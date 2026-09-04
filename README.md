@@ -8,12 +8,12 @@ Everything is static files. No server-side code, no build step needed to *serve*
 
 ## Publish on GitHub Pages
 
-1. Create a new public repository, e.g. `articles` (the name becomes the URL: `https://krisfricke.github.io/articles/`).
+1. Create a new public repository, e.g. `portfolio` (the name becomes the URL: `https://krisfricke.github.io/portfolio/`).
 2. Put the **contents of this folder** at the root of the repository (so `index.html` is at the top level) and push.
 3. Repository → Settings → Pages → *Build and deployment*: Source **Deploy from a branch**, branch **main**, folder **/ (root)**. Save.
 4. A minute later the site is live at `https://krisfricke.github.io/<repo>/`.
 
-If you name the repository anything other than `articles`, change `base` in `_config.json` and run the two build
+If you name the repository anything other than `portfolio`, change `base` in `_config.json` and run the two build
 scripts below (the base URL is baked into share links, citations' links, the sitemap and canonical tags).
 
 Files and folders starting with an underscore (`_build/`, `_config.json`, `_articles_meta.json`) are ignored by
@@ -62,9 +62,9 @@ The Cite button copies rich text (italics preserved) where the browser allows it
 Add `#/newest` or `#/oldest` to the address to open the list in that order (the visitor's own saved preference is
 left alone). It also works as a prefix on any other link:
 
-    https://krisfricke.github.io/articles/#/oldest
-    https://krisfricke.github.io/articles/#/oldest/topic/varroa
-    https://krisfricke.github.io/articles/#/newest/read/abj-2019-06
+    https://krisfricke.github.io/portfolio/#/oldest
+    https://krisfricke.github.io/portfolio/#/oldest/topic/varroa
+    https://krisfricke.github.io/portfolio/#/newest/read/abj-2019-06
 
 ## Reader controls
 

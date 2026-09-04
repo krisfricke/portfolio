@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://krisfricke.github.io/articles/sitemap.xml
+Sitemap: https://krisfricke.github.io/portfolio/sitemap.xml
