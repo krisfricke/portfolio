@@ -643,6 +643,13 @@ window.addEventListener('keydown',function(e){
   const bee=document.getElementById('beecur'); if(!bee) return;
   document.body.classList.add('bee-on');
   let tx=innerWidth/2, ty=innerHeight/2, x=tx, y=ty, ta=0, a=0, started=false;
+  /* hand-off between pages on the same site: the leaving page notes where the bee was and which way she faced,
+     the arriving page starts her right there, so she appears to have flown across with you */
+  const HAND='kf_bee';
+  try{ const h=JSON.parse(localStorage.getItem(HAND)||'null');
+    if(h && Date.now()-h.t<8000 && isFinite(h.x) && isFinite(h.y)){ tx=x=h.x; ty=y=h.y; ta=a=h.a||0; started=true; bee.classList.add('on'); }
+    localStorage.removeItem(HAND); }catch(e){}
+  window.addEventListener('pagehide',function(){ try{ localStorage.setItem(HAND,JSON.stringify({x:x,y:y,a:a,t:Date.now()})); }catch(e){} });
   /* landing: hold still for 2s over something solid and she settles; any movement and she is airborne again */
   const SKY='html,body,.track,.lane,.sheet,.cov,.arc,.iscrim,.bscrim,.rail,.pn';
   const SURF='iframe,.pframe,.chrome,.tophead,.edge,.zoombar,.ibox,.bpanel,.hit,.gate,img,button,a,input,.rail .ti,.rail .meta';
