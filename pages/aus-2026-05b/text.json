@@ -1,0 +1,608 @@
+{
+"pages": [
+{
+"lines": [
+"16 ",
+"Australian Bee Journal ",
+"Prophylactics ",
+"By Kris Fricke ",
+"I’d have thought we can all agree that you shouldn’t ",
+"engage in “risky behaviour” with multiple partners of ",
+"unknown infectious disease status without any protec-",
+"tion, right?  But that has been the policy recommenda-",
+"tion of the National Varroa Mite Management Program. ",
+"“Don’t use miticides prophylactically” they say, (ie, as a ",
+"protective measure) if you do not yet have mites or are ",
+"not near threshold. ",
+"It makes sense not to use miticides when you don’t ",
+"need them, and that’s in keeping with the principals of ",
+"Integrated Pest Management,  but the extension of this ",
+"rule to times when in any analogous situation you ",
+"would definitely want to use protection is a bit more ",
+"questionable. ",
+"Let’s examine what the authorities we’ve looked to ",
+"in building our policies say about this. ",
+"“Control of Varroa: a Guide for New Zealand Bee-",
+"keepers” encapsulates a lot of the findings of our near-",
+"est neighbors and last-to-get-it-prior-to-us, and is writ-",
+"ten by serious authorities Michelle Taylor and Mark ",
+"Goodwin.   ",
+"“A good example of preventative treatment is when ",
+"hives are used for kiwifruit pollination; colonies may ",
+"have finished varroa control treatment before entering ",
+"pollination so by the time they are moved into orchards, ",
+"they have very low mite numbers and should not need to ",
+"be treated until the following season.  However, in some ",
+"kiwifruit areas, colonies are placed at very high densi-",
+"ties (up to 600 colonies per km2 [similar to our al-",
+"monds]).  Thus, there is a significant risk of treated col-",
+"onies being invaded by a large number of mites from ",
+"other colonies where varroa has not been controlled ",
+"(managed or feral).  The effect may not be immediate ",
+"but may require treatments to be conducted in mid or ",
+"late summer.”1 ",
+"The Honeybee Health Coalition, another major ",
+"source for our policymakers, does not say anything one ",
+"way or another about prophylactic miticide use, but they ",
+"do say:  ",
+"“Integrated Pest Management (IPM) is a set of pro-",
+"active control methods that offer beekeepers the best ",
+"“whole systems approach” to controlling varroa.” … ",
+"“Successful varroa control solutions are proactive. ",
+"They control varroa before the mites reach levels that ",
+"threaten colony productivity and survival, rather than ",
+"respond after the damage has occurred.”2 ",
+"  They do not otherwise address prophylactic miti-",
+"cide use either for or against. ",
+"The other “holy text” of varroa management policy ",
+"is the Jack and Ellis 2021 paper “Integrated Pest Man-",
+"agement Control of Varroa […].”  It doesn’t directly ",
+"address the use of miticides in a preventative role, but ",
+"they do have a section on prevention: ",
+"Prevention ",
+"One aspect of IPM that is often overlooked is pre-",
+"vention.  Prevention involves removing the conditions ",
+"that attract pests or help them to build their popula-",
+"tions.  As Varroa occurs throughout much of the world, ",
+"complete prevention is nearly impossible.  Furthermore, ",
+"Varroa only feed on honey bees and only reproduce in ",
+"their brood cells; thus, there currently is no way for ",
+"beekeepers to remove the conditions that attract Var-",
+"roa.  While some beekeepers’ primary goal is to prevent ",
+"the arrival of Varroa in their area, beekeepers should ",
+"employ preventative practices to keep Varroa popula-",
+"tions from spreading to different areas.3  ",
+"So these sources don’t really weigh in on it directly, ",
+"a simple logical analysis is probably better anyway.  ",
+"The fundamental idea of Integrated Pest Management is ",
+"to ensure you are spending less on treatment than the ",
+"cost of not performing the treatment.  This is the idea ",
+"underpinning all the monitoring and thresholds, etc.  As ",
+"you’ve no doubt heard explained, obviously treating 12 ",
+"times in a year will cost more than the damage the mites ",
+"were going to inflict.  Treating too few times will allow ",
+"the mites to do more damage than another treatment ",
+"would have cost you, that’s the whole idea of IPM, by ",
+"monitoring for numbers, treating on thresholds, you can ",
+"avoid unnecessary costs … if varroa only steadily builds ",
+"up evenly over time.  But that doesn’t account for the ",
+"possibility that strategically treating at a particularly ",
+"high risk moment can disproportionately reduce your ",
+"costs later. ",
+"Imagine you don’t have varroa, let’s go back in time ",
+"to when most people didn’t have varroa because yes this ",
+"is about what should have been policy as much as what ",
+"should be policy going forward.  Back in the heady days ",
+"of 2024 we all knew some people would come to al-",
+"monds with varroa, but we had to go because we needed ",
+"that sweet sweet almond money. ",
+"Scenario 1: ",
+"You are told not to use miticide protection, so you ",
+"don’t.  You get a dozen mites via drift.  You don’t real-",
+"ize you have 24 mites in October, 60 mites in Novem-",
+"ber,  190 in December, 376 in January4…  you detect it ",
+"some time between then and April, hopefully, because ",
+"April you hit treatment threshold, congratulations ",
+"you’re on the Varroa treadmill probably spending mon-",
+"ey on at least three treatments a year for the next 20 ",
+"years. ",
+"Scenario 2: ",
+"You pay for one miticide treatment, you have ",
+"Apistan in the hives the whole time you’re at almonds.  ",
+"Those same dozen mites enter your hives on drifting ",
+"bees.  Apistan (in the early days without resistance) is ",
+"99% effective, the odds of one of those mites surviving ",
+"is just around 11%.  The overwhelming probability is ",
+"89%* odds of congratulations you have dodged getting ",
+"mites at the highest risk part of the year, if everyone ",
+"else had been doing likewise, odds are very good you ",
+"could make it the rest of the year with no added treat-",
+"ment costs, no varroa damage, you have successfully ",
+"minimized your costs greatly. ",
+"*(Because I’ve been asked about this: Chance of none of 12 ",
+"mites surviving is 0.9912, which is approximately 0.886, ",
+"turned into a percentage that’s 89% chance none survive.) ",
+"(Continued on page 17 "
+],
+"paras": [
+{
+"t": "16 Australian Bee Journal",
+"size": 10.0,
+"y": 810.0,
+"x": 37.2
+},
+{
+"t": "Prophylactics",
+"size": 24.0,
+"y": 37.7,
+"x": 38.4
+},
+{
+"t": "By Kris Fricke",
+"size": 11.0,
+"y": 75.0,
+"x": 37.4
+},
+{
+"t": "I’d have thought we can all agree that you shouldn’t engage in “risky behaviour” with multiple partners of unknown infectious disease status without any protection, right?  But that has been the policy recommendation of the National Varroa Mite Management Program. “Don’t use miticides prophylactically” they say, (ie, as a protective measure) if you do not yet have mites or are not near threshold.",
+"size": 11.0,
+"y": 98.3,
+"x": 37.4
+},
+{
+"t": "It makes sense not to use miticides when you don’t need them, and that’s in keeping with the principals of Integrated Pest Management,  but the extension of this rule to times when in any analogous situation you would definitely want to use protection is a bit more questionable.",
+"size": 11.0,
+"y": 191.5,
+"x": 37.4
+},
+{
+"t": "Let’s examine what the authorities we’ve looked to in building our policies say about this.",
+"size": 11.0,
+"y": 261.5,
+"x": 37.4
+},
+{
+"t": "“Control of Varroa: a Guide for New Zealand Beekeepers” encapsulates a lot of the findings of our nearest neighbors and last-to-get-it-prior-to-us, and is written by serious authorities Michelle Taylor and Mark Goodwin.",
+"size": 11.0,
+"y": 284.8,
+"x": 37.4
+},
+{
+"t": "“A good example of preventative treatment is when hives are used for kiwifruit pollination; colonies may have finished varroa control treatment before entering pollination so by the time they are moved into orchards, they have very low mite numbers and should not need to be treated until the following season.  However, in some kiwifruit areas, colonies are placed at very high densities (up to 600 colonies per km2 [similar to our almonds]).  Thus, there is a significant risk of treated colonies being invaded by a large number of mites from other colonies where varroa has not been controlled (managed or feral).  The effect may not be immediate but may require treatments to be conducted in mid or late summer.”1",
+"size": 11.0,
+"y": 354.7,
+"x": 37.4
+},
+{
+"t": "The Honeybee Health Coalition, another major source for our policymakers, does not say anything one way or another about prophylactic miticide use, but they do say:",
+"size": 11.0,
+"y": 518.0,
+"x": 37.4
+},
+{
+"t": "“Integrated Pest Management (IPM) is a set of proactive control methods that offer beekeepers the best “whole systems approach” to controlling varroa.” … “Successful varroa control solutions are proactive. They control varroa before the mites reach levels that threaten colony productivity and survival, rather than respond after the damage has occurred.”2",
+"size": 11.0,
+"y": 564.6,
+"x": 37.4
+},
+{
+"t": "They do not otherwise address prophylactic miticide use either for or against.",
+"size": 11.0,
+"y": 646.2,
+"x": 37.4
+},
+{
+"t": "The other “holy text” of varroa management policy is the Jack and Ellis 2021 paper “Integrated Pest Management Control of Varroa […].”  It doesn’t directly address the use of miticides in a preventative role, but they do have a section on prevention:",
+"size": 11.0,
+"y": 669.5,
+"x": 37.4
+},
+{
+"t": "Prevention One aspect of IPM that is often overlooked is prevention.  Prevention involves removing the conditions that attract pests or help them to build their populations.  As Varroa occurs throughout much of the world,",
+"size": 11.0,
+"y": 739.2,
+"x": 37.4
+},
+{
+"t": "complete prevention is nearly impossible.  Furthermore, Varroa only feed on honey bees and only reproduce in their brood cells; thus, there currently is no way for beekeepers to remove the conditions that attract Varroa.  While some beekeepers’ primary goal is to prevent the arrival of Varroa in their area, beekeepers should employ preventative practices to keep Varroa populations from spreading to different areas.3",
+"size": 11.0,
+"y": 75.0,
+"x": 306.8
+},
+{
+"t": "So these sources don’t really weigh in on it directly, a simple logical analysis is probably better anyway. The fundamental idea of Integrated Pest Management is to ensure you are spending less on treatment than the cost of not performing the treatment.  This is the idea underpinning all the monitoring and thresholds, etc.  As you’ve no doubt heard explained, obviously treating 12 times in a year will cost more than the damage the mites were going to inflict.  Treating too few times will allow the mites to do more damage than another treatment would have cost you, that’s the whole idea of IPM, by monitoring for numbers, treating on thresholds, you can avoid unnecessary costs … if varroa only steadily builds up evenly over time.  But that doesn’t account for the possibility that strategically treating at a particularly high risk moment can disproportionately reduce your costs later.",
+"size": 11.0,
+"y": 168.3,
+"x": 306.8
+},
+{
+"t": "Imagine you don’t have varroa, let’s go back in time to when most people didn’t have varroa because yes this is about what should have been policy as much as what should be policy going forward.  Back in the heady days of 2024 we all knew some people would come to almonds with varroa, but we had to go because we needed that sweet sweet almond money.",
+"size": 11.0,
+"y": 378.1,
+"x": 306.8
+},
+{
+"t": "Scenario 1: You are told not to use miticide protection, so you don’t.  You get a dozen mites via drift.  You don’t realize you have 24 mites in October, 60 mites in November,  190 in December, 376 in January4…  you detect it some time between then and April, hopefully, because April you hit treatment threshold, congratulations you’re on the Varroa treadmill probably spending money on at least three treatments a year for the next 20 years.",
+"size": 11.0,
+"y": 459.4,
+"x": 306.8
+},
+{
+"t": "Scenario 2: You pay for one miticide treatment, you have Apistan in the hives the whole time you’re at almonds. Those same dozen mites enter your hives on drifting bees.  Apistan (in the early days without resistance) is 99% effective, the odds of one of those mites surviving is just around 11%.  The overwhelming probability is 89%* odds of congratulations you have dodged getting mites at the highest risk part of the year, if everyone else had been doing likewise, odds are very good you could make it the rest of the year with no added treatment costs, no varroa damage, you have successfully minimized your costs greatly.",
+"size": 11.0,
+"y": 575.7,
+"x": 306.8
+},
+{
+"t": "*(Because I’ve been asked about this: Chance of none of 12 mites surviving is 0.9912, which is approximately 0.886, turned into a percentage that’s 89% chance none survive.)",
+"size": 10.0,
+"y": 765.4,
+"x": 306.3
+},
+{
+"t": "(Continued on page 17",
+"size": 8.0,
+"y": 736.2,
+"x": 483.1
+}
+]
+},
+{
+"lines": [
+"May 2026  ",
+"17 ",
+"Prophylactics, cont’d ",
+"Scenario 3: ",
+"The incoming beekeepers with varroa had been told ",
+"to have strips in on arrival, the amount of varroa able to ",
+"drift into other hives is reduced by 99%.  Varroa-free ",
+"beekeepers such as yourself also have a treatment in, so ",
+"any of the small number of varroa who do manage to ",
+"drift out of infected hives will 99% be killed on arriving ",
+"in the hive.  Total number of varroa surviving into pre-",
+"viously uninfected hives is almost incalculably low, ",
+"varroa does not spread at the almonds. ",
+"In which case did you spend less money and have ",
+"less impact on your bees?  Very obviously scenarios 2 ",
+"and 3.  The spread could have been significantly slowed ",
+"down and the cost to industry significantly reduced if ",
+"the policy advisors had encouraged prophylactic use of ",
+"miticides instead of advising against it. ",
+"The above scenarios are backwards looking though, ",
+"to a time when we didn’t have mites.  Let’s look for-",
+"ward, most commercial beekeepers in Victoria by this ",
+"point unfortunately have varroa:   ",
+"Scenario 4: ",
+"So let’s say you go to the almonds, with less than ",
+"the detectable threshold of mites because you’re a re-",
+"sponsible beekeeper, but of course your hives will wake ",
+"up beside partners from all across Australia.  Some of ",
+"whom come from hot sweaty places with no brood ",
+"break and relied on the “she’ll be right” method.  These ",
+"hives are itchy with varroa and in intimate proximity ",
+"with your own.  So 200 mites drift into each of your ",
+"hives.  You’d come out with detectable levels of mites ",
+"and hit threshold in January.  Do a treatment then and ",
+"you might still have to put another one in in April.  If ",
+"you had had a treatment in while at the almonds you’d ",
+"come right back out again with undetectably low levels ",
+"of mites and not hit threshold till May.4 ",
+"Bottom line is regardless of your current threshold ",
+"status, your biggest risk of the year is the almonds (and ",
+"possibly ironbark) and if you ensure your mite numbers ",
+"are as low as possible coming out of almonds you’ll ",
+"have the best shot at a good year. Without protection ",
+"you risk leaving with a peculiar burning sensation … in ",
+"your wallet from treatment costs. ",
+"There’s surprisingly little research on spring mite ",
+"immigration, probably because in the United States or ",
+"Europe all the hives are just coming out of a long brood",
+"-free winter, but that is not the case with many of the ",
+"beekeepers we’ll be sharing paddocks with in the al-",
+"monds.   ",
+"In wider veterinary medicine, prophylactic treatment ",
+"for diseases before specific high risk situations is com-",
+"mon.5  The specific treatment of healthy animals before ",
+"being commingled with animals of unknown disease ",
+"status is called “metaphylaxis.”  In 107 randomized ",
+"field trials, preventatively treating healthy cattle before ",
+"(Continued from page 16) ",
+"(Continued on page 18) "
+],
+"paras": [
+{
+"t": "May 2026 17",
+"size": 10.0,
+"y": 808.4,
+"x": 434.3
+},
+{
+"t": "Prophylactics, cont’d",
+"size": 24.0,
+"y": 37.3,
+"x": 38.6
+},
+{
+"t": "Scenario 3: The incoming beekeepers with varroa had been told to have strips in on arrival, the amount of varroa able to drift into other hives is reduced by 99%.  Varroa-free beekeepers such as yourself also have a treatment in, so any of the small number of varroa who do manage to drift out of infected hives will 99% be killed on arriving in the hive.  Total number of varroa surviving into previously uninfected hives is almost incalculably low, varroa does not spread at the almonds.",
+"size": 11.0,
+"y": 96.7,
+"x": 39.7
+},
+{
+"t": "In which case did you spend less money and have less impact on your bees?  Very obviously scenarios 2 and 3.  The spread could have been significantly slowed down and the cost to industry significantly reduced if the policy advisors had encouraged prophylactic use of miticides instead of advising against it.",
+"size": 11.0,
+"y": 213.3,
+"x": 39.7
+},
+{
+"t": "The above scenarios are backwards looking though, to a time when we didn’t have mites.  Let’s look forward, most commercial beekeepers in Victoria by this point unfortunately have varroa:",
+"size": 11.0,
+"y": 283.1,
+"x": 39.7
+},
+{
+"t": "Scenario 4: So let’s say you go to the almonds, with less than the detectable threshold of mites because you’re a responsible beekeeper, but of course your hives will wake up beside partners from all across Australia.  Some of whom come from hot sweaty places with no brood break and relied on the “she’ll be right” method.  These",
+"size": 11.0,
+"y": 329.6,
+"x": 39.7
+},
+{
+"t": "hives are itchy with varroa and in intimate proximity with your own.  So 200 mites drift into each of your hives.  You’d come out with detectable levels of mites and hit threshold in January.  Do a treatment then and you might still have to put another one in in April.  If you had had a treatment in while at the almonds you’d come right back out again with undetectably low levels of mites and not hit threshold till May.4",
+"size": 11.0,
+"y": 73.9,
+"x": 307.1
+},
+{
+"t": "Bottom line is regardless of your current threshold status, your biggest risk of the year is the almonds (and possibly ironbark) and if you ensure your mite numbers are as low as possible coming out of almonds you’ll have the best shot at a good year. Without protection you risk leaving with a peculiar burning sensation … in your wallet from treatment costs.",
+"size": 11.0,
+"y": 167.2,
+"x": 307.1
+},
+{
+"t": "There’s surprisingly little research on spring mite immigration, probably because in the United States or Europe all the hives are just coming out of a long brood -free winter, but that is not the case with many of the beekeepers we’ll be sharing paddocks with in the almonds.",
+"size": 11.0,
+"y": 248.7,
+"x": 307.1
+},
+{
+"t": "In wider veterinary medicine, prophylactic treatment for diseases before specific high risk situations is common.5  The specific treatment of healthy animals before being commingled with animals of unknown disease status is called “metaphylaxis.”  In 107 randomized field trials, preventatively treating healthy cattle before",
+"size": 11.0,
+"y": 318.7,
+"x": 307.1
+},
+{
+"t": "(Continued from page 16)",
+"size": 8.0,
+"y": 77.6,
+"x": 39.7
+},
+{
+"t": "(Continued on page 18)",
+"size": 8.0,
+"y": 398.9,
+"x": 478.2
+}
+]
+},
+{
+"lines": [
+"18 ",
+"Australian Bee Journal ",
+"WEBCASTS: ",
+"Victorian Apiarists Association ",
+"May 7th – Paul Roder – “Varroa resistance breeding in Australia” ",
+"PODCASTS: ",
+"Two Bees in a Podcast: ",
+"April 7th: “Understanding Honey and Botulism with Dr Joshua Jakum” ",
+"Amy Vu and Dr. Jamie Ellis are joined by Dr. Joshua Jakum, MD, a pediatrician and an Eastern       ",
+"Apicultural Society Master Beekeeper, to discuss honey and its connection to botulism. ",
+"April 23rd: “Viral Infections of Honey Bee Queens with Dr Leonard Foster” ",
+"Amy Vu and Dr. Jamie Ellis are joined by Dr. Leonard Foster, a Professor in Biochemistry and         ",
+"Molecular Biology, Faculty of Medicine, as well as the director of the Life Sciences Institute at the    ",
+"University of British Columbia. They discuss elevated virus infections in honey bee queens and what  ",
+"that means for colonies. ",
+"Beekeeping Today Podcast: ",
+"April 13th – “Varroa Management Guide Update with Dewey Caron” ",
+" A wide-ranging discussion on Varroa management, beekeeping education, and the evolving work of   ",
+"the Honey Bee Health Coalition. ",
+"April 27th – “Queen Biology and Quality with Dr David Tarpy” ",
+" Challenging a common oversimplification: the queen is not just an \"egg-laying machine,\" but part        ",
+"of a dynamic, cooperative system shaped by both biology and worker perception. ",
+"Prophylactics, cont’d ",
+"entering the heavy concentration of feed lots reduced ",
+"morbidity by 80-90%.  In fact NSW DPI explicitly rec-",
+"ommends cattle likely to go into feedlots be vaccinat-",
+"ed.7  This isn’t just a “vaccination: good” scenario, cat-",
+"tle that are not bound for high risk concentration envi-",
+"ronments do not typically receive this preventative ",
+"treatment.  This is a directly analogous situation.  Like ",
+"with bees, blanket treating would drive up costs and ",
+"lead to resistant strains of the disease. ",
+"Prior to resistant strains of mites emerging I recom-",
+"mended counting back ten weeks from when you ",
+"planned to put honey supers on and putting in Apistan ",
+"for those last ten weeks of winter including almonds. ",
+"Now we really don’t want these resistant strains, so I ",
+"would recommend having slow-release oxalic in.  ",
+"When your hives are not in a high-risk situation, it ",
+"remains true that treating prophylactically is just a ",
+"waste of money and time, needless contamination and ",
+"resistance building.  If a treatment isn’t timed to reduce ",
+"the total number of treatments you have to do in a year, ",
+"you really shouldn’t do it.  ",
+"But if you’re in a specific high-risk situation where ",
+"not protecting your hives stands to set you back against ",
+"varroa for the whole upcoming season – or especially ",
+"poses the most overwhelming risk to get mites if you ",
+"don’t have them yet, there’s no scientific or logical ar-",
+"gument why you would not want to protect your hives.  ",
+"Do you really trust that every one of your numerous ",
+"anonymous industry partners has been practicing safe ",
+"and responsible varroa management and is perfectly ",
+"safe to promiscuously interchange drift with? ",
+"References ",
+"1 Taylor, M. and Goodwin, M. (2021). Control of Var-",
+"roa: A Guide for New Zealand Beekeepers. New Zea-",
+"land Ministry for Primary Industries, Wellington. ",
+"2 Honey Bee Health Coalition. Tools for Varroa Man-",
+"agement: A Guide to Effective Varroa Sampling & ",
+"Control. 8th ed. Keystone Policy Center; 2022. ",
+"Available at: https://honeybeehealthcoalition.org/wp-",
+"content/uploads/2022/08/HBHC-Guide_Varroa-",
+"Mgmt_8thEd-082422.pdf ",
+"3 Jack CJ, Ellis JD. Integrated pest management control ",
+"of Varroa destructor (Acari: Varroidae), the most ",
+"damaging pest of Apis mellifera L. (Hymenoptera: ",
+"Apidae) colonies. J Insect Sci. 2021;21(5):6. ",
+"doi:10.1093/jisesa/ieab054 ",
+"4 Oliver R. Randy's Varroa Model. ScientificBeekeep-",
+"ing.com. ",
+"2026, ",
+"February ",
+"22nd. ",
+"https://",
+"scientificbeekeeping.com/randys-varroa-model/ ",
+"5 Cusack PMV. 2004. Effect of mass medication with ",
+"antibiotics at feedlot entry on the health and growth ",
+"rate of cattle destined for the Australian domestic ",
+"market. Australian Veterinary Journal 82: 154–156. ",
+"6 Van Donkersgoed J. Meta-analysis of field trials of ",
+"antimicrobial mass medication for prophylaxis of ",
+"bovine respiratory disease in feedlot cattle. Can Vet ",
+"J. 1992 Dec;33(12):786-95. PMID: 17424131; ",
+"PMCID: PMC1481390. ",
+"7 NSW Department of Primary Industries and Re-",
+"gional Development. Bovine Respiratory Disease ",
+"(BRD) or Shipping Fever. NSW Government [Internet]. ",
+"2025 October [cited 2026 April 21]. Available from: ",
+"https://www.nsw.gov.au/regional-and-primary-",
+"industries/livestock/health-diseases/bovine-respiratory  ",
+"(Continued from page 17) "
+],
+"paras": [
+{
+"t": "18 Australian Bee Journal",
+"size": 10.0,
+"y": 809.1,
+"x": 38.5
+},
+{
+"t": "WEBCASTS: Victorian Apiarists Association May 7th – Paul Roder – “Varroa resistance breeding in Australia”",
+"size": 11.0,
+"y": 500.4,
+"x": 40.6
+},
+{
+"t": "PODCASTS: Two Bees in a Podcast: April 7th: “Understanding Honey and Botulism with Dr Joshua Jakum” Amy Vu and Dr. Jamie Ellis are joined by Dr. Joshua Jakum, MD, a pediatrician and an Eastern Apicultural Society Master Beekeeper, to discuss honey and its connection to botulism.",
+"size": 11.0,
+"y": 541.4,
+"x": 40.6
+},
+{
+"t": "April 23rd: “Viral Infections of Honey Bee Queens with Dr Leonard Foster” Amy Vu and Dr. Jamie Ellis are joined by Dr. Leonard Foster, a Professor in Biochemistry and Molecular Biology, Faculty of Medicine, as well as the director of the Life Sciences Institute at the University of British Columbia. They discuss elevated virus infections in honey bee queens and what that means for colonies.",
+"size": 11.0,
+"y": 615.5,
+"x": 40.6
+},
+{
+"t": "Beekeeping Today Podcast: April 13th – “Varroa Management Guide Update with Dewey Caron” A wide-ranging discussion on Varroa management, beekeeping education, and the evolving work of the Honey Bee Health Coalition.",
+"size": 11.0,
+"y": 690.3,
+"x": 40.6
+},
+{
+"t": "April 27th – “Queen Biology and Quality with Dr David Tarpy” Challenging a common oversimplification: the queen is not just an \"egg-laying machine,\" but part of a dynamic, cooperative system shaped by both biology and worker perception.",
+"size": 11.0,
+"y": 752.0,
+"x": 40.6
+},
+{
+"t": "Prophylactics, cont’d",
+"size": 24.0,
+"y": 38.4,
+"x": 38.4
+},
+{
+"t": "entering the heavy concentration of feed lots reduced morbidity by 80-90%.  In fact NSW DPI explicitly recommends cattle likely to go into feedlots be vaccinated.7  This isn’t just a “vaccination: good” scenario, cattle that are not bound for high risk concentration environments do not typically receive this preventative treatment.  This is a directly analogous situation.  Like with bees, blanket treating would drive up costs and lead to resistant strains of the disease.",
+"size": 11.0,
+"y": 99.7,
+"x": 39.6
+},
+{
+"t": "Prior to resistant strains of mites emerging I recommended counting back ten weeks from when you planned to put honey supers on and putting in Apistan for those last ten weeks of winter including almonds. Now we really don’t want these resistant strains, so I would recommend having slow-release oxalic in.",
+"size": 11.0,
+"y": 204.7,
+"x": 39.6
+},
+{
+"t": "When your hives are not in a high-risk situation, it remains true that treating prophylactically is just a waste of money and time, needless contamination and resistance building.  If a treatment isn’t timed to reduce the total number of treatments you have to do in a year, you really shouldn’t do it.",
+"size": 11.0,
+"y": 274.5,
+"x": 39.6
+},
+{
+"t": "But if you’re in a specific high-risk situation where not protecting your hives stands to set you back against varroa for the whole upcoming season – or especially poses the most overwhelming risk to get mites if you don’t have them yet, there’s no scientific or logical argument why you would not want to protect your hives. Do you really trust that every one of your numerous anonymous industry partners has been practicing safe and responsible varroa management and is perfectly safe to promiscuously interchange drift with? References 1 Taylor, M. and Goodwin, M. (2021). Control of Var-",
+"size": 11.0,
+"y": 344.5,
+"x": 39.6
+},
+{
+"t": "roa: A Guide for New Zealand Beekeepers. New Zealand Ministry for Primary Industries, Wellington. 2 Honey Bee Health Coalition. Tools for Varroa Management: A Guide to Effective Varroa Sampling & Control. 8th ed. Keystone Policy Center; 2022. Available at: https://honeybeehealthcoalition.org/wpcontent/uploads/2022/08/HBHC-Guide_Varroa- Mgmt_8thEd-082422.pdf",
+"size": 11.0,
+"y": 76.5,
+"x": 308.5
+},
+{
+"t": "3 Jack CJ, Ellis JD. Integrated pest management control of Varroa destructor (Acari: Varroidae), the most damaging pest of Apis mellifera L. (Hymenoptera: Apidae) colonies. J Insect Sci. 2021;21(5):6. doi:10.1093/jisesa/ieab054",
+"size": 11.0,
+"y": 176.2,
+"x": 308.5
+},
+{
+"t": "4 Oliver R. Randy's Varroa Model. ScientificBeekeeping.com. 2026, February 22nd. https:// scientificbeekeeping.com/randys-varroa-model/",
+"size": 11.0,
+"y": 242.5,
+"x": 308.5
+},
+{
+"t": "5 Cusack PMV. 2004. Effect of mass medication with antibiotics at feedlot entry on the health and growth rate of cattle destined for the Australian domestic market. Australian Veterinary Journal 82: 154–156.",
+"size": 11.0,
+"y": 285.5,
+"x": 308.5
+},
+{
+"t": "6 Van Donkersgoed J. Meta-analysis of field trials of antimicrobial mass medication for prophylaxis of bovine respiratory disease in feedlot cattle. Can Vet J. 1992 Dec;33(12):786-95. PMID: 17424131; PMCID: PMC1481390.",
+"size": 11.0,
+"y": 340.1,
+"x": 308.5
+},
+{
+"t": "7 NSW Department of Primary Industries and Regional Development. Bovine Respiratory Disease (BRD) or Shipping Fever. NSW Government [Internet]. 2025 October [cited 2026 April 21]. Available from: https://www.nsw.gov.au/regional-and-primaryindustries/livestock/health-diseases/bovine-respiratory",
+"size": 11.0,
+"y": 406.3,
+"x": 308.5
+},
+{
+"t": "(Continued from page 17)",
+"size": 8.0,
+"y": 80.4,
+"x": 39.6
+}
+]
+}
+],
+"links": [
+"https://honeybeehealthcoalition.org/wp-content/uploads/2022/08/HBHC-Guide_Varroa-Mgmt_8thEd-082422.pdf",
+"https://open.spotify.com/episode/4VVTKTWaT5jWkN0BK4V1oe",
+"https://open.spotify.com/episode/4quAA4pfsicFczEcDTvdv4",
+"https://open.spotify.com/episode/4w77OJlzdZtFO4yfEQny3y",
+"https://open.spotify.com/episode/5fQ5ppVaHpsI7k0Bmk8qB4",
+"https://scientificbeekeeping.com/randys-varroa-model/",
+"https://www.nsw.gov.au/regional-and-primary-industries/livestock/health-diseases/bovine-respiratory",
+"https://www.youtube.com/watch?v=hXyUv1Kdlxg"
+],
+"pt": [
+595.3200073242188,
+841.9199829101562
+]
+}

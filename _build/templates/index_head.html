@@ -1,0 +1,313 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kris Fricke — Articles</title>
+<meta name="description" content="Articles by Kris Fricke on beekeeping, bee biology and beekeeping development around the world, as published in the American Bee Journal and the Australian Bee Journal.">
+<link rel="icon" type="image/png" href="assets/bee/gold.png">
+<link rel="stylesheet" href="assets/fonts.css">
+<style>
+:root{--chromeH:58px;--gold:#f9c500;--paper:#faf8f2;--navy:#1f3a5f;
+  --ink:#14293b;--ink2:#3d6079;--sky1:#7db4dc;--sky2:#a9d2ec;--sky3:#d3e8f7}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,var(--sky1) 0%,var(--sky2) 46%,var(--sky3) 100%) fixed;color:#1d1b16;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;overflow:hidden}
+/* accessibility exits: keyboard users and text-only agents get a way to the plain-text pages */
+.skip{position:absolute;left:-9999px;top:8px;z-index:1000;background:var(--gold);color:#111;padding:8px 14px;border-radius:8px;font-weight:700;text-decoration:none}
+.skip:focus{left:8px}
+noscript .nojs{position:fixed;inset:0;z-index:2000;background:var(--paper);color:#222;padding:40px 24px;font:16px/1.6 Georgia,serif;overflow:auto}
+noscript .nojs a{color:#0f4b70}
+/* ---------- top bar ---------- */
+.chrome{position:fixed;top:0;left:0;right:0;z-index:80;display:flex;align-items:center;gap:12px;
+ padding:0;background:rgba(17,17,17,.94);backdrop-filter:blur(6px);color:#fff;height:var(--chromeH)}
+.mast{display:flex;align-items:center;gap:10px;height:100%;flex:0 0 auto;padding:0 14px 0 14px;text-decoration:none;color:#fff}
+.mast img{height:34px;width:auto;display:block}
+.mast b{font-size:16px;letter-spacing:.02em;white-space:nowrap}
+.mast small{display:block;font-size:10.5px;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+.chrome .iss{font-size:12.5px;color:var(--gold);font-weight:700;white-space:nowrap}
+.chrome nav.ctr{display:flex;gap:4px;margin:0 auto;flex-wrap:wrap}
+.chrome .rt{display:flex;align-items:center;gap:8px;margin-left:auto;padding-right:14px}
+.chrome a.t .sm{display:none}
+.chrome a.t{color:#ddd;text-decoration:none;font-size:13.5px;padding:6px 11px;border-radius:6px;cursor:pointer;white-space:nowrap}
+.chrome a.t:hover{background:#2b2b2b;color:#fff}.chrome a.t.on{background:var(--gold);color:#111;font-weight:700}
+.chrome a.t.ord{border:1px solid #444}
+.chrome a.t.ord::before{content:"⇅ ";opacity:.7}
+@media(max-width:820px){.chrome nav a.t{font-size:12.5px;padding:5px 8px}}
+/* ---------- horizontal track: lane 0 = the article stack, lane 1 = a topic / publication lane ---------- */
+.track{position:fixed;inset:var(--chromeH) 0 0;display:flex;width:300%;transition:transform .55s cubic-bezier(.4,0,.2,1);transform:translateX(-33.3334%)}
+.track.right{transform:translateX(-66.6667%)}
+.track.left{transform:translateX(0)}
+.lane{width:33.3334%;height:100%;overflow-y:auto;overflow-x:auto;-webkit-overflow-scrolling:touch}
+/* western seam: where the articles join the main site */
+.gate{min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;
+ background:var(--paper);color:#26241e;text-align:center;padding:60px 24px 40px}
+.gate img{height:96px;margin-bottom:14px}
+.gate h2{margin:0;font-size:24px;color:#111}
+.gate .dom{font-size:12.5px;color:#6a5600;letter-spacing:.06em;margin-top:4px}
+.gate p{max-width:430px;color:#6d6857;font-size:14px;line-height:1.55}
+.gate .handoff{color:#8a8472;font-size:12.5px;margin:12px 0 0;opacity:0;transition:opacity .3s}
+.gate.leaving .handoff{opacity:1}
+.gate .back{background:#111;color:#fff;border:none;border-radius:20px;padding:9px 20px;font-size:13.5px;cursor:pointer;font-family:inherit}
+.edge{position:fixed;top:50%;transform:translateY(-50%);z-index:70;background:rgba(17,17,17,.80);
+  color:#c9c4b5;border:none;border-radius:0 8px 8px 0;padding:13px 8px 13px 5px;cursor:pointer;font-family:inherit;
+  display:flex;flex-direction:row;align-items:center;gap:6px;transition:background .15s,color .15s}
+.edge .chev{width:0;height:0;flex:0 0 auto;
+  border-top:6px solid transparent;border-bottom:6px solid transparent;border-right:8px solid currentColor}
+.edge .lbl{writing-mode:vertical-rl;letter-spacing:.12em;font-size:12px;font-weight:700}
+.edge:hover{background:var(--gold);color:#111}
+.edge.back{display:none;background:rgba(15,75,112,.86);color:#eaf3fa;border-radius:8px}
+.edge.back:hover{background:var(--gold);color:#111}
+body.inlane .edge.back{display:flex}
+.edge.w{left:0}
+/* ---------- light woodgrain ---------- */
+.wood{background-color:#ecd9b7;
+  background-image:linear-gradient(180deg,rgba(255,255,255,.30),rgba(255,255,255,0) 55%,rgba(120,85,40,.07)),url(assets/wood.jpg);
+  background-size:auto,512px 512px;color:#33240f}
+/* ---------- one-time welcome ---------- */
+.iscrim{position:fixed;inset:0;background:rgba(12,32,48,.55);backdrop-filter:blur(3px);z-index:200;
+ display:none;align-items:center;justify-content:center;padding:24px}
+.iscrim.on{display:flex}
+.ibox{border:1px solid #b9975f;border-radius:14px;max-width:390px;width:100%;padding:28px 30px 24px;
+ box-shadow:0 26px 70px rgba(0,0,0,.45);text-align:center;animation:ipop .28s cubic-bezier(.2,.9,.3,1.2)}
+@keyframes ipop{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:none}}
+.ibox h2{margin:0 0 16px;font:700 14px/1 system-ui,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#000}
+.ibox p{margin:0 0 10px;font:16px/1.5 Georgia,serif;color:#000;display:flex;align-items:center;justify-content:center;gap:10px}
+.ibox .ar{font-size:19px;color:#000;line-height:1}
+.iok{margin-top:20px;background:#6b4a1c;color:#f6ecd7;border:none;border-radius:7px;
+ padding:11px 30px;font:600 14px/1 system-ui,sans-serif;cursor:pointer;letter-spacing:.03em}
+.iok:hover{background:#513411}
+/* ---------- browse panels & citation ---------- */
+.bscrim{position:fixed;inset:0;background:rgba(8,8,6,.72);backdrop-filter:blur(3px);z-index:120;
+ display:none;align-items:flex-start;justify-content:center;padding:74px 18px 30px}
+.bscrim.on{display:flex}
+.bpanel{border:1px solid #cbb083;border-radius:12px;overflow:hidden;width:100%;max-width:760px;
+ max-height:100%;display:flex;flex-direction:column;box-shadow:0 22px 60px rgba(0,0,0,.6)}
+.bpanel.wood{background-image:linear-gradient(rgba(255,255,255,.62),rgba(255,255,255,.62)),
+   linear-gradient(180deg,rgba(255,255,255,.30),rgba(255,255,255,0) 55%,rgba(120,85,40,.05)),url(assets/wood.jpg);
+ background-size:auto,auto,512px 512px}
+.bhead{flex:0 0 auto;display:flex;align-items:center;gap:12px;padding:16px 18px 12px;border-bottom:1px solid rgba(120,85,40,.32)}
+.bhead h3{margin:0;font:700 15px/1 system-ui,sans-serif;color:#000;letter-spacing:.05em;text-transform:uppercase}
+.bhead .cnt{font:12px/1 system-ui,sans-serif;color:#3a3a3a}
+.bx{margin-left:auto;background:none;border:none;color:#333;font-size:22px;line-height:1;cursor:pointer;padding:0 2px}
+.bx:hover{color:#000}
+.bfind{flex:0 0 auto;margin:12px 18px 0;padding:8px 11px;border-radius:7px;border:1px solid #c0a06a;background:rgba(255,255,255,.86);
+ color:#000;font:13px/1.3 system-ui,sans-serif}
+.blist{overflow:auto;min-height:0;flex:1 1 auto;padding:12px 18px 18px;margin-top:10px;
+ background-image:linear-gradient(rgba(255,255,255,.62),rgba(255,255,255,.62)),url(assets/wood.jpg);
+ background-size:auto,512px 512px;background-repeat:repeat,repeat;background-attachment:local,local}
+.bletter{font:700 11px/1 system-ui,sans-serif;color:#000;letter-spacing:.14em;margin:16px 0 7px;
+ border-bottom:1px solid rgba(120,85,40,.28);padding-bottom:5px}
+.bletter:first-child{margin-top:0}
+.brow{display:block;width:100%;text-align:left;background:none;border:none;color:#000;
+ font:13.5px/1.35 system-ui,sans-serif;padding:6px 26px 6px 8px;border-radius:7px;cursor:pointer;position:relative}
+.brow:hover{background:rgba(255,255,255,.72);color:#000}
+.brow .n{font:11.5px/1 system-ui,sans-serif;color:#4a4a4a;margin-left:7px}
+.brow::after{content:"";position:absolute;right:9px;top:50%;width:0;height:0;margin-top:-5px;
+ border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:7px solid currentColor;
+ opacity:0;transition:opacity .12s,right .12s}
+.brow:hover::after{opacity:.85;right:6px}
+.bnone{color:#333;font:13px/1.5 system-ui,sans-serif;padding:14px 8px}
+.bcols{columns:2;column-gap:26px}
+@media(max-width:620px){.bcols{columns:1}}
+/* citation card */
+.cite{padding:18px 18px 20px;font:15px/1.6 Georgia,'Times New Roman',serif;color:#111}
+.cite .q{background:rgba(255,255,255,.8);border:1px solid #c0a06a;border-radius:8px;padding:14px 16px;user-select:all}
+.cite .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.cite button{background:#6b4a1c;color:#f6ecd7;border:none;border-radius:7px;padding:9px 16px;font:600 13px/1 system-ui,sans-serif;cursor:pointer}
+.cite button:hover{background:#513411}
+.cite button.sec{background:rgba(255,255,255,.7);color:#33240f;border:1px solid #c0a06a}
+.cite .note{font:12px/1.5 system-ui,sans-serif;color:#4a4a4a;margin-top:10px}
+/* ---------- narrow screens ---------- */
+@media(max-width:700px){
+  :root{--chromeH:92px}
+  .chrome{flex-wrap:wrap;align-items:center;row-gap:0}
+  .mast img{height:28px}.mast b{font-size:14px}
+  .chrome nav.ctr{order:3;width:100%;display:flex;justify-content:center;gap:2px;flex-wrap:wrap;padding-bottom:4px}
+  .chrome a.t{font-size:12.5px;padding:5px 8px}
+  .chrome .rt{padding-right:10px;gap:6px}
+  .chrome .iss{font-size:11.5px}
+  .page{flex-direction:column;align-items:center;gap:8px}
+  .rail{width:100%;max-width:520px;flex:0 0 auto;padding:4px 10px 0}
+  .rail .tg,.rail .pb,.rail .share,.rail .txt{display:inline-block;width:auto;margin:0 5px 6px 0}
+  .sheet{padding:16px 8px}
+  .cov,.arc{margin-left:-8px;margin-right:-8px;width:calc(100% + 16px)}
+  .edge{padding:10px 6px 10px 4px}
+  .edge .lbl{font-size:11px}
+}
+@media(max-width:430px){
+  .chrome a.t{font-size:12px;padding:4px 6px}
+  .chrome a.t .lg{display:none}
+  .chrome a.t .sm{display:inline}
+  .mast small{display:none}
+}
+/* ---------- page size control ---------- */
+.zoombar{position:fixed;right:14px;bottom:14px;z-index:90;display:flex;align-items:center;gap:1px;
+ background:rgba(17,17,17,.84);backdrop-filter:blur(6px);border-radius:22px;padding:4px;
+ color:#e9e3d2;box-shadow:0 8px 22px rgba(10,40,60,.32)}
+.zoombar button{width:30px;height:30px;border:none;background:none;color:inherit;font:600 18px/1 system-ui,sans-serif;border-radius:50%;cursor:pointer}
+.zoombar button:hover{background:var(--gold);color:#111}
+.zoombar .val{min-width:48px;text-align:center;font:600 12px/1 system-ui,sans-serif;cursor:pointer;letter-spacing:.02em}
+.zoombar .val:hover{color:var(--gold)}
+@media(max-width:700px){.zoombar{right:8px;bottom:8px}}
+/* ---------- the bee (replaces the pointer on hover devices) ----------
+   Three layers cut from the original drawing: body, left wing, right wing. Each wing pivots
+   about its own root (the point where it meets the thorax), so the same transform-origin
+   serves both the flap in flight and the fold when she lands. */
+#beecur{position:fixed;left:0;top:0;width:44px;height:32px;z-index:600;pointer-events:none;
+ transform-origin:0 0;will-change:transform;opacity:0;transition:opacity .22s}
+#beecur.on{opacity:1}
+#beecur .bb{position:absolute;inset:0;animation:beebob .9s ease-in-out infinite alternate;
+ filter:drop-shadow(0 2px 1.5px rgba(15,35,50,.30));transition:filter .55s,transform .55s}
+#beecur img{position:absolute;left:0;top:0;width:100%;height:100%;display:block}
+#beecur img.body{z-index:2}
+#beecur img.w{z-index:1;transition:transform .55s cubic-bezier(.3,.7,.25,1),opacity .55s}
+#beecur img.wl{transform-origin:WL_ORIGIN}
+#beecur img.wr{transform-origin:WR_ORIGIN}
+@keyframes beebob{from{transform:translateY(0)} to{transform:translateY(-1.4px)}}
+#beecur.landed .bb{animation:none;transform:scale(.95);filter:drop-shadow(0 .6px .7px rgba(15,35,50,.38))}
+#beecur.landed img.w{z-index:3;opacity:.92}
+/* fold: each wing swings back about its root (CSS angles run clockwise, so the left wing takes the negative one);
+   no resizing, so the two overlap over the abdomen as on a resting bee. The right wing lies on top. */
+#beecur.landed img.wl{transform:rotate(-62deg)}
+#beecur.landed img.wr{transform:rotate(62deg);z-index:4}
+@media(hover:hover){ body.bee-on, body.bee-on *{cursor:none !important} }
+@media(prefers-reduced-motion:reduce){ #beecur{display:none} }
+/* ---------- free-scrolling ribbon ---------- */
+.sheet{position:relative;display:flex;flex-direction:column;align-items:center;align-items:safe center;padding:26px 16px}
+
+.cov{display:flex;flex-direction:column;align-items:center;justify-content:center;
+ background:none;margin:0 -16px 0;padding:30px 16px 10px;width:calc(100% + 32px)}
+.cov .page{margin-bottom:0}
+.cov .hint{margin:14px 0 18px}
+/* end of the article */
+.next{margin:6px 0 40px;text-align:center}
+.next button{background:rgba(17,17,17,.84);color:#e9e3d2;border:none;border-radius:16px;padding:14px 26px 12px;cursor:pointer;font-family:inherit;
+ display:inline-flex;flex-direction:column;align-items:center;gap:2px;box-shadow:0 8px 22px rgba(10,40,60,.32);transition:background .15s,color .15s}
+.next button:hover{background:var(--gold);color:#111}
+.next .ar{font-size:20px;line-height:1;animation:nudge 1.4s ease-in-out infinite}
+.next .l{font:700 12px/1.4 system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase}
+.next .t{font:14px/1.3 Georgia,serif;max-width:420px;opacity:.85}
+@keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+
+.cov img{display:block;box-sizing:border-box;border:5px solid #fff;box-shadow:0 20px 50px rgba(20,60,90,.35);cursor:pointer}
+.cov .cap{color:#16344b;margin-top:14px;font-size:14px;letter-spacing:.16em;text-transform:uppercase;text-align:center}
+.cov .cap b{display:block;font-size:17px;letter-spacing:.02em;text-transform:none;margin-bottom:4px;color:#0e2a3d}
+.cov .hint,.arc .hint{color:#3d6079;font-size:12.5px;margin-top:16px;letter-spacing:.05em}
+.arc{display:flex;flex-direction:column;align-items:center;justify-content:center;
+ cursor:pointer;background:none;margin:0 -16px;padding:30px 16px 10px;width:calc(100% + 32px)}
+.arc .page{margin-bottom:0;cursor:pointer}
+.arc .rail{cursor:auto}
+.rail .go{display:block;width:100%;background:var(--gold);color:#111;font-weight:700;border:none;border-radius:16px;padding:7px 11px;font-size:12px;margin:0 0 8px;cursor:pointer;font-family:inherit}
+.rail .go:hover{background:#ffd733}
+.deck{position:relative;display:block;margin:0 auto}
+.deck img{position:relative;z-index:5;display:block;width:100%;height:100%;box-sizing:border-box;border:5px solid #fff;box-shadow:0 16px 44px rgba(0,0,0,.5);transition:transform .15s}
+.arc:hover .deck img{transform:translate(-2px,-2px)}
+/* the pages underneath: one white sheet per remaining page, each stepped a little right and down */
+.deck .sh{position:absolute;left:0;top:0;width:100%;height:100%;box-sizing:border-box;background:#fff;border:5px solid #fff;
+ box-shadow:0 4px 14px rgba(0,0,0,.28);transform:translate(calc(var(--i)*4px),calc(var(--i)*4px));
+ transition:transform .38s cubic-bezier(.4,0,.2,1),opacity .38s;transition-delay:calc(var(--i)*35ms)}
+/* opening: the pages shoot down out from under the cover; landing: they start down there and shuffle back */
+.arc.opening .deck .sh,.arc.landing .deck .sh{transform:translate(calc(var(--i)*4px),calc(110vh + var(--i)*30px));opacity:0}
+.arc.landing .deck .sh{transition:none}
+/* ---------- page + right-hand rail ---------- */
+.page{position:relative;margin:0 0 26px;display:flex;align-items:flex-start;gap:12px}
+.pframe{position:relative;display:inline-block;line-height:0}
+.pframe.htmlpage{height:86vh;aspect-ratio:210/297;overflow:hidden;background:#fff;box-shadow:0 10px 34px rgba(0,0,0,.45)}
+.pframe.htmlpage iframe{border:0;position:absolute;top:0;left:0;transform-origin:top left;background:#fff}
+.rail{width:170px;flex:0 0 170px;padding-top:6px}
+.rail .pn{color:#47637a;font-size:11.5px;letter-spacing:.08em;margin-bottom:7px}
+.rail .ti{color:var(--ink);font-size:12.5px;font-weight:600;line-height:1.25;margin-bottom:4px}
+.rail .meta{color:#3d6079;font-size:11px;line-height:1.35;margin-bottom:8px}
+.rail .tg,.rail .pb{position:relative;padding-right:24px}
+.rail .tg::after,.rail .pb::after{content:"";position:absolute;right:10px;top:50%;width:0;height:0;margin-top:-5px;
+  border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:7px solid currentColor;opacity:.8;transition:right .13s,opacity .13s}
+.rail .tg:hover::after,.rail .pb:hover::after{opacity:1;right:7px}
+.rail .tg{display:block;width:100%;text-align:left;background:rgba(255,255,255,.80);color:#17313f;border:1px solid rgba(255,255,255,.95);
+ border-radius:16px;padding:5px 11px;font-size:12px;margin:0 0 6px;cursor:pointer;font-family:inherit;transition:.13s}
+.rail .tg:hover{background:var(--gold);color:#111;border-color:var(--gold);transform:translateX(3px)}
+.rail .pb{display:block;width:100%;text-align:left;background:rgba(255,255,255,.42);color:#1b4a6b;border:1px dashed #6f9cbb;
+ border-radius:14px;padding:4px 10px;font-size:11.5px;margin:0 0 8px;cursor:pointer;font-family:inherit;font-style:italic}
+.rail .pb:hover{background:#1f4b68;color:#fff;border-color:#1f4b68}
+.rail .share,.rail .txt{display:block;width:100%;text-align:left;background:rgba(255,255,255,.72);color:#1c4258;border:1px solid #7ea9c6;
+ border-radius:14px;padding:5px 11px;font-size:11.5px;margin:0 0 7px;cursor:pointer;font-family:inherit;text-decoration:none;line-height:1.4}
+.rail .share::before{content:"\1F517  "}
+.rail .txt::before{content:"\201C  "}
+.rail .share:hover,.rail .txt:hover{background:#2f6d92;color:#fff;border-color:#2f6d92}
+.rail .sep{border-top:1px dashed rgba(30,70,100,.35);margin:8px 0}
+/* ---------- side lane (topic / publication) ---------- */
+.tophead{position:sticky;top:0;z-index:5;background:linear-gradient(rgba(169,210,236,.96),rgba(169,210,236,.72) 62%,rgba(169,210,236,0));padding:16px 16px 12px;text-align:center}
+.tophead h2{color:#12303f;margin:0;font-size:23px;letter-spacing:.02em}
+.tophead .sub{color:#3d6079;font-size:12.5px;margin-top:5px}
+.tophead .back{margin-top:11px;background:rgba(255,255,255,.5);border:1px solid #6f9cbb;color:#17313f;border-radius:18px;padding:7px 15px;font-size:13px;cursor:pointer;font-family:inherit}
+.tophead .back:hover{background:#1f4b68;color:#fff;border-color:#1f4b68}
+.hit{display:flex;gap:18px;align-items:flex-start;width:100%;max-width:720px;margin:0 auto 22px;padding:14px;background:rgba(255,255,255,.55);border-radius:12px;cursor:pointer;transition:background .15s}
+.hit:hover{background:rgba(255,255,255,.85)}
+.hit img{width:150px;flex:0 0 150px;box-shadow:0 8px 22px rgba(0,0,0,.35);background:#fff}
+.hit .hb{font:15px/1.5 Georgia,'Times New Roman',serif;color:#12303f}
+.hit .hb b{font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;font-size:16px;display:block;margin-bottom:6px}
+.hit .hb .tags{margin-top:8px}
+.hit .hb .tags span{display:inline-block;font:11px/1.6 system-ui,sans-serif;background:rgba(255,255,255,.8);border-radius:10px;padding:0 8px;margin:0 4px 4px 0;color:#17313f}
+.empty{color:#8a8474;text-align:center;padding:60px 20px}
+@media(max-width:560px){.hit{flex-direction:column}.hit img{width:60%;flex:none}}
+</style></head><body>
+<a class="skip" href="article/index.html">Skip to the text-only list of articles</a>
+<noscript><div class="nojs"><h1>Articles by Kris Fricke</h1>
+<p>This page-turning reader needs JavaScript. Every article is also available as plain, readable text:</p>
+<p><a href="article/index.html">List of all articles (text version)</a></p></div></noscript>
+
+<div class="iscrim" id="iscrim">
+  <div class="ibox wood" role="dialog" aria-modal="true" aria-labelledby="ititle">
+    <h2 id="ititle">Articles by Kris Fricke</h2>
+    <p><span class="ar">&#9660;</span> Scroll down to read this article</p>
+    <p><span class="ar">&#9650;</span> Scroll up for the other articles</p>
+    <p><span class="ar">&#9711;</span> Click the sky around an article to close it</p>
+    <button class="iok" onclick="closeIntro()">Okay</button>
+  </div>
+</div>
+<div class="bscrim" id="bscrim" onclick="if(event.target===this)closeBrowse()">
+  <div class="bpanel wood" role="dialog" aria-modal="true" aria-labelledby="btitle">
+    <div class="bhead"><h3 id="btitle"></h3><span class="cnt" id="bcount"></span>
+      <button class="bx" onclick="closeBrowse()" title="Close" aria-label="Close">&times;</button></div>
+    <input class="bfind" id="bfind" placeholder="Type to filter…" oninput="renderBrowse()" autocomplete="off">
+    <div class="blist" id="blist"></div>
+  </div>
+</div>
+<div class="bscrim" id="cscrim" onclick="if(event.target===this)closeCite()">
+  <div class="bpanel wood" role="dialog" aria-modal="true" aria-labelledby="ctitle" style="max-width:640px">
+    <div class="bhead"><h3 id="ctitle">Cite this article</h3>
+      <button class="bx" onclick="closeCite()" title="Close" aria-label="Close">&times;</button></div>
+    <div class="cite" id="citebox"></div>
+  </div>
+</div>
+<div id="beecur" aria-hidden="true"><div class="bb">
+  <img class="w wl" src="assets/bee/wl.png" alt="">
+  <img class="w wr" src="assets/bee/wr.png" alt="">
+  <img class="body" src="assets/bee/body.png" alt="">
+</div></div>
+<div class="zoombar" role="group" aria-label="Page size">
+  <button onclick="zoomStep(-1)" title="Smaller" aria-label="Smaller">&minus;</button>
+  <span class="val" id="zval" onclick="setZoom(100)" title="Click to reset to 100%">100%</span>
+  <button onclick="zoomStep(1)" title="Larger" aria-label="Larger">&plus;</button>
+</div>
+<div class="chrome">
+  <a class="mast" href="#" onclick="gotoCover();return false" title="Back to the current article"><img src="assets/bee/gold.png" alt=""><span><small>Kris Fricke</small><b>Articles</b></span></a>
+  <nav class="ctr">
+    <a class="t" onclick="openBrowse('pub')"><span class="lg">By publication</span><span class="sm">Publications</span></a>
+    <a class="t" onclick="openBrowse('topic')"><span class="lg">By topic</span><span class="sm">Topics</span></a>
+    <a class="t ord" id="ordBtn" onclick="toggleOrder()" title="Flip the order of the stack"></a>
+    <a class="t" onclick="backToTop()" title="Close what is open and go to the top of the list"><span class="lg">&#8679; Back to top</span><span class="sm">&#8679; Top</span></a>
+    <a class="t" onclick="openCite()" title="Citation for the article you are reading"><span class="lg">Cite</span><span class="sm">Cite</span></a>
+  </nav>
+  <div class="rt"><span class="iss" id="issLabel"></span></div>
+</div>
+
+<button class="edge w back" id="edgeBack" onclick="closeTopic()" title="Back to the article you were reading"><span class="chev" aria-hidden="true"></span><span class="lbl">Back to the article</span></button>
+<button class="edge w" id="edgeHome" onclick="setLane(-1)" title="Go to krisfricke.github.io"><span class="chev" aria-hidden="true"></span><span class="lbl">krisfricke.github.io</span></button>
+<div class="track" id="track">
+  <div class="lane" id="laneL"><div class="gate">
+    <img src="assets/bee/gold.png" alt="">
+    <h2>Kris Fricke</h2><div class="dom">KRISFRICKE.GITHUB.IO</div>
+    <p>You&rsquo;ve reached the western edge of the articles. The main site is one step further.</p>
+    <button class="back" onclick="setLane(0)">back to the articles &rsaquo;</button>
+    <p class="handoff">Taking you to krisfricke.github.io&hellip;</p>
+  </div></div>
+  <div class="lane" id="lane0"><div class="sheet" id="sheet"></div></div>
+  <div class="lane" id="lane1"><div class="sheet" id="topsheet"></div></div>
+</div>

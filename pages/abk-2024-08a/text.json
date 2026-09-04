@@ -1,0 +1,406 @@
+{
+"pages": [
+{
+"lines": [
+"We’ve had a lot of articles about specific aspects of ",
+"management, but I wanted to start from the beginning ",
+"and go through the process step by step in the way I think ",
+"makes it most easy to understand.",
+"Well the beginning beginning would be an overview of ",
+"what Varroa is, but I feel like that’s been covered enough ",
+"and I value your time, so we’ll skip to the next thing, ",
+"monitoring mites levels and planning when to treat. We’ll ",
+"go into more specifics later, but first, in general, when ",
+"and why?",
+"You have bees. And there’s this Varroa mite thing. Obviously. It’ll cause ",
+"your hives to fail unless you manage it, but there’s seemingly so much to ",
+"know about managing it, where to start?",
+"ARTICLE BY KRIS FRICKE",
+"Okay so the first thing we need to understand is that the ",
+"mite population doesn’t just slowly rise, it rises exponentially, ",
+"ie if you were to graph it over time it would be a curve ",
+"that continues to steadily increase ever more steeply over ",
+"time. Here is a graph I hand drew (and then finished on ",
+"the computer) because making a graph with a specific ",
+"curve in excel is not among my talents, but the curve is my ",
+"best attempt at accurately reflecting actual graphs of mite ",
+"population growth (of which you’ll find some later in this ",
+"article so be patient if thats what you want to see)",
+"24  |   ",
+"  Celebrating 125 years  |  Vol. 126  |  No. 02"
+],
+"paras": [
+{
+"t": "We’ve had a lot of articles about specific aspects of management, but I wanted to start from the beginning and go through the process step by step in the way I think makes it most easy to understand.",
+"size": 10.1,
+"y": 339.6,
+"x": 36.8
+},
+{
+"t": "Well the beginning beginning would be an overview of what Varroa is, but I feel like that’s been covered enough and I value your time, so we’ll skip to the next thing, monitoring mites levels and planning when to treat. We’ll go into more specifics later, but first, in general, when and why?",
+"size": 10.1,
+"y": 387.6,
+"x": 36.8
+},
+{
+"t": "You have bees. And there’s this Varroa mite thing. Obviously. It’ll cause your hives to fail unless you manage it, but there’s seemingly so much to",
+"size": 13.0,
+"y": 281.5,
+"x": 88.1
+},
+{
+"t": "know about managing it, where to start?",
+"size": 13.0,
+"y": 313.5,
+"x": 181.9
+},
+{
+"t": "ARTICLE BY KRIS FRICKE",
+"size": 10.0,
+"y": 225.1,
+"x": 122.6
+},
+{
+"t": "Okay so the first thing we need to understand is that the mite population doesn’t just slowly rise, it rises exponentially, ie if you were to graph it over time it would be a curve that continues to steadily increase ever more steeply over time. Here is a graph I hand drew (and then finished on the computer) because making a graph with a specific curve in excel is not among my talents, but the curve is my best attempt at accurately reflecting actual graphs of mite population growth (of which you’ll find some later in this article so be patient if thats what you want to see)",
+"size": 10.1,
+"y": 337.4,
+"x": 303.3
+},
+{
+"t": "24  | Celebrating 125 years  |  Vol. 126  |  No. 02",
+"size": 10.0,
+"y": 794.1,
+"x": 36.9
+}
+]
+},
+{
+"lines": [
+"So as you can see, the mite population if left unchecked ",
+"can quickly get completely out of control, which causes the ",
+"hive to eventually collapse. Yes this graph has no actual ",
+"numbers to it because it’s just to illustrate the idea of the ",
+"lines. Ignore that blue line for the moment. Okay, so we ",
+"don’t want mites, obviously. There are various treatments ",
+"that can really hammer them. So let’s hammer the heck out ",
+"of them so their population can’t even get offthe ground. If ",
+"we put that on a chart that might look something like this:",
+"Okay we’re hammering them once a month, and that ",
+"population is going nowhere. Are we and our bees very ",
+"happy with this? Well there’s a problem, with most ",
+"treatments costing $13-$16 a treatment1, we’ve just ",
+"spent $156-$168 per hive on treatment, to say nothing ",
+"of our time, and none of these treatments are really great ",
+"for our bees, honey, or wax2, so we’ve perhaps gone ",
+"a little bit overboard with both the spending and the ",
+"chemical usage. So what’s the happy medium?",
+"And that’s where the blue line I’ve drawn here comes ",
+"in. The people who crunch numbers on these things have ",
+"determined that this is the “economic injury” threshold. ",
+"That is to say, if the mite numbers get higher than that line ",
+"they will cause more economic damage (loss of revenue ",
+"from lost honey production, costs of replacing hives, ",
+"etc) than if you treated the pest right at or before that ",
+"line. This is the basis of “Integrated Pest Management”-- ",
+"solving your problem at the minimum cost.",
+"The super simplified graph now looks like this. For probably ",
+"somewhere between 2 and 4 treatments per year you can keep ",
+"your actual “economic injury” from the mites to a minimum. I ",
+"say 2 to 4 because there’s still a great deal that’s unknown about ",
+"the efficacies of our treatments, the resilience of our bees and ",
+"the speed at which mites will build up in our hives (we can’t just ",
+"calculate based on their reproduction rate because especially in ",
+"this initial “acute” stage of the spread there will be a significant ",
+"in-flow of mites from infested feral hives around us, coming ",
+"into our hives via bee drift, robbing or even mites hitchhiking ",
+"at flowers.",
+"And we can’t just take a wild guess at when the best time ",
+"to treat would be, because for example here is what happens ",
+"with the exact same curves as the above chart, but with the ",
+"treatments timed wrong:",
+"As you can see, with treatments in the same place, but with ",
+"even slightly different mite population dynamics it can easily ",
+"once again end up in the area where it’s causing you too much ",
+"economic harm.",
+"And so how do you know when to do the treatments? That ",
+"is why mite checks (via sugar shake, alcohol wash, or soapy ",
+"water wash) are so important. I know people are sometimes ",
+"slow to learn a new thing if they don’t feel like they have to yet, ",
+"especially when they lack the tool, but trust me, it’s easy and ",
+"more than “worth it” – it’s essential if you’re going to continue ",
+"in beekeeping with Varroa. One can either make one oneself ",
+"(see Dr Anna Carrucan’s instructions in last issue of the ABK), ",
+"or most beekeeping supply stores should sell them. Learning ",
+"how will take just a few minutes and may be some of the most ",
+"valuable five minutes of education you’ll spend on anything.",
+"The recommended frequency of monitoring and amount ",
+"of hives to check varies by state so check your state’s ",
+"recommendations. The current recommendation from NSW ",
+"DPI is to monitor mites at least four times a year, at least once ",
+"every 16 weeks3 (4 months), but it is commonly recommended ",
+"if you are in an area where varroa is already present you check ",
+"much much more frequently, in the area of once every 3-4 ",
+"weeks4. It is generally recommended that when you check, if ",
+"you have ten or less hives you check all of them, if more than ",
+"ten you check whichever is the larger number of either ten ",
+"hives or ten percent (but again, some jurisdictions may have ",
+"more specific requirements). A common practice is actually to ",
+"check some of your hives every time you’re out at the bees so ",
+"the total adds up to the requirement, for example 2 or 3 hives ",
+"once a week so it’s ten every four weeks. That way you’re not ",
+"having to do many all at once and always getting a snapshot ",
+"of mite levels.",
+"While you’re in an area where mites are not yet known to ",
+"be present the purpose of your mite checks are to detect if ",
+"there’s any at all, and it will be particularly important to log ",
+"your results with the relevant authority. Especially if you are ",
+"in a state not yet known to have the mite at all you should ",
+"be sure not to dump out the wash if you find mites, as your ",
+"apiary department will want to confirm the finding.",
+"Vol. 126  |  No. 02 |  ",
+"  Celebrating 125 years |  25 "
+],
+"paras": [
+{
+"t": "So as you can see, the mite population if left unchecked can quickly get completely out of control, which causes the hive to eventually collapse. Yes this graph has no actual numbers to it because it’s just to illustrate the idea of the lines. Ignore that blue line for the moment. Okay, so we don’t want mites, obviously. There are various treatments that can really hammer them. So let’s hammer the heck out of them so their population can’t even get offthe ground. If we put that on a chart that might look something like this:",
+"size": 10.1,
+"y": 39.6,
+"x": 36.8
+},
+{
+"t": "Okay we’re hammering them once a month, and that population is going nowhere. Are we and our bees very happy with this? Well there’s a problem, with most treatments costing $13-$16 a treatment1, we’ve just spent $156-$168 per hive on treatment, to say nothing of our time, and none of these treatments are really great for our bees, honey, or wax2, so we’ve perhaps gone a little bit overboard with both the spending and the chemical usage. So what’s the happy medium?",
+"size": 10.0,
+"y": 315.6,
+"x": 36.8
+},
+{
+"t": "And that’s where the blue line I’ve drawn here comes in. The people who crunch numbers on these things have determined that this is the “economic injury” threshold. That is to say, if the mite numbers get higher than that line they will cause more economic damage (loss of revenue from lost honey production, costs of replacing hives, etc) than if you treated the pest right at or before that line. This is the basis of “Integrated Pest Management”-solving your problem at the minimum cost.",
+"size": 10.0,
+"y": 423.6,
+"x": 36.8
+},
+{
+"t": "The super simplified graph now looks like this. For probably somewhere between 2 and 4 treatments per year you can keep your actual “economic injury” from the mites to a minimum. I say 2 to 4 because there’s still a great deal that’s unknown about the efficacies of our treatments, the resilience of our bees and the speed at which mites will build up in our hives (we can’t just",
+"size": 10.0,
+"y": 711.6,
+"x": 36.9
+},
+{
+"t": "calculate based on their reproduction rate because especially in this initial “acute” stage of the spread there will be a significant in-flow of mites from infested feral hives around us, coming into our hives via bee drift, robbing or even mites hitchhiking at flowers.",
+"size": 10.0,
+"y": 39.6,
+"x": 303.3
+},
+{
+"t": "And we can’t just take a wild guess at when the best time to treat would be, because for example here is what happens with the exact same curves as the above chart, but with the treatments timed wrong:",
+"size": 10.0,
+"y": 99.6,
+"x": 303.3
+},
+{
+"t": "As you can see, with treatments in the same place, but with even slightly different mite population dynamics it can easily once again end up in the area where it’s causing you too much economic harm.",
+"size": 10.0,
+"y": 315.6,
+"x": 303.3
+},
+{
+"t": "And so how do you know when to do the treatments? That is why mite checks (via sugar shake, alcohol wash, or soapy water wash) are so important. I know people are sometimes slow to learn a new thing if they don’t feel like they have to yet, especially when they lack the tool, but trust me, it’s easy and more than “worth it” – it’s essential if you’re going to continue in beekeeping with Varroa. One can either make one oneself (see Dr Anna Carrucan’s instructions in last issue of the ABK), or most beekeeping supply stores should sell them. Learning how will take just a few minutes and may be some of the most valuable five minutes of education you’ll spend on anything.",
+"size": 10.0,
+"y": 363.6,
+"x": 303.3
+},
+{
+"t": "The recommended frequency of monitoring and amount of hives to check varies by state so check your state’s recommendations. The current recommendation from NSW DPI is to monitor mites at least four times a year, at least once every 16 weeks3 (4 months), but it is commonly recommended if you are in an area where varroa is already present you check much much more frequently, in the area of once every 3-4 weeks4. It is generally recommended that when you check, if you have ten or less hives you check all of them, if more than ten you check whichever is the larger number of either ten hives or ten percent (but again, some jurisdictions may have more specific requirements). A common practice is actually to check some of your hives every time you’re out at the bees so the total adds up to the requirement, for example 2 or 3 hives once a week so it’s ten every four weeks. That way you’re not having to do many all at once and always getting a snapshot of mite levels.",
+"size": 10.0,
+"y": 495.6,
+"x": 303.3
+},
+{
+"t": "While you’re in an area where mites are not yet known to be present the purpose of your mite checks are to detect if there’s any at all, and it will be particularly important to log your results with the relevant authority. Especially if you are in a state not yet known to have the mite at all you should be sure not to dump out the wash if you find mites, as your apiary department will want to confirm the finding.",
+"size": 10.0,
+"y": 699.6,
+"x": 303.3
+},
+{
+"t": "Vol. 126  |  No. 02 | Celebrating 125 years |  25",
+"size": 10.0,
+"y": 794.1,
+"x": 331.4
+}
+]
+},
+{
+"lines": [
+"Varying Thresholds",
+"Hopefully the general ",
+"idea of thresholds has ",
+"been well explained now, ",
+"and I’ll now make it a ",
+"little more complicated. ",
+"The number of mites per ",
+"bee is a graver problem ",
+"at some times of year ",
+"than at others, so the ",
+"recommended treatment threshold changes.",
+"Calculated Models",
+"As I mentioned, the graphs above are hand drawn approximations, because I wanted to start as simple as possible. If you ",
+"would like to see a similar graph but based on the very best calculations anyone can come up with, don’t worry I’ve got ",
+"you covered. Commercial beekeeper and renowned researcher Randy Oliver has made a great mite population model you ",
+"can download here: https://scientificbeekeeping.com/randys-varroa-model/.6 It easily runs in excel and his tutorials from that ",
+"same site will soon set you right for playing with it.",
+"As you can see, there’s a lot of information on this graph, which is why I didn’t lead with it. The light blue is the number of ",
+"mites in a mite wash, equivalent to the line in the other charts, everything else, well it’s labeled. I set this one for a subtropical ",
+"no brood break type colony with very high mite re-infestation to best match our conditions. The above shows no treatment, ",
+"starting from a very small number of mites at the beginning of the year. Let’s add some 95% effective treatments:",
+"4",
+"26  |   ",
+"  Celebrating 125 years  |  Vol. 126  |  No. 02"
+],
+"paras": [
+{
+"t": "Varying Thresholds",
+"size": 11.0,
+"y": 38.2,
+"x": 36.9
+},
+{
+"t": "Hopefully the general idea of thresholds has been well explained now, and I’ll now make it a little more complicated. The number of mites per bee is a graver problem at some times of year than at others, so the recommended treatment threshold changes.",
+"size": 9.9,
+"y": 51.6,
+"x": 36.9
+},
+{
+"t": "Calculated Models",
+"size": 11.0,
+"y": 182.2,
+"x": 36.9
+},
+{
+"t": "As I mentioned, the graphs above are hand drawn approximations, because I wanted to start as simple as possible. If you would like to see a similar graph but based on the very best calculations anyone can come up with, don’t worry I’ve got you covered. Commercial beekeeper and renowned researcher Randy Oliver has made a great mite population model you can download here: https://scientificbeekeeping.com/randys-varroa-model/.6 It easily runs in excel and his tutorials from that same site will soon set you right for playing with it.",
+"size": 10.0,
+"y": 195.6,
+"x": 36.9
+},
+{
+"t": "As you can see, there’s a lot of information on this graph, which is why I didn’t lead with it. The light blue is the number of mites in a mite wash, equivalent to the line in the other charts, everything else, well it’s labeled. I set this one for a subtropical no brood break type colony with very high mite re-infestation to best match our conditions. The above shows no treatment, starting from a very small number of mites at the beginning of the year. Let’s add some 95% effective treatments:",
+"size": 10.0,
+"y": 495.6,
+"x": 36.9
+},
+{
+"t": "4",
+"size": 5.8,
+"y": 51.2,
+"x": 502.9
+},
+{
+"t": "26  | Celebrating 125 years  |  Vol. 126  |  No. 02",
+"size": 10.0,
+"y": 794.1,
+"x": 36.9
+}
+]
+},
+{
+"lines": [
+"References",
+"1. Source: I googled the prices of them all just now (mid ",
+"July 2024), as found with the first google result for each ",
+"one.",
+"2. Tihelka, E., (2018) “Effects of Synthetic and Organic ",
+"Acaricides on Honey Bee Health: A Review” Slovenian ",
+"Veterinary Research, 55(3) https://doi.org/10.26873/",
+"SVR-422-20",
+"3. https://www.dpi.nsw.gov.au/emergencies/biosecurity/",
+"current-situation/varroa-mite-emergency-response/",
+"managing",
+"4. -your-hives-with-varroa/primefact-varroa-mite-",
+"management-options-in-nsw",
+"5. National Varroa Management Program Weekly Update ",
+"(email) 26 July 2024",
+"6. The Randy Oliver graphs are obviously © Randy Oliver, ",
+"as he puts it on his website, “Everything on this ",
+"website is open access and freely given to beekeepers ",
+"and researchers worldwide, on a not-for-profit basis,” ",
+"which I think we should all immensely appreciate..",
+"As you can see, even with three treatments where the mites ",
+"reached threshold level, if we didn’t check again for 16 weeks ",
+"after the mid March treatment it would be nearly crashed (one ",
+"can enter this year’s ending mite population of “1,897” in the ",
+"starting mite population to generate a chart showing what ",
+"the next year would look like – it would crash very quickly).",
+"But if we checked mite levels in May we’d see it’s over the ",
+"winter threshold, treat, and we’d be ending the year with 95 ",
+"mites, same as we started. Obviously in Southern Victoria and ",
+"Tasmania we would be unlikely to even be looking at our bees ",
+"in May but we’d also have a brood break – which chart I could ",
+"easily generate using Randy’s tool but this article already has far ",
+"too many charts so feel free to download it yourself and play ",
+"around with it.",
+"And of course this is just a model to help understand mite ",
+"population dynamics, because the reality on the ground could ",
+"be dangerously different there’s no substitute for mite checks.",
+"I hope you’ve found this useful, I plan to thoroughly cover ",
+"a specific aspect of mite management like this every month ",
+"going forward.",
+"Vol. 126  |  No. 02 |  ",
+"  Celebrating 125 years |  27 "
+],
+"paras": [
+{
+"t": "References",
+"size": 11.0,
+"y": 161.2,
+"x": 307.0
+},
+{
+"t": "1. Source: I googled the prices of them all just now (mid July 2024), as found with the first google result for each one. 2. Tihelka, E., (2018) “Effects of Synthetic and Organic Acaricides on Honey Bee Health: A Review” Slovenian Veterinary Research, 55(3) https://doi.org/10.26873/ SVR-422-20 3. https://www.dpi.nsw.gov.au/emergencies/biosecurity/ current-situation/varroa-mite-emergency-response/ managing 4. -your-hives-with-varroa/primefact-varroa-mitemanagement-options-in-nsw 5. National Varroa Management Program Weekly Update (email) 26 July 2024 6. The Randy Oliver graphs are obviously © Randy Oliver, as he puts it on his website, “Everything on this website is open access and freely given to beekeepers and researchers worldwide, on a not-for-profit basis,” which I think we should all immensely appreciate..",
+"size": 9.9,
+"y": 180.6,
+"x": 315.5
+},
+{
+"t": "As you can see, even with three treatments where the mites reached threshold level, if we didn’t check again for 16 weeks after the mid March treatment it would be nearly crashed (one can enter this year’s ending mite population of “1,897” in the starting mite population to generate a chart showing what the next year would look like – it would crash very quickly).",
+"size": 9.9,
+"y": 276.6,
+"x": 41.9
+},
+{
+"t": "But if we checked mite levels in May we’d see it’s over the winter threshold, treat, and we’d be ending the year with 95 mites, same as we started. Obviously in Southern Victoria and Tasmania we would be unlikely to even be looking at our bees in May but we’d also have a brood break – which chart I could",
+"size": 9.9,
+"y": 348.6,
+"x": 41.9
+},
+{
+"t": "easily generate using Randy’s tool but this article already has far too many charts so feel free to download it yourself and play around with it.",
+"size": 9.9,
+"y": 36.6,
+"x": 295.6
+},
+{
+"t": "And of course this is just a model to help understand mite population dynamics, because the reality on the ground could be dangerously different there’s no substitute for mite checks.",
+"size": 9.9,
+"y": 72.6,
+"x": 295.6
+},
+{
+"t": "I hope you’ve found this useful, I plan to thoroughly cover a specific aspect of mite management like this every month going forward.",
+"size": 9.9,
+"y": 108.6,
+"x": 295.6
+},
+{
+"t": "Vol. 126  |  No. 02 | Celebrating 125 years |  27",
+"size": 10.0,
+"y": 794.1,
+"x": 331.4
+}
+]
+}
+],
+"links": [],
+"pt": [
+595.2760009765625,
+833.385986328125
+]
+}

@@ -1,0 +1,666 @@
+{
+"pages": [
+{
+"lines": [
+"ARTICLE BY ",
+"KRIS FRICKE",
+"Are there honey supers on ",
+"the hive that can’t be romoved ",
+"for treatment",
+"Have you already used Apitraz ",
+"twice in the past 12 months? (even ",
+"if not pervious treatment)",
+"Have you already used Apivar ",
+"in the past 12 months? (even ",
+"if not pervious treatment)",
+"Is the temperature between ",
+"10°C and 29.5°C",
+"When you last treated, ",
+"was it with Apiguard?",
+"Last time you treated, was it with ",
+"EITHER Apistan or Bayvarol?",
+"Are you finding mites are becoming ",
+"resistant to bayvarol?",
+"Are there honey supers on ",
+"the hive that can’t be removed",
+" for treatment",
+"No",
+"No (no honey supers)",
+"No (with honey supers)",
+"Yes",
+"Yes",
+"Yes",
+"Yes",
+"Yes",
+"Last time you treated ",
+"was it with Formic Pro?",
+"Last time you treated was it with ",
+"EITHER Apivar or Apitraz?",
+"Is the temperature ",
+"between 15°C and 40°C",
+"Treat with Apiguard",
+"Treat with Apivar",
+"Treat with Apitraz",
+"Treat with Apistan",
+"Treat with Bayvarol",
+"Treat with Formic Pro",
+"No",
+"No",
+"No",
+"No",
+"No",
+"No",
+"No",
+"No",
+"Yes",
+"Yes",
+"Yes",
+"Yes ",
+"(no",
+" ho",
+"n",
+"20  |   ",
+"  Celebrating 125 years  |  Vol. 126  |  No. 02"
+],
+"paras": [
+{
+"t": "ARTICLE BY KRIS FRICKE",
+"size": 10.0,
+"y": 105.7,
+"x": 472.3
+},
+{
+"t": "Are there honey supers on the hive that can’t be romoved",
+"size": 15.0,
+"y": 151.5,
+"x": 70.0
+},
+{
+"t": "for treatment",
+"size": 15.0,
+"y": 181.8,
+"x": 109.2
+},
+{
+"t": "Have you already used Apitraz twice in the past 12 months? (even",
+"size": 15.0,
+"y": 512.9,
+"x": 142.9
+},
+{
+"t": "if not pervious treatment)",
+"size": 15.0,
+"y": 543.0,
+"x": 163.1
+},
+{
+"t": "Have you already used Apivar",
+"size": 15.0,
+"y": 440.5,
+"x": 333.3
+},
+{
+"t": "in the past 12 months? (even",
+"size": 15.0,
+"y": 455.5,
+"x": 334.5
+},
+{
+"t": "if not pervious treatment)",
+"size": 15.0,
+"y": 470.6,
+"x": 341.1
+},
+{
+"t": "Is the temperature between",
+"size": 15.0,
+"y": 343.1,
+"x": 276.9
+},
+{
+"t": "10°C and 29.5°C",
+"size": 15.0,
+"y": 353.1,
+"x": 300.7
+},
+{
+"t": "When you last treated,",
+"size": 15.0,
+"y": 173.7,
+"x": 386.3
+},
+{
+"t": "was it with Apiguard?",
+"size": 15.0,
+"y": 188.8,
+"x": 388.2
+},
+{
+"t": "Last time you treated, was it with",
+"size": 15.0,
+"y": 612.5,
+"x": 61.2
+},
+{
+"t": "EITHER Apistan or Bayvarol?",
+"size": 15.0,
+"y": 627.6,
+"x": 73.7
+},
+{
+"t": "Are you finding mites are becoming",
+"size": 15.0,
+"y": 687.7,
+"x": 99.3
+},
+{
+"t": "resistant to bayvarol?",
+"size": 15.0,
+"y": 702.9,
+"x": 127.2
+},
+{
+"t": "Are there honey supers on the hive that can’t be removed",
+"size": 15.0,
+"y": 638.0,
+"x": 333.7
+},
+{
+"t": "for treatment",
+"size": 15.0,
+"y": 668.3,
+"x": 371.6
+},
+{
+"t": "No",
+"size": 15.0,
+"y": 156.8,
+"x": 284.3
+},
+{
+"t": "No (no honey supers)",
+"size": 12.0,
+"y": 394.8,
+"x": 293.7
+},
+{
+"t": "No (with honey supers)",
+"size": 12.0,
+"y": 350.5,
+"x": 122.8
+},
+{
+"t": "Yes",
+"size": 15.0,
+"y": 220.6,
+"x": 79.0
+},
+{
+"t": "Yes",
+"size": 15.0,
+"y": 199.1,
+"x": 272.7
+},
+{
+"t": "Yes",
+"size": 15.0,
+"y": 260.0,
+"x": 447.6
+},
+{
+"t": "Yes",
+"size": 15.0,
+"y": 345.5,
+"x": 447.2
+},
+{
+"t": "Yes",
+"size": 15.0,
+"y": 472.2,
+"x": 270.5
+},
+{
+"t": "Last time you treated was it with Formic Pro?",
+"size": 15.0,
+"y": 257.0,
+"x": 118.8
+},
+{
+"t": "Last time you treated was it with",
+"size": 15.0,
+"y": 413.7,
+"x": 100.7
+},
+{
+"t": "EITHER Apivar or Apitraz?",
+"size": 15.0,
+"y": 428.9,
+"x": 117.2
+},
+{
+"t": "Is the temperature between 15°C and 40°C",
+"size": 15.0,
+"y": 253.2,
+"x": 302.3
+},
+{
+"t": "Treat with Apiguard",
+"size": 15.0,
+"y": 304.7,
+"x": 426.8
+},
+{
+"t": "Treat with Apivar",
+"size": 15.0,
+"y": 518.6,
+"x": 451.3
+},
+{
+"t": "Treat with Apitraz",
+"size": 15.0,
+"y": 567.6,
+"x": 358.6
+},
+{
+"t": "Treat with Apistan Treat with Bayvarol",
+"size": 15.0,
+"y": 741.3,
+"x": 61.3
+},
+{
+"t": "Treat with Formic Pro",
+"size": 15.0,
+"y": 386.3,
+"x": 434.3
+},
+{
+"t": "No",
+"size": 12.0,
+"y": 672.4,
+"x": 292.5
+},
+{
+"t": "No",
+"size": 12.0,
+"y": 734.6,
+"x": 242.3
+},
+{
+"t": "No",
+"size": 12.0,
+"y": 635.2,
+"x": 258.1
+},
+{
+"t": "No",
+"size": 12.0,
+"y": 535.2,
+"x": 341.7
+},
+{
+"t": "No",
+"size": 12.0,
+"y": 476.9,
+"x": 519.5
+},
+{
+"t": "No",
+"size": 12.0,
+"y": 424.7,
+"x": 287.0
+},
+{
+"t": "No",
+"size": 12.0,
+"y": 231.3,
+"x": 436.6
+},
+{
+"t": "No No",
+"size": 12.0,
+"y": 309.9,
+"x": 237.4
+},
+{
+"t": "Yes",
+"size": 12.0,
+"y": 739.9,
+"x": 184.0
+},
+{
+"t": "Yes",
+"size": 12.0,
+"y": 574.5,
+"x": 139.9
+},
+{
+"t": "Yes",
+"size": 12.0,
+"y": 505.1,
+"x": 115.9
+},
+{
+"t": "Yes",
+"size": 12.0,
+"y": 706.8,
+"x": 408.7
+},
+{
+"t": "Ye",
+"size": 12.0,
+"y": 434.0,
+"x": 36.9
+},
+{
+"t": "s (",
+"size": 12.0,
+"y": 423.4,
+"x": 36.9
+},
+{
+"t": "ho",
+"size": 12.0,
+"y": 414.4,
+"x": 37.5
+},
+{
+"t": "ne",
+"size": 12.0,
+"y": 405.4,
+"x": 38.6
+},
+{
+"t": "y",
+"size": 12.0,
+"y": 400.8,
+"x": 40.3
+},
+{
+"t": "s",
+"size": 12.0,
+"y": 393.6,
+"x": 42.5
+},
+{
+"t": "u",
+"size": 12.0,
+"y": 389.4,
+"x": 44.1
+},
+{
+"t": "p",
+"size": 12.0,
+"y": 384.8,
+"x": 46.1
+},
+{
+"t": "e",
+"size": 12.0,
+"y": 380.6,
+"x": 48.6
+},
+{
+"t": "r",
+"size": 12.0,
+"y": 376.6,
+"x": 51.5
+},
+{
+"t": "s c",
+"size": 12.0,
+"y": 368.7,
+"x": 54.3
+},
+{
+"t": "urr",
+"size": 12.0,
+"y": 360.3,
+"x": 62.0
+},
+{
+"t": "ently",
+"size": 12.0,
+"y": 348.1,
+"x": 71.1
+},
+{
+"t": "pres",
+"size": 12.0,
+"y": 336.6,
+"x": 86.5
+},
+{
+"t": "e",
+"size": 12.0,
+"y": 334.5,
+"x": 100.1
+},
+{
+"t": "nt)",
+"size": 12.0,
+"y": 326.0,
+"x": 102.5
+},
+{
+"t": "Yes",
+"size": 12.0,
+"y": 581.9,
+"x": 476.2
+},
+{
+"t": "(no",
+"size": 12.0,
+"y": 578.2,
+"x": 490.1
+},
+{
+"t": "ho",
+"size": 12.0,
+"y": 574.3,
+"x": 500.7
+},
+{
+"t": "n",
+"size": 12.0,
+"y": 572.7,
+"x": 510.1
+},
+{
+"t": "e",
+"size": 12.0,
+"y": 570.9,
+"x": 513.5
+},
+{
+"t": "y",
+"size": 12.0,
+"y": 568.8,
+"x": 516.5
+},
+{
+"t": "s",
+"size": 12.0,
+"y": 565.5,
+"x": 521.7
+},
+{
+"t": "u",
+"size": 12.0,
+"y": 563.1,
+"x": 524.5
+},
+{
+"t": "p",
+"size": 12.0,
+"y": 560.4,
+"x": 527.3
+},
+{
+"t": "er",
+"size": 12.0,
+"y": 555.0,
+"x": 530.2
+},
+{
+"t": "s)",
+"size": 12.0,
+"y": 549.6,
+"x": 534.9
+},
+{
+"t": "20  | Celebrating 125 years  |  Vol. 126  |  No. 02",
+"size": 10.0,
+"y": 794.1,
+"x": 36.9
+}
+]
+},
+{
+"lines": [
+"This flow chart I have made starts in the upper left hand ",
+"corner and assumes you have just done a mite check and ",
+"found yourself over threshold levels (See ABK August 2024). ",
+"It does not account for cultural/mechanical means to slow ",
+"down or reduce mite numbers (selective breeding, screened ",
+"bottom boards, drone frame removal). Drone frame removal ",
+"in particular can be a fairly effective chemical free treatment ",
+"method1 and would probably be first on the consideration ",
+"list but can be time consuming. But, especially if you have ",
+"a small number of hives and want to be chemical free you ",
+"can go ahead and do it as much as feasible.",
+"In general I organised this flowchart to consider first the ",
+"organic options least likely to result in any lasting residues in ",
+"the hive, and taking into account other strategic decisions ",
+"like saving Bayvarol for last since it’s one of the few things ",
+"that can be used with honey supers.",
+"There may be some other “strategic” considerations ",
+"that go into the decision, such as the quick knockdown ",
+"of FormicPro (see entire article on FormicPro in this issue), ",
+"or Apiguard being cheaper on double-brood boxes since ",
+"its the same dosage per “hive” rather than per brood ",
+"box, so it’s always worthwhile to fully consider everything, ",
+"but I anticipate this flow chart might make it slightly less ",
+"overwhelming.",
+"Another consideration is that over time some of the ",
+"treatments may unfortunately become ineffective as bees ",
+"develop resistances, so always perform mite washes at the ",
+"end of the treatment to confirm effectiveness, and if you’ve ",
+"found or been informed one of the miticides has become ",
+"ineffective you can skip it here by choosing the answer on ",
+"the chart indicating it was the last thing you used so the flow ",
+"chart will take you to the next option.",
+"Otherwise, start in the upper left, the yellow lines are a yes ",
+"answer to the question and the blue lines are a no answer ",
+"to the question. A few times there will be two yes or two ",
+"no options depending on whether or not you have honey ",
+"supers on the hive, but they’re labelled and I assume you ",
+"can read.",
+"It’s entirely possible there’s a more effective way to organise ",
+"this flow chart that doesn’t require re-asking about honey ",
+"supers, but I can’t figure it out, if you are a flow chart savant ",
+"and can organize this better please please let me know! ",
+"You’ll win… public recognition as a genius.",
+"But I want to end by emphatically saying this is merely ",
+"a guide to an order of considering the miticides, and in ",
+"considering them you must fully read the label and any other ",
+"more thorough guides you can find because many of them ",
+"have numerous factors to consider.",
+"It’s a bit overwhelming at first, to look at the list of miticides, with all their ",
+"particular use conditions, and sort out exactly what to use. In any such case ",
+"it’s helpful to come up with an organized manner to go down the list, using ",
+"simple “yes,” or “no” ‘questions about conditions to narrow the choices ",
+"down to the optimum one. One already exists on the internet at https://",
+"honeybeehealthcoalition.org/varroatool/ but, not being Australia-specific, it ",
+"references a number of miticides we do not have available.",
+"1. See “Chemical Free Varroa Control Methods”in our March 2024 issue.",
+"Vol. 126  |  No. 02 |  ",
+"  Celebrating 125 years |  21 "
+],
+"paras": [
+{
+"t": "This flow chart I have made starts in the upper left hand corner and assumes you have just done a mite check and found yourself over threshold levels (See ABK August 2024). It does not account for cultural/mechanical means to slow down or reduce mite numbers (selective breeding, screened bottom boards, drone frame removal). Drone frame removal in particular can be a fairly effective chemical free treatment method1 and would probably be first on the consideration list but can be time consuming. But, especially if you have a small number of hives and want to be chemical free you can go ahead and do it as much as feasible.",
+"size": 10.1,
+"y": 459.6,
+"x": 36.8
+},
+{
+"t": "In general I organised this flowchart to consider first the organic options least likely to result in any lasting residues in the hive, and taking into account other strategic decisions like saving Bayvarol for last since it’s one of the few things that can be used with honey supers.",
+"size": 10.1,
+"y": 591.6,
+"x": 36.9
+},
+{
+"t": "There may be some other “strategic” considerations that go into the decision, such as the quick knockdown of FormicPro (see entire article on FormicPro in this issue), or Apiguard being cheaper on double-brood boxes since its the same dosage per “hive” rather than per brood box, so it’s always worthwhile to fully consider everything, but I anticipate this flow chart might make it slightly less overwhelming.",
+"size": 10.1,
+"y": 651.6,
+"x": 36.9
+},
+{
+"t": "Another consideration is that over time some of the treatments may unfortunately become ineffective as bees develop resistances, so always perform mite washes at the end of the treatment to confirm effectiveness, and if you’ve found or been informed one of the miticides has become ineffective you can skip it here by choosing the answer on the chart indicating it was the last thing you used so the flow chart will take you to the next option.",
+"size": 10.0,
+"y": 459.6,
+"x": 303.5
+},
+{
+"t": "Otherwise, start in the upper left, the yellow lines are a yes answer to the question and the blue lines are a no answer to the question. A few times there will be two yes or two no options depending on whether or not you have honey supers on the hive, but they’re labelled and I assume you can read.",
+"size": 10.0,
+"y": 555.6,
+"x": 303.5
+},
+{
+"t": "It’s entirely possible there’s a more effective way to organise this flow chart that doesn’t require re-asking about honey supers, but I can’t figure it out, if you are a flow chart savant and can organize this better please please let me know! You’ll win… public recognition as a genius.",
+"size": 10.0,
+"y": 627.6,
+"x": 303.5
+},
+{
+"t": "But I want to end by emphatically saying this is merely a guide to an order of considering the miticides, and in considering them you must fully read the label and any other more thorough guides you can find because many of them have numerous factors to consider.",
+"size": 10.0,
+"y": 687.6,
+"x": 303.5
+},
+{
+"t": "It’s a bit overwhelming at first, to look at the list of miticides, with all their particular use conditions, and sort out exactly what to use. In any such case",
+"size": 14.0,
+"y": 333.1,
+"x": 63.9
+},
+{
+"t": "it’s helpful to come up with an organized manner to go down the list, using",
+"size": 14.0,
+"y": 366.7,
+"x": 65.3
+},
+{
+"t": "simple “yes,” or “no” ‘questions about conditions to narrow the choices down to the optimum one. One already exists on the internet at https:// honeybeehealthcoalition.org/varroatool/ but, not being Australia-specific, it",
+"size": 14.0,
+"y": 383.5,
+"x": 62.1
+},
+{
+"t": "references a number of miticides we do not have available.",
+"size": 14.0,
+"y": 433.9,
+"x": 114.3
+},
+{
+"t": "1. See “Chemical Free Varroa Control Methods”in our March 2024 issue.",
+"size": 8.0,
+"y": 765.5,
+"x": 36.9
+},
+{
+"t": "Vol. 126  |  No. 02 | Celebrating 125 years |  21",
+"size": 10.0,
+"y": 794.1,
+"x": 331.4
+}
+]
+}
+],
+"links": [],
+"pt": [
+595.2760009765625,
+833.385986328125
+]
+}

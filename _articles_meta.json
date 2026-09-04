@@ -1,0 +1,652 @@
+[
+ {
+  "id": "abj-2012-09",
+  "pub": "American Bee Journal",
+  "year": 2012,
+  "month": 9,
+  "vol": 152,
+  "no": 9,
+  "pages": [
+   881,
+   886
+  ],
+  "title": "Exploring Beekeeping and Honey Production in Nigeria and Ethiopia",
+  "src": "ABJ 2012 09 - Ethiopia and Nigeria.pdf",
+  "tags": [
+   "International",
+   "Development",
+   "Nigeria",
+   "Ethiopia",
+   "Africa",
+   "Topbar hives"
+  ],
+  "n": 6,
+  "mm": [
+   203.2,
+   276.22
+  ]
+ },
+ {
+  "id": "abj-2019-06",
+  "pub": "American Bee Journal",
+  "year": 2019,
+  "month": 6,
+  "vol": 159,
+  "no": 6,
+  "pages": [
+   701,
+   706
+  ],
+  "title": "Beekeeping Development Project: Kyrgyzstan",
+  "src": "ABJ 2019 06 - Kyrgyzstan.pdf",
+  "tags": [
+   "International",
+   "Development",
+   "Kyrgyzstan",
+   "Central Asia",
+   "Winrock"
+  ],
+  "n": 6,
+  "mm": [
+   203.2,
+   276.22
+  ],
+  "links": [
+   {
+    "page": 1,
+    "text": "follow the ancient Silk Road",
+    "url": "https://krisfricke.github.io/Silk-Road/"
+   }
+  ]
+ },
+ {
+  "id": "abj-2019-09",
+  "pub": "American Bee Journal",
+  "year": 2019,
+  "month": 9,
+  "vol": 159,
+  "no": 9,
+  "pages": [
+   1035,
+   1039
+  ],
+  "title": "Beekeeping Development Project: Nicaragua",
+  "src": "ABJ 2019 09 - Nicaragua.pdf",
+  "tags": [
+   "International",
+   "Development",
+   "Nicaragua",
+   "Central America"
+  ],
+  "n": 5,
+  "mm": [
+   203.2,
+   276.22
+  ]
+ },
+ {
+  "id": "abj-2020-01",
+  "pub": "American Bee Journal",
+  "year": 2020,
+  "month": 1,
+  "vol": 160,
+  "no": 1,
+  "pages": [
+   103,
+   108
+  ],
+  "title": "Beekeeping in Guinea",
+  "src": "ABJ 2020 01 - Guinea.pdf",
+  "tags": [
+   "International",
+   "Development",
+   "Guinea",
+   "Africa",
+   "Topbar hives"
+  ],
+  "n": 6,
+  "mm": [
+   203.2,
+   276.22
+  ]
+ },
+ {
+  "id": "abj-2021-01",
+  "pub": "American Bee Journal",
+  "year": 2021,
+  "month": 1,
+  "vol": 161,
+  "no": 1,
+  "pages": [
+   95,
+   100
+  ],
+  "title": "Tanzania: Bringing Beekeeping to Hunter-gatherers",
+  "src": "ABJ 2021 01 - Tanzania.pdf",
+  "tags": [
+   "International",
+   "Development",
+   "Tanzania",
+   "Africa",
+   "Hadzabe"
+  ],
+  "n": 6,
+  "mm": [
+   203.2,
+   276.22
+  ]
+ },
+ {
+  "id": "abj-2023-11",
+  "pub": "American Bee Journal",
+  "year": 2023,
+  "month": 11,
+  "vol": 163,
+  "no": 11,
+  "pages": [
+   1201,
+   1203
+  ],
+  "title": "Apimondia 2023 Santiago: 230 Speakers, 120 Vendors, and Not Nearly Enough Time",
+  "src": "ABJ 2023 11 - Apimondia 2023.pdf",
+  "tags": [
+   "Apimondia",
+   "Conferences",
+   "Chile",
+   "International"
+  ],
+  "n": 3,
+  "mm": [
+   203.2,
+   276.22
+  ]
+ },
+ {
+  "id": "abj-2024-10",
+  "pub": "American Bee Journal",
+  "year": 2024,
+  "month": 10,
+  "vol": 164,
+  "no": 10,
+  "pages": [
+   1125,
+   1127
+  ],
+  "title": "Honey Bee Icarus: Temperature Limitations of Bees in Flight",
+  "src": "ABJ 2024 10 - Icarus.pdf",
+  "tags": [
+   "Research",
+   "Bee biology",
+   "Thermoregulation",
+   "Flight"
+  ],
+  "n": 3,
+  "mm": [
+   203.2,
+   276.22
+  ]
+ },
+ {
+  "id": "abj-2025-01",
+  "pub": "American Bee Journal",
+  "year": 2025,
+  "month": 1,
+  "vol": 165,
+  "no": 1,
+  "pages": [
+   106,
+   109
+  ],
+  "title": "Varroa Eradicated from Guam",
+  "src": "ABJ 2025 01 - Guam.pdf",
+  "tags": [
+   "Varroa",
+   "Biosecurity",
+   "Guam",
+   "Pacific",
+   "Eradication"
+  ],
+  "n": 4,
+  "mm": [
+   203.2,
+   276.22
+  ]
+ },
+ {
+  "id": "abj-2025-10",
+  "pub": "American Bee Journal",
+  "year": 2025,
+  "month": 10,
+  "vol": 165,
+  "no": 10,
+  "pages": [
+   1125,
+   1127
+  ],
+  "title": "Cyclops Bees!",
+  "src": "ABJ 2025 10 - Cyclopes.pdf",
+  "tags": [
+   "Bee biology",
+   "Anomalies",
+   "Research",
+   "Biosecurity"
+  ],
+  "n": 3,
+  "mm": [
+   203.2,
+   276.22
+  ]
+ },
+ {
+  "id": "abj-2025-12",
+  "pub": "American Bee Journal",
+  "year": 2025,
+  "month": 12,
+  "vol": 165,
+  "no": 12,
+  "pages": [
+   1315,
+   1318
+  ],
+  "title": "Apimondia 2025",
+  "src": "ABJ 2025 12 - Apimondia 2025.pdf",
+  "tags": [
+   "Apimondia",
+   "Conferences",
+   "Denmark",
+   "International"
+  ],
+  "n": 4,
+  "mm": [
+   203.2,
+   276.22
+  ]
+ },
+ {
+  "id": "aus-2026-05a",
+  "pub": "Australian Bee Journal",
+  "year": 2026,
+  "month": 5,
+  "vol": 107,
+  "no": 5,
+  "pages": [
+   10,
+   12
+  ],
+  "title": "Mystery Mites",
+  "src": {
+   "iss": "may",
+   "dir": "may",
+   "p": [
+    10,
+    12
+   ]
+  },
+  "tags": [
+   "Biosecurity",
+   "Geelong"
+  ],
+  "n": 3,
+  "mm": [
+   210.02,
+   297.01
+  ]
+ },
+ {
+  "id": "aus-2026-05b",
+  "pub": "Australian Bee Journal",
+  "year": 2026,
+  "month": 5,
+  "vol": 107,
+  "no": 5,
+  "pages": [
+   16,
+   18
+  ],
+  "title": "Prophylactics",
+  "src": {
+   "iss": "may",
+   "dir": "may",
+   "p": [
+    16,
+    18
+   ]
+  },
+  "tags": [
+   "Varroa",
+   "Varroa Control",
+   "Varroa control: chemical",
+   "Biosecurity"
+  ],
+  "n": 3,
+  "mm": [
+   210.02,
+   297.01
+  ]
+ },
+ {
+  "id": "aus-2026-06",
+  "pub": "Australian Bee Journal",
+  "year": 2026,
+  "month": 6,
+  "vol": 107,
+  "no": 6,
+  "pages": [
+   6,
+   7
+  ],
+  "title": "Bags of Dead Bees",
+  "src": {
+   "iss": "jun",
+   "dir": "jun",
+   "p": [
+    6,
+    7
+   ]
+  },
+  "tags": [
+   "Biosecurity",
+   "Varroa Monitoring",
+   "Varroa Control"
+  ],
+  "n": 2,
+  "mm": [
+   210.02,
+   297.01
+  ]
+ },
+ {
+  "id": "aus-2026-07",
+  "pub": "Australian Bee Journal",
+  "year": 2026,
+  "month": 7,
+  "vol": 107,
+  "no": 7,
+  "pages": [
+   18,
+   22
+  ],
+  "title": "Beekeeping in Cuba",
+  "src": {
+   "iss": "jul",
+   "dir": "jul",
+   "p": [
+    18,
+    22
+   ]
+  },
+  "tags": [
+   "International",
+   "Varroa",
+   "Treatment Free Beekeeping",
+   "Cuba"
+  ],
+  "n": 5,
+  "mm": [
+   210.02,
+   297.01
+  ]
+ },
+ {
+  "id": "aus-2026-08",
+  "pub": "Australian Bee Journal",
+  "year": 2026,
+  "month": 8,
+  "vol": 107,
+  "no": 8,
+  "pages": [
+   22,
+   28
+  ],
+  "title": "Supra-annual Masting: When Will Those Trees Flower?",
+  "src": {
+   "iss": "aug",
+   "dir": "aug",
+   "p": [
+    22,
+    28
+   ]
+  },
+  "tags": [
+   "Flowering",
+   "Research",
+   "Grey box",
+   "Yellow gum",
+   "Flora"
+  ],
+  "n": 7,
+  "mm": [
+   210.02,
+   297.01
+  ]
+ },
+ {
+  "id": "abk-2024-07a",
+  "pub": "The Australasian Beekeeper",
+  "year": 2024,
+  "month": 7,
+  "vol": 126,
+  "no": 1,
+  "pages": [
+   15,
+   19
+  ],
+  "title": "Old Comb",
+  "src": "ABK/Kris Fricke Feature Articles/126.01 - Old Comb.pdf",
+  "tags": [
+   "Comb",
+   "Beeswax",
+   "Hive management",
+   "Research"
+  ],
+  "n": 5,
+  "mm": [
+   210.0,
+   294.0
+  ],
+  "ligfix": true
+ },
+ {
+  "id": "abk-2024-07b",
+  "pub": "The Australasian Beekeeper",
+  "year": 2024,
+  "month": 7,
+  "vol": 126,
+  "no": 1,
+  "pages": [
+   20,
+   23
+  ],
+  "title": "Conference Season",
+  "src": "ABK/Kris Fricke Feature Articles/126.01 - Conference Season.pdf",
+  "tags": [
+   "Conferences",
+   "Tasmania",
+   "Varroa"
+  ],
+  "n": 4,
+  "mm": [
+   210.0,
+   294.0
+  ],
+  "ligfix": true
+ },
+ {
+  "id": "abk-2024-08a",
+  "pub": "The Australasian Beekeeper",
+  "year": 2024,
+  "month": 8,
+  "vol": 126,
+  "no": 2,
+  "pages": [
+   24,
+   27
+  ],
+  "title": "Treating Varroa Without Going Broke: Balancing Treatments",
+  "src": "ABK/Kris Fricke Feature Articles/126.02 - Treating Varroa Without Going Broke.pdf",
+  "tags": [
+   "Varroa",
+   "Varroa Control",
+   "Economics",
+   "Thresholds"
+  ],
+  "n": 4,
+  "mm": [
+   210.0,
+   294.0
+  ],
+  "ligfix": true
+ },
+ {
+  "id": "abk-2024-08b",
+  "pub": "The Australasian Beekeeper",
+  "year": 2024,
+  "month": 8,
+  "vol": 126,
+  "no": 2,
+  "pages": [
+   38,
+   40
+  ],
+  "title": "Varroa Eradicated from Guam",
+  "src": "ABK/Kris Fricke Feature Articles/126.02 - Varroa Eradicated from Guam.pdf",
+  "tags": [
+   "Varroa",
+   "Biosecurity",
+   "Guam",
+   "Pacific",
+   "Eradication"
+  ],
+  "n": 3,
+  "mm": [
+   210.0,
+   294.0
+  ],
+  "ligfix": true
+ },
+ {
+  "id": "abk-2024-09",
+  "pub": "The Australasian Beekeeper",
+  "year": 2024,
+  "month": 9,
+  "vol": 126,
+  "no": 3,
+  "pages": [
+   20,
+   21
+  ],
+  "title": "Miticide Decision Flowchart",
+  "src": "ABK/Kris Fricke Feature Articles/126.03 - Miticide Decision Flowchart.pdf",
+  "tags": [
+   "Varroa",
+   "Varroa Control",
+   "Varroa control: chemical",
+   "Infographic"
+  ],
+  "n": 2,
+  "mm": [
+   210.0,
+   294.0
+  ],
+  "ligfix": true
+ },
+ {
+  "id": "abk-2024-12",
+  "pub": "The Australasian Beekeeper",
+  "year": 2024,
+  "month": 12,
+  "vol": 126,
+  "no": 6,
+  "pages": [
+   44,
+   45
+  ],
+  "title": "A Smoker Lighting Trick",
+  "src": "ABK/Kris Fricke Feature Articles/126.06 - A Smoker Lighting Trick.pdf",
+  "tags": [
+   "Smokers",
+   "Practical tips"
+  ],
+  "n": 2,
+  "mm": [
+   210.0,
+   294.0
+  ],
+  "ligfix": true
+ },
+ {
+  "id": "abk-2025-07a",
+  "pub": "The Australasian Beekeeper",
+  "year": 2025,
+  "month": 7,
+  "vol": 127,
+  "no": 1,
+  "pages": [
+   16,
+   19
+  ],
+  "title": "NSW Annual Conference 2025",
+  "src": "ABK/Kris Fricke Feature Articles/127.01 - NSW Annual Conference 2025.pdf",
+  "tags": [
+   "Conferences",
+   "New South Wales",
+   "Varroa"
+  ],
+  "ocr": true,
+  "n": 4,
+  "mm": [
+   210.23,
+   297.01
+  ]
+ },
+ {
+  "id": "abk-2025-07b",
+  "pub": "The Australasian Beekeeper",
+  "year": 2025,
+  "month": 7,
+  "vol": 127,
+  "no": 1,
+  "pages": [
+   20,
+   25
+  ],
+  "title": "Crop Pollination and Victorian Apiarist Association Conferences 2025",
+  "src": "ABK/Kris Fricke Feature Articles/127.01 - Crop Pollination and VAA Conferences 2025.pdf",
+  "tags": [
+   "Conferences",
+   "Pollination",
+   "Victoria",
+   "VAA Events"
+  ],
+  "ocr": true,
+  "n": 6,
+  "mm": [
+   210.23,
+   297.01
+  ]
+ },
+ {
+  "id": "abk-2025-08",
+  "pub": "The Australasian Beekeeper",
+  "year": 2025,
+  "month": 8,
+  "vol": 127,
+  "no": 2,
+  "pages": [
+   14,
+   17
+  ],
+  "title": "Queensland Beekeepers Association Conferences 2025",
+  "src": "ABK/Kris Fricke Feature Articles/127.02 - Queensland Beekeepers Association Conference 2025.pdf",
+  "tags": [
+   "Conferences",
+   "Queensland"
+  ],
+  "ocr": true,
+  "n": 4,
+  "mm": [
+   210.23,
+   297.01
+  ]
+ }
+]

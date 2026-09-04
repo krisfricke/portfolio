@@ -1,0 +1,384 @@
+<script>
+/* ---------- configuration ---------- */
+const BASE='__BASE__';                 /* where this will live on the web; used for share links and citations' URLs */
+const HOME='https://krisfricke.github.io/';
+const AUTHOR_CITE='Fricke, K.';
+const ARTS=__ARTS__;
+const MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+/* ---------- helpers ---------- */
+const byId=id=>ARTS.find(a=>a.id===id);
+const esc=x=>(x||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const when=a=>MONTHS[a.month-1]+' '+a.year;
+const key=a=>a.year*10000+a.month*100+(a.pages?a.pages[0]%100:0);
+function sorted(list,order){ const s=list.slice().sort((x,y)=>key(x)-key(y)); return order==='new'?s.reverse():s; }
+function pageRange(a){ return a.pages[0]===a.pages[1]? String(a.pages[0]) : a.pages[0]+'\u2013'+a.pages[1]; }
+/* APA-style, as requested: year only, article title in quotes, publication in italics */
+function cite(a){
+  const t=a.title.replace(/\.$/,''), end=/[?!]$/.test(t)?'':'.';
+  const vol=a.vol? ', '+a.vol+(a.no?'('+a.no+')':'') : '';
+  const pp=a.pages? ', '+pageRange(a) : '';
+  const head=AUTHOR_CITE+' ('+a.year+'). \u201C'+t+end+'\u201D ';
+  return { html: esc(head)+'<i>'+esc(a.pub)+'</i>'+esc(vol+pp)+'.',
+           text: head+a.pub+vol+pp+'.' };
+}
+const LOCAL=(location.protocol==='file:');
+const webDir=()=> LOCAL ? BASE : location.href.split('#')[0].replace(/[^\/]*$/,'');
+const textURL=a=>'article/'+a.id+'/index.html';
+
+/* ---------- state ---------- */
+const ZSTEPS=[50,60,70,80,90,100,110,125,150,175,200];
+let ZOOM=(function(){ try{ const v=parseInt(localStorage.getItem('kf_zoom'),10); return ZSTEPS.indexOf(v)>=0?v:100; }catch(e){ return 100; } })();
+let ORDER=(function(){ try{ return localStorage.getItem('kf_order')==='old'?'old':'new'; }catch(e){ return 'new'; } })();
+
+
+function setZoom(p){ ZOOM=p; try{ localStorage.setItem('kf_zoom',String(p)); }catch(e){}
+  const el=document.getElementById('zval'); if(el) el.textContent=p+'%'; fitFrames(); }
+function zoomStep(d){ let i=ZSTEPS.indexOf(ZOOM); if(i<0) i=ZSTEPS.indexOf(100);
+  i=Math.max(0,Math.min(ZSTEPS.length-1,i+d)); setZoom(ZSTEPS[i]); }
+/* flipping the order: at the top of a list you stay at the top and the new order unrolls beneath you;
+   anywhere else you stay on what you were looking at while everything reshuffles around it */
+function anchorOf(li){
+  const l=laneEl(li); if(!l || l.scrollTop<40) return null;
+  const lr=l.getBoundingClientRect(), mid=lr.top+l.clientHeight/2; let best=null, bd=1e9;
+  l.querySelectorAll('.arc,.cov,.page').forEach(function(e){ if(!e.id) return; const r=e.getBoundingClientRect();
+    const d=Math.abs((r.top+r.bottom)/2-mid); if(d<bd){ bd=d; best=e; } });
+  return best ? {id:best.id, off:best.getBoundingClientRect().top-lr.top} : null;
+}
+function restoreAnchor(li,an){
+  const l=laneEl(li); if(!l) return;
+  requestAnimationFrame(function(){ requestAnimationFrame(function(){        /* after fitFrames has sized the decks */
+    if(!an){ l.scrollTop=0; return; }
+    const e=document.getElementById(an.id); if(!e){ l.scrollTop=0; return; }
+    l.scrollTop += (e.getBoundingClientRect().top - l.getBoundingClientRect().top) - an.off;
+  }); });
+}
+function setOrder(o,persist){ ORDER=(o==='old')?'old':'new'; if(persist!==false){ try{ localStorage.setItem('kf_order',ORDER); }catch(e){} } orderLabel(); }
+function toggleOrder(){
+  const an0=anchorOf(0), an1=LANES[1].hits.length?anchorOf(1):null;
+  setOrder(ORDER==='new'?'old':'new'); build();
+  restoreAnchor(0,an0); if(LANES[1].hits.length) restoreAnchor(1,an1);
+}
+/* Back to top: close whatever is open and go to the head of the list, in the current order */
+function backToTop(){ closeTopic(); LANES[0].active=null; build(); location.hash='#/all'; requestAnimationFrame(function(){ laneEl(0).scrollTop=0; }); }
+function orderLabel(){ const b=document.getElementById('ordBtn'); if(b) b.innerHTML=(ORDER==='new')?'<span class="lg">Newest on top</span><span class="sm">Newest</span>':'<span class="lg">Oldest on top</span><span class="sm">Oldest</span>'; }
+
+/* ---------- page sizing: 100% = true printed size; only a too-narrow window shrinks it ---------- */
+const MM=96/25.4;
+function availWidth(el){
+  const row=el.parentElement, sheet=el.closest('.sheet'); let w=window.innerWidth;
+  if(sheet){ const cs=getComputedStyle(sheet); w=sheet.clientWidth-parseFloat(cs.paddingLeft||0)-parseFloat(cs.paddingRight||0); }
+  if(row){ const stacked=getComputedStyle(row).flexDirection==='column'; const rail=row.querySelector('.rail');
+    if(rail && !stacked){ w-=rail.getBoundingClientRect().width; w-=parseFloat(getComputedStyle(row).columnGap||getComputedStyle(row).gap||12)||12; } }
+  return Math.max(140,w);
+}
+function fitFrames(){
+  requestAnimationFrame(function(){
+    /* covers and cards: the same true-size rule as the pages, less room for the deck's offset */
+    document.querySelectorAll('.deck[data-wmm]').forEach(function(dk){
+      const W=parseFloat(dk.dataset.wmm)*MM, H=parseFloat(dk.dataset.hmm)*MM, off=(parseInt(dk.dataset.extra,10)||0)*4;
+      const k=Math.min(1,(availWidth(dk)-off)/W)*(ZOOM/100);
+      dk.style.width=(W*k)+'px'; dk.style.height=(H*k)+'px'; dk.style.margin='0 '+off+'px '+off+'px';
+    });
+    document.querySelectorAll('.pframe.htmlpage').forEach(function(fr){
+      const ifr=fr.querySelector('iframe'); if(!ifr) return;
+      const W=parseFloat(fr.dataset.wmm)*MM, H=parseFloat(fr.dataset.hmm)*MM;
+      const k=Math.min(1, availWidth(fr)/W)*(ZOOM/100);
+      fr.style.width=(W*k)+'px'; fr.style.height=(H*k)+'px';
+      ifr.style.width=W+'px'; ifr.style.height=H+'px'; ifr.style.transform='scale('+k+')';
+    });
+  });
+}
+window.addEventListener('resize',fitFrames);
+
+/* ---------- stacks: lane 0 is every article, lane 1 is a filtered set (a topic or a publication) ----------
+   Both render the same way: a stack of covers, each on its remaining pages, with the full rail beside it;
+   one card may be unfolded in place. */
+const LANES={
+  0:{sheet:'sheet', list:()=>ARTS, active:null, head:''},
+  1:{sheet:'topsheet', hits:[], list(){return this.hits;}, active:null, head:''}
+};
+function deck(a,extra){
+  let sh=''; for(let i=extra;i>=1;i--) sh+='<div class="sh" style="--i:'+i+'"></div>';
+  return '<div class="deck" data-wmm="'+a.mm[0]+'" data-hmm="'+a.mm[1]+'" data-extra="'+extra+'">'+sh+
+         '<img src="pages/'+a.id+'/cover.jpg" loading="lazy" alt="'+esc(a.title)+' — first page"></div>';
+}
+const q=v=>"'"+String(v).replace(/\\/g,'\\\\').replace(/'/g,"\\'")+"'";
+/* n=0: the stacked card (full details + Read); n=1: page 1 (full details); n>1: continuation (title + chips) */
+function railFor(a,n,li){
+  let r='<div class="pn">'+(n===0 ? a.n+' PAGE'+(a.n==1?'':'S') : 'PAGE '+n+' / '+a.n)+'</div>'+
+    '<div class="ti'+(n>1?' co':'')+'">'+(n>1?'↳ ':'')+esc(a.title)+'</div>';
+  if(n<=1){
+    r+='<div class="meta">'+esc(a.pub)+', '+when(a)+(a.vol?'<br>Vol. '+a.vol+(a.no?' No. '+a.no:''):'')+(a.pages?'<br>pp. '+pageRange(a):'')+'</div>';
+    if(n===0) r+='<button class="go" onclick="openCard('+q(a.id)+','+li+')">Read this article</button>';
+    r+='<button class="share" onclick="copyLink('+q(a.id)+')" title="Copy a link straight to this article">Share this article</button>'+
+       '<button class="share" onclick="openCite('+q(a.id)+')" title="Citation for this article">Cite this article</button>'+
+       '<a class="txt" href="'+textURL(a)+'" title="Plain, reflowable text of this article">Text version</a><div class="sep"></div>';
+  }
+  r+='<button class="pb" onclick="openPub('+q(a.pub)+')">'+esc(a.pub)+'</button>';
+  a.tags.forEach(t=>{ r+='<button class="tg" onclick="openTopic('+q(t)+')">'+esc(t)+'</button>'; });
+  return r;
+}
+function card(a,li){
+  const d=document.createElement('div'); d.className='arc'; d.id='art'+li+'-'+a.id;
+  d.innerHTML='<div class="page">'+deck(a,a.n-1)+'<div class="rail" onclick="event.stopPropagation()">'+railFor(a,0,li)+'</div></div>';
+  d.onclick=()=>openCard(a.id,li); return d;
+}
+function pageRow(a,n,li){
+  return '<div class="pframe htmlpage" data-wmm="'+a.mm[0]+'" data-hmm="'+a.mm[1]+'" style="aspect-ratio:'+a.mm[0]+'/'+a.mm[1]+'">'+
+    '<iframe loading="lazy" title="'+esc(a.title)+' page '+n+'" src="pages/'+a.id+'/'+n+'.html"></iframe></div><div class="rail">'+railFor(a,n,li)+'</div>';
+}
+function buildStack(li){
+  const L=LANES[li], s=document.getElementById(L.sheet); s.innerHTML=L.head||'';
+  const order=sorted(L.list(),ORDER);
+  if(L.active===null){ order.forEach(a=>s.appendChild(card(a,li))); fitFrames(); return; }
+  const act=byId(L.active), at=order.findIndex(a=>a.id===L.active);
+  order.slice(0,at).forEach(a=>s.appendChild(card(a,li)));
+  const c=document.createElement('div'); c.className='cov'; c.id='cover'+li;
+  c.innerHTML='<div class="hint">▲ the other articles · click the sky to close this one</div>'+
+    '<div class="page" id="p'+li+'-1">'+pageRow(act,1,li)+'</div>'+(act.n>1?'<div class="hint">▼ scroll down to read on</div>':'');
+  s.appendChild(c);
+  for(let n=2;n<=act.n;n++){ const d=document.createElement('div'); d.className='page'; d.id='p'+li+'-'+n; d.innerHTML=pageRow(act,n,li); s.appendChild(d); }
+  const nx=order[at+1], e=document.createElement('div'); e.className='next';
+  e.innerHTML=nx ? '<button onclick="nextArticle('+li+')"><span class="ar">▼</span><span class="l">Next article</span><span class="t">'+esc(nx.title)+'</span></button>'
+                 : '<button onclick="closeArticle('+li+')"><span class="ar">▲</span><span class="l">Back to the list</span><span class="t">that was the last one in this order</span></button>';
+  s.appendChild(e);
+  order.slice(at+1).forEach(a=>s.appendChild(card(a,li)));
+  fitFrames();
+}
+function build(){
+  orderLabel();
+  const L=LANES[0];
+  document.body.classList.toggle('reading',L.active!==null);
+  if(L.active===null){ document.getElementById('issLabel').textContent=ARTS.length+' articles'; document.title='Kris Fricke — Articles'; }
+  else { const a=byId(L.active); document.getElementById('issLabel').textContent=a.pub+' · '+when(a); document.title=a.title+' — Kris Fricke'; }
+  buildStack(0);
+  if(LANES[1].hits.length) buildStack(1);
+}
+const laneEl=li=>document.getElementById(li?'lane1':'lane0');
+function scrollCover(li){ const e=document.getElementById('cover'+(li||0)); if(e) e.scrollIntoView(); }
+function setActive(id,li){ li=li||0; const L=LANES[li];
+  if(id===L.active){ scrollCover(li); return; }
+  L.active=id; buildStack(li); if(li===0) build();
+  if(li===0) location.hash='#/read/'+id;
+  requestAnimationFrame(()=>scrollCover(li)); }
+/* open: the pages under the cover shoot downward, then the article unfolds in their place */
+let OPENING=false;
+function openCard(id,li){ li=li||0;
+  if(OPENING) return; const el=document.getElementById('art'+li+'-'+id);
+  if(!el || byId(id).n<2){ setActive(id,li); return; }
+  OPENING=true; el.classList.add('opening');
+  setTimeout(function(){ OPENING=false; setActive(id,li); },420);
+}
+function restack(li,fromId,focusId){
+  const L=LANES[li]; L.active=null; buildStack(li); if(li===0){ build(); location.hash=LANES[1].hits.length&&li===1?location.hash:'#/all'; }
+  const el=document.getElementById('art'+li+'-'+fromId), tgt=document.getElementById('art'+li+'-'+focusId);
+  if(el) el.classList.add('landing');
+  requestAnimationFrame(function(){ requestAnimationFrame(function(){      /* after fitFrames has sized the decks */
+    if(tgt) tgt.scrollIntoView({block:'center'});
+    requestAnimationFrame(function(){ if(el) el.classList.remove('landing'); });
+  }); });
+}
+/* close (click the sky around an open article): back to the stack, its pages shuffling back under the cover */
+function closeArticle(li){ li=li||0; const L=LANES[li]; if(L.active===null) return; restack(li,L.active,L.active); }
+/* next: restack this one and centre the next card, still stacked */
+function nextArticle(li){ li=li||0; const L=LANES[li]; const order=sorted(L.list(),ORDER), at=order.findIndex(a=>a.id===L.active), nx=order[at+1];
+  if(!nx){ closeArticle(li); return; } restack(li,L.active,nx.id); }
+function gotoCover(){ closeTopic(); const L=LANES[0];
+  if(L.active===null){ setActive(sorted(ARTS,'new')[0].id,0); return; }
+  const e=document.getElementById('cover0'); if(e) e.scrollIntoView({behavior:'smooth'}); }
+function gotoArchive(){ backToTop(); }
+function jumpTo(id,p){ closeTopic(); if(LANES[0].active!==id){ LANES[0].active=id; build(); }
+  setTimeout(()=>{const e=document.getElementById('p0-'+(p<=1?1:p)); if(e)e.scrollIntoView({behavior:'smooth'});},260); }
+[0,1].forEach(function(li){
+  const l=laneEl(li);
+  l.addEventListener('click',function(e){
+    if(LANES[li].active===null) return;
+    if(e.target.closest('.pframe,.rail,.arc,.next,.tophead,button,a,input,img,.hint,.cap')) return;   /* only the empty sky closes */
+    closeArticle(li);
+  });
+  /* touch: ordinary panning stops at the end of the article; a brisk flick upward from there goes on to the next one */
+  let y0=0,t0=0,atEnd=false;
+  l.addEventListener('touchstart',function(e){ const t=e.touches[0]; y0=t.clientY; t0=Date.now(); atEnd=(l.scrollTop+l.clientHeight>=l.scrollHeight-24); },{passive:true});
+  l.addEventListener('touchend',function(e){ if(LANES[li].active===null||!atEnd) return;
+    const t=e.changedTouches[0], dy=y0-t.clientY, dt=Math.max(1,Date.now()-t0);
+    if(dy>90 && dy/dt>0.9) nextArticle(li); },{passive:true});
+});
+
+/* ---------- share & cite ---------- */
+function copyLink(id){
+  const a=byId(id); const u=webDir()+'article/'+id+'/';
+  const note=LOCAL?'\n\nNote: you are reading this from a folder, so the link is not live until the site is published.':'';
+  if(!navigator.clipboard){ prompt('Copy this link:'+note,u); return; }
+  navigator.clipboard.writeText(u).then(
+    ()=>alert('Link to “'+a.title+'” copied.\n\n'+u+note),
+    ()=>prompt('Copy this link:'+note,u));
+}
+let CITE_ID=null;
+function openCite(id){
+  const a=byId(id||LANES[0].active||sorted(ARTS,'new')[0].id); if(!a) return; CITE_ID=a.id;
+  const c=cite(a);
+  document.getElementById('citebox').innerHTML='<div class="q" id="citeq">'+c.html+'</div>'+
+    '<div class="row"><button onclick="copyCite(false)">Copy citation</button>'+
+    '<button class="sec" onclick="copyCite(true)">Copy with link</button></div>'+
+    '<div class="note">Copies as rich text where the browser allows it, so the italics survive a paste into Word or Docs; otherwise as plain text.</div>';
+  document.getElementById('cscrim').classList.add('on');
+}
+function closeCite(){ document.getElementById('cscrim').classList.remove('on'); }
+function copyCite(withLink){
+  const a=byId(CITE_ID); const c=cite(a); const u=webDir()+'article/'+a.id+'/';
+  const text=c.text+(withLink?' '+u:''), html=c.html+(withLink?' <a href="'+u+'">'+u+'</a>':'');
+  const done=()=>{ const q=document.getElementById('citeq'); if(q){ q.style.outline='2px solid #6b4a1c'; setTimeout(()=>q.style.outline='',600); } };
+  if(navigator.clipboard && window.ClipboardItem){
+    navigator.clipboard.write([new ClipboardItem({'text/plain':new Blob([text],{type:'text/plain'}),'text/html':new Blob([html],{type:'text/html'})})]).then(done,()=>navigator.clipboard.writeText(text).then(done));
+  } else if(navigator.clipboard){ navigator.clipboard.writeText(text).then(done); }
+  else prompt('Copy this citation:',text);
+}
+
+/* ---------- side lane: the same stack, filtered ---------- */
+function lane(title,sub,hits){
+  const L=LANES[1]; L.hits=hits; L.active=null;
+  L.head='<div class="tophead"><h2>'+esc(title)+'</h2><div class="sub">'+sub+'</div>'+
+    '<button class="back" onclick="closeTopic()">‹ back to all articles</button></div>'+(hits.length?'':'<div class="empty">Nothing here yet.</div>');
+  buildStack(1);
+  laneEl(1).scrollTop=0; setLane(1);
+}
+function openTopic(tag){ const hits=ARTS.filter(a=>a.tags.some(t=>t.toLowerCase()===tag.toLowerCase()));
+  lane(tag,hits.length+' article'+(hits.length==1?'':'s')+' tagged '+esc(tag),hits); location.hash='#/topic/'+encodeURIComponent(tag.toLowerCase()); }
+function openPub(name){ const hits=ARTS.filter(a=>a.pub.toLowerCase()===name.toLowerCase());
+  lane(name,hits.length+' article'+(hits.length==1?'':'s')+' in '+esc(name),hits); location.hash='#/pub/'+encodeURIComponent(name); }
+function setLane(pos){ const t=document.getElementById('track');
+  if(pos===-1){ t.classList.remove('right'); t.classList.add('left');
+    document.querySelector('.gate').classList.add('leaving');
+    setTimeout(function(){ location.href=HOME; },780); return; }
+  t.classList.toggle('right',pos===1); t.classList.toggle('left',pos===-1);
+  document.body.classList.toggle('inlane',pos===1);
+  if(pos===1) placeBackTab(); }
+function closeTopic(){ setLane(0); }
+function placeBackTab(){ requestAnimationFrame(function(){
+  const v=document.getElementById('edgeHome'), b=document.getElementById('edgeBack'); if(!v||!b) return;
+  b.style.left=(v.getBoundingClientRect().right+4)+'px'; }); }
+window.addEventListener('resize',placeBackTab);
+
+/* ---------- browse panel ---------- */
+var BMODE='pub';
+function index(mode){
+  var m={};
+  ARTS.forEach(function(a){ (mode==='pub'?[a.pub]:a.tags).forEach(function(t){ t=String(t).trim(); if(!t) return;
+    var k=t.toLowerCase(); if(!m[k]) m[k]={name:t,n:0}; m[k].n++; }); });
+  return Object.keys(m).map(k=>m[k]).sort((x,y)=>x.name.toLowerCase().localeCompare(y.name.toLowerCase()));
+}
+function openBrowse(mode){ BMODE=mode;
+  document.getElementById('btitle').textContent = mode==='pub'?'By publication':'By topic';
+  var fi=document.getElementById('bfind'); fi.value=''; fi.placeholder = mode==='pub'?'Type a publication…':'Type a topic…';
+  document.getElementById('bscrim').classList.add('on'); renderBrowse(); setTimeout(function(){fi.focus();},30); }
+function closeBrowse(){ document.getElementById('bscrim').classList.remove('on'); }
+function renderBrowse(){
+  var items=index(BMODE), q=document.getElementById('bfind').value.trim().toLowerCase();
+  if(q) items=items.filter(i=>i.name.toLowerCase().indexOf(q)>-1);
+  document.getElementById('bcount').textContent=items.length+(BMODE==='pub'?' publications':' topics');
+  if(!items.length){ document.getElementById('blist').innerHTML='<div class="bnone">Nothing matches that.</div>'; return; }
+  var html='',cur='';
+  items.forEach(function(i){
+    var k=i.name.charAt(0).toUpperCase()||'#';
+    if(BMODE==='topic' && k!==cur){ if(cur)html+='</div>'; html+='<div class="bletter">'+k+'</div><div class="bcols">'; cur=k; }
+    html+='<button class="brow" onclick="pickBrowse('+JSON.stringify(i.name).replace(/"/g,'&quot;')+')">'+esc(i.name)+'<span class="n">'+i.n+'</span></button>';
+  });
+  if(cur)html+='</div>';
+  document.getElementById('blist').innerHTML=html;
+}
+function pickBrowse(name){ closeBrowse(); if(BMODE==='pub') openPub(name); else openTopic(name); }
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){ closeBrowse(); closeCite(); }
+  if((e.key==='Escape'||e.key==='Enter') && document.getElementById('iscrim').classList.contains('on')) closeIntro();
+});
+
+/* ---------- one-time welcome ---------- */
+var INTROKEY='kf_intro_v1';
+function closeIntro(){ document.getElementById('iscrim').classList.remove('on'); try{ localStorage.setItem(INTROKEY,'1'); }catch(e){} }
+function maybeIntro(){ var seen=false; try{ seen=localStorage.getItem(INTROKEY)==='1'; }catch(e){}
+  if(seen||location.hash) return; document.getElementById('iscrim').classList.add('on'); }
+
+/* ---------- routing ---------- */
+function route(){ let h=location.hash;
+  /* an order in the address: #/newest or #/oldest, alone or as a prefix (#/oldest/topic/varroa, #/oldest/read/<id>) */
+  const om=h.match(/^#\/(newest|oldest)(?=\/|$)/);
+  if(om){ setOrder(om[1]==='oldest'?'old':'new',false); build(); h='#'+(h.slice(om[0].length)||'/all'); }
+  if(h.startsWith('#/read/')){ const id=h.slice(7); if(byId(id)){ closeTopic(); if(id!==LANES[0].active){ LANES[0].active=id; build(); } requestAnimationFrame(()=>scrollCover(0)); } return; }
+  if(h.startsWith('#/article/')){ const q=h.slice(10).split('/'); const id=q[0], p=parseInt(q[1],10)||1; if(byId(id)){ setLane(0); jumpTo(id,p); } return; }
+  if(h.startsWith('#/topic/')){ openTopic(decodeURIComponent(h.slice(8))); return; }
+  if(h.startsWith('#/pub/')){ openPub(decodeURIComponent(h.slice(6))); return; }
+  if(h==='#/all'){ const was=(LANES[0].active!==null)||!!om; if(LANES[0].active!==null){ LANES[0].active=null; build(); } closeTopic();
+      /* only scroll when this hash change is what opened the list; backToTop/closeArticle place the view themselves */
+      if(was){ requestAnimationFrame(()=>{ laneEl(0).scrollTop=0; }); } return; }
+  closeTopic(); }
+LANES[0].active=sorted(ARTS,'new')[0].id;
+setZoom(ZOOM);
+build();
+window.addEventListener('keydown',function(e){
+  if(/INPUT|TEXTAREA|SELECT/.test((e.target&&e.target.tagName)||'')) return;
+  const t=document.getElementById('track');
+  if(e.key==='ArrowLeft'){ setLane(t.classList.contains('right')?0:-1); }
+  if(e.key==='ArrowRight'&&!t.classList.contains('right')){ if(t.classList.contains('left')) setLane(0); }
+  if(e.key==='Escape') setLane(0);
+});
+
+/* ---------- bee follower ---------- */
+(function(){
+  if(!matchMedia('(hover:hover)').matches) return;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const bee=document.getElementById('beecur'); if(!bee) return;
+  document.body.classList.add('bee-on');
+  let tx=innerWidth/2, ty=innerHeight/2, x=tx, y=ty, ta=0, a=0, started=false;
+  /* landing: hold still for 2s over something solid and she settles; any movement and she is airborne again */
+  const SKY='html,body,.track,.lane,.sheet,.cov,.arc,.iscrim,.bscrim,.rail,.pn';
+  const SURF='iframe,.pframe,.chrome,.tophead,.edge,.zoombar,.ibox,.bpanel,.hit,.gate,img,button,a,input,.rail .ti,.rail .meta';
+  let landT=null, landed=false;
+  function onSurface(){
+    const el=document.elementFromPoint(tx,ty); if(!el) return false;
+    if(el.closest(SURF)) return true;
+    for(let e=el; e && !e.matches(SKY); e=e.parentElement){
+      const bg=getComputedStyle(e).backgroundColor;
+      if(bg && bg!=='transparent' && !/^rgba\(.*,\s*0\)$/.test(bg)) return true;
+    }
+    return false;
+  }
+  function land(){ landT=null; if(bee.classList.contains('on') && onSurface()){ landed=true; bee.classList.add('landed'); } }
+  function takeoff(){ if(landed){ landed=false; bee.classList.remove('landed'); } }
+  function rearm(){ clearTimeout(landT); landT=setTimeout(land,2000); }
+  function aim(nx,ny){
+    const dx=nx-tx, dy=ny-ty; tx=nx; ty=ny;
+    if(!started){ x=tx; y=ty; started=true; }
+    if(dx*dx+dy*dy>6) ta=Math.atan2(dy,dx)*180/Math.PI+90;       /* head leads the way */
+    if(dx*dx+dy*dy>1){ takeoff(); rearm(); }
+    bee.classList.add('on');
+  }
+  function hide(){ bee.classList.remove('on'); takeoff(); clearTimeout(landT); landT=null; }
+  document.addEventListener('mousemove',e=>aim(e.clientX,e.clientY),{passive:true});
+  document.documentElement.addEventListener('mouseleave',hide);
+  document.documentElement.addEventListener('mouseenter',()=>bee.classList.add('on'));
+  /* pages live in iframes; they report the pointer in their own coordinates */
+  window.addEventListener('message',function(e){
+    const m=e.data; if(!m||!m.abj) return;
+    if(m.abj==='hello' && e.source){ try{ e.source.postMessage({abj:'bee',on:true},'*'); }catch(err){} return; }
+    if(m.abj==='pointerleave'){ hide(); return; }
+    if(m.abj!=='pointer') return;
+    const frames=document.querySelectorAll('iframe');
+    let fr=null; for(const f of frames){ if(f.contentWindow===e.source){ fr=f; break; } }
+    if(!fr) return;
+    const r=fr.getBoundingClientRect(), k=r.width/(fr.offsetWidth||r.width);
+    aim(r.left+m.x*k, r.top+m.y*k);
+  });
+  (function frame(){
+    x+=(tx-x)*0.5; y+=(ty-y)*0.5;
+    const d=((ta-a+540)%360)-180; a+=d*0.15;
+    bee.style.transform='translate3d('+x.toFixed(1)+'px,'+y.toFixed(1)+'px,0) rotate('+a.toFixed(1)+'deg) translate(-50%,-50%)';
+    requestAnimationFrame(frame);
+  })();
+})();
+
+window.addEventListener('hashchange',route);
+if(location.hash) route(); else scrollCover(0);
+maybeIntro();
+</script>
+</body></html>

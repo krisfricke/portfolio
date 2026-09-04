@@ -1,0 +1,574 @@
+{
+"pages": [
+{
+"lines": [
+"10 ",
+"Australian Bee Journal ",
+"Mystery Mites ",
+"By Kris Fricke  ",
+"(& substantial quotes from Bruce Ward) ",
+"Werribee Mystery Mite ",
+"On the evening of Monday April 6th Werribee area ",
+"beekeeper David Ross posted on the Werribee Beekeep-",
+"ers’ facebook page: ",
+"Tonight I had a bee come inside that was clearly ",
+"struggling, I put it out of its misery with a cloth and ",
+"a large number of mites came off it.  Any ideas on ",
+"what it is?   Will be doing another hive check tomor-",
+"row on all 3 hives and see if I get any more.  Size is ",
+"less than 1mm. ",
+"He immediately reported it to AgVic as well.  On ",
+"Facebook people didn’t hesitate to start guessing: ",
+"chatGPT says it’s a varroa, which it clearly is not; ",
+"someone else said it was a pollen mite while posting a ",
+"picture that was equally not a pollen mite either.  To me ",
+"it looked very alarmingly like a Tropilaelaps mite, but ",
+"there are actually a lot of mites that look very similar so ",
+"all we could do was wait anxiously for the official diag-",
+"nosis. ",
+"AgVic staff rushed out there the next morning, took ",
+"samples and checked the rest of the hives.  They deliv-",
+"ered the sample to the AgriBio diagnostics lab on the La ",
+"Trobe University campus, staff there worked overtime ",
+"into the evening to identify the mystery mite.  Unfortu-",
+"nately, apparently the samples were both slightly dam-",
+"aged and not fully adult, which made things harder, but ",
+"finally they were able to identify them as mites of the ",
+"genus Parasitus.  These mites are not harmful to bees, ",
+"can be found in compost and leaf litter, can be phoretic ",
+"(hitching a ride) on dung beetles or other similar insects, ",
+"and eat nematodes and other small arthropods including ",
+"other mite species (I don’t believe anyone has tested if ",
+"they’ll eat Varroa…).  They were unable to identify it to ",
+"the species level, but I note the most common species of ",
+"Parasitus have all been found in bee hives (though it is ",
+"not believed to prey on bees or bee larvae).1  Interest-",
+"ingly I note on a map2 on the Atlas of Living Australia3 ",
+"while there are a few sporadic identifications of Parasi-",
+"tus mites elsewhere in Australia, findings are more ",
+"common in Central Victoria and in Werribee very spe-",
+"cifically there are four specimens collected and pre-",
+"served by NSW DPI, so it seems to be a hotspot for this ",
+"mite. ",
+"Pollen Mite ",
+"On the evening of September 4th, 2024, I, then an ",
+"AgVic employee, was just sitting to dinner when a call ",
+"came in about a suspicious mite reported near Geelong ",
+"about forty minutes from me just then by former NSW ",
+"apiary officer Bruce Ward.   Obviously by default I ",
+"can’t share the details of what I did for AgVic, but con-",
+"veniently Bruce himself wrote about it for the Geelong ",
+"club newsletter, and because he’s a good writer himself, ",
+"I’ll quote him directly, writing in September 2024: ",
+"With the arrival of Varroa in Victoria last month, ",
+"I decided to increase my Varroa testing, and have ",
+"started a detergent wash every month.  You can im-",
+"agine my surprise when on my very first monthly ",
+"wash, I spotted several brown spots in my wash bot-",
+"tle.  My first reaction was that they were too small to ",
+"be Varroa, but I wanted to take a closer look. ",
+"I strained the spots onto a paper towel and had a ",
+"look with a hand lens.  I was expecting to see lumps ",
+"of pollen or debris. ",
+"My heart sank when I saw two brown mites that ",
+"looked very similar to Varroa.  One was on its front ",
+"and had a domed back.  The other one was on its ",
+"back, and I could just make out little legs. ",
+"My first step was to make an online report ",
+"through the exotic plant disease hotline.  Within an ",
+"hour I was contacted by the bee biosecurity team ",
+"from Agriculture Victoria.  The biosecurity staff ar-",
+"ranged to have the mites collected by a Varroa De-",
+"velopment Officer (VDO).  We took the opportunity ",
+"to re-check the hive and uncap the few drone brood ",
+"cells available, with no further concerning signs.  By ",
+"this time I had also been able to take a relatively ",
+"clear photo of the two mites. ",
+"At that time, even though pollen mites are much ",
+"smaller than Varroa, I (Kris) personally had happily not ",
+"seen Varroa first hand in nearly 10 years so I felt I ",
+"couldn’t rule out the possibility.   The next day I met ",
+"one of the biosecurity officers at the Geelong ringroad ",
+"(Continued on page 11) ",
+"Credit: David Ross, Werribee ",
+"With the head of a toothpick for size comparison.   ",
+"Credit: Bruce Ward, Geelong "
+],
+"paras": [
+{
+"t": "10 Australian Bee Journal",
+"size": 10.0,
+"y": 809.7,
+"x": 39.5
+},
+{
+"t": "Mystery Mites",
+"size": 24.0,
+"y": 37.7,
+"x": 38.4
+},
+{
+"t": "By Kris Fricke (& substantial quotes from Bruce Ward)",
+"size": 11.0,
+"y": 76.0,
+"x": 38.2
+},
+{
+"t": "Werribee Mystery Mite",
+"size": 11.0,
+"y": 99.3,
+"x": 38.2
+},
+{
+"t": "On the evening of Monday April 6th Werribee area beekeeper David Ross posted on the Werribee Beekeepers’ facebook page:",
+"size": 11.0,
+"y": 120.9,
+"x": 38.2
+},
+{
+"t": "Tonight I had a bee come inside that was clearly struggling, I put it out of its misery with a cloth and a large number of mites came off it.  Any ideas on what it is?   Will be doing another hive check tomorrow on all 3 hives and see if I get any more.  Size is less than 1mm.",
+"size": 11.0,
+"y": 157.3,
+"x": 38.2
+},
+{
+"t": "He immediately reported it to AgVic as well.  On Facebook people didn’t hesitate to start guessing: chatGPT says it’s a varroa, which it clearly is not; someone else said it was a pollen mite while posting a picture that was equally not a pollen mite either.  To me it looked very alarmingly like a Tropilaelaps mite, but there are actually a lot of mites that look very similar so all we could do was wait anxiously for the official diagnosis.",
+"size": 11.0,
+"y": 460.6,
+"x": 38.2
+},
+{
+"t": "AgVic staff rushed out there the next morning, took samples and checked the rest of the hives.  They delivered the sample to the AgriBio diagnostics lab on the La Trobe University campus, staff there worked overtime into the evening to identify the mystery mite.  Unfortunately, apparently the samples were both slightly damaged and not fully adult, which made things harder, but finally they were able to identify them as mites of the genus Parasitus.  These mites are not harmful to bees, can be found in compost and leaf litter, can be phoretic (hitching a ride) on dung beetles or other similar insects, and eat nematodes and other small arthropods including other mite species (I don’t believe anyone has tested if they’ll eat Varroa…).  They were unable to identify it to the species level, but I note the most common species of Parasitus have all been found in bee hives (though it is not believed to prey on bees or bee larvae).1  Interestingly I note on a map2 on the Atlas of Living Australia3 while there are a few sporadic identifications of Parasitus mites elsewhere in Australia, findings are more",
+"size": 11.0,
+"y": 565.5,
+"x": 38.2
+},
+{
+"t": "common in Central Victoria and in Werribee very specifically there are four specimens collected and preserved by NSW DPI, so it seems to be a hotspot for this mite.",
+"size": 11.0,
+"y": 76.0,
+"x": 307.5
+},
+{
+"t": "Pollen Mite",
+"size": 11.0,
+"y": 122.5,
+"x": 307.5
+},
+{
+"t": "On the evening of September 4th, 2024, I, then an AgVic employee, was just sitting to dinner when a call came in about a suspicious mite reported near Geelong about forty minutes from me just then by former NSW apiary officer Bruce Ward.   Obviously by default I can’t share the details of what I did for AgVic, but conveniently Bruce himself wrote about it for the Geelong club newsletter, and because he’s a good writer himself, I’ll quote him directly, writing in September 2024:",
+"size": 11.0,
+"y": 144.2,
+"x": 307.5
+},
+{
+"t": "With the arrival of Varroa in Victoria last month, I decided to increase my Varroa testing, and have started a detergent wash every month.  You can imagine my surprise when on my very first monthly wash, I spotted several brown spots in my wash bottle.  My first reaction was that they were too small to be Varroa, but I wanted to take a closer look.",
+"size": 11.0,
+"y": 250.6,
+"x": 307.5
+},
+{
+"t": "I strained the spots onto a paper towel and had a look with a hand lens.  I was expecting to see lumps of pollen or debris.",
+"size": 11.0,
+"y": 332.2,
+"x": 307.5
+},
+{
+"t": "My heart sank when I saw two brown mites that looked very similar to Varroa.  One was on its front and had a domed back.  The other one was on its back, and I could just make out little legs.",
+"size": 11.0,
+"y": 367.3,
+"x": 307.5
+},
+{
+"t": "My first step was to make an online report through the exotic plant disease hotline.  Within an hour I was contacted by the bee biosecurity team from Agriculture Victoria.  The biosecurity staff arranged to have the mites collected by a Varroa Development Officer (VDO).  We took the opportunity to re-check the hive and uncap the few drone brood cells available, with no further concerning signs.  By this time I had also been able to take a relatively clear photo of the two mites.",
+"size": 11.0,
+"y": 413.8,
+"x": 307.5
+},
+{
+"t": "At that time, even though pollen mites are much smaller than Varroa, I (Kris) personally had happily not seen Varroa first hand in nearly 10 years so I felt I couldn’t rule out the possibility.   The next day I met one of the biosecurity officers at the Geelong ringroad",
+"size": 11.0,
+"y": 728.8,
+"x": 307.5
+},
+{
+"t": "(Continued on page 11)",
+"size": 8.0,
+"y": 791.3,
+"x": 480.5
+},
+{
+"t": "Credit: David Ross, Werribee",
+"size": 11.0,
+"y": 441.9,
+"x": 93.0
+},
+{
+"t": "With the head of a toothpick for size comparison.",
+"size": 11.0,
+"y": 694.7,
+"x": 322.1
+},
+{
+"t": "Credit: Bruce Ward, Geelong",
+"size": 11.0,
+"y": 706.4,
+"x": 365.0
+}
+]
+},
+{
+"lines": [
+"May 2026  ",
+"11 ",
+"Mystery Mites, cont’d ",
+"servo to hand-off the specimens, like some kind of illic-",
+"it drug deal, and he drove them the rest of the way to ",
+"AgrBio.  They were able to identify them as Mellitiphis ",
+"alvearius, which name means “Bee-associated of-the-",
+"hive,” commonly known as the pollen mite, another ",
+"innocuous occasional inhabitant of beehives.   It pri-",
+"marily feeds on pollen that has fallen to the bottom of ",
+"the hive4 and has been found throughout the world, ",
+"meaning it probably has been a natural commensal (non",
+"-harmful) inhabitant of European bees’ hives since pre-",
+"history and rode them to distribution around the world.  ",
+"They have been little studied since being determined to ",
+"be harmless, but it’s possible natural commensal inhab-",
+"itants of beehives like this are killed off by Varroa ",
+"treatments.   ",
+" Back to Bruce: ",
+"In less than 24 hours from the sample being col-",
+"lected, I had a reassuring text message that the ",
+"mites were pollen mites.  I have thought a lot about ",
+"this between finding the specks in the wash and get-",
+"ting the all-clear.  Since the official identification, I ",
+"have read up on pollen mites and talked to the bi-",
+"osecurity team and to my former colleagues in NSW ",
+"DPI.  ",
+"Pollen mites are sometimes found in beehives, ",
+"and can often be seen on the bottom board or in the ",
+"tray under a screened bottom board.  They are ",
+"smaller and more active than Varroa. ",
+"Pollen mites are routinely seen in sticky mat sur-",
+"veillance, but do not normally show up in alcohol ",
+"washes. ",
+"They are harmless to bees and feed on pollen. ",
+"I don’t think it is possible for the average person ",
+"to accurately identify pollen mites without Varroa ",
+"for comparison.  It really needs a good quality mi-",
+"croscope to see the distinguishing features.  Need-",
+"less to say I am relieved not to be the first beekeeper ",
+"to find Varroa this far south.  But I am also relieved ",
+"that I am sure it was not Varroa.  I won’t be lying ",
+"awake at night wondering. ",
+"That last sentence carries a bit of ironic foreshadow-",
+"ing, 17 months later he was indeed the first beekeeper ",
+"to find Varroa this close to Geelong (which distinction ",
+"he held for an hour or two that day only).  It’s no coin-",
+"cidence that it’s the people looking most closely who ",
+"find it first. ",
+"Other Things ",
+"John Edmonds recently sent me this picture of a ",
+"pseudoscorpion he found in a hive (see photo next ",
+"page).  While there’s nothing for scale in this picture ",
+"they’re tiny but bigger than mites, typically 2-8mm ",
+"(Varroa is about 1.6mm for comparison). ",
+"(Continued from page 10) ",
+"(Continued on page 12) "
+],
+"paras": [
+{
+"t": "May 2026 11",
+"size": 10.0,
+"y": 811.8,
+"x": 434.8
+},
+{
+"t": "Mystery Mites, cont’d",
+"size": 24.0,
+"y": 38.7,
+"x": 38.6
+},
+{
+"t": "servo to hand-off the specimens, like some kind of illicit drug deal, and he drove them the rest of the way to AgrBio.  They were able to identify them as Mellitiphis alvearius, which name means “Bee-associated of-thehive,” commonly known as the pollen mite, another innocuous occasional inhabitant of beehives.   It primarily feeds on pollen that has fallen to the bottom of the hive4 and has been found throughout the world, meaning it probably has been a natural commensal (non -harmful) inhabitant of European bees’ hives since prehistory and rode them to distribution around the world. They have been little studied since being determined to be harmless, but it’s possible natural commensal inhabitants of beehives like this are killed off by Varroa treatments.",
+"size": 11.0,
+"y": 97.2,
+"x": 39.7
+},
+{
+"t": "Back to Bruce: In less than 24 hours from the sample being collected, I had a reassuring text message that the mites were pollen mites.  I have thought a lot about this between finding the specks in the wash and getting the all-clear.  Since the official identification, I have read up on pollen mites and talked to the biosecurity team and to my former colleagues in NSW DPI.",
+"size": 11.0,
+"y": 272.1,
+"x": 39.7
+},
+{
+"t": "Pollen mites are sometimes found in beehives, and can often be seen on the bottom board or in the",
+"size": 11.0,
+"y": 377.0,
+"x": 39.7
+},
+{
+"t": "tray under a screened bottom board.  They are smaller and more active than Varroa.",
+"size": 11.0,
+"y": 73.9,
+"x": 307.1
+},
+{
+"t": "Pollen mites are routinely seen in sticky mat surveillance, but do not normally show up in alcohol washes.",
+"size": 11.0,
+"y": 97.3,
+"x": 307.1
+},
+{
+"t": "They are harmless to bees and feed on pollen. I don’t think it is possible for the average person to accurately identify pollen mites without Varroa for comparison.  It really needs a good quality microscope to see the distinguishing features.  Needless to say I am relieved not to be the first beekeeper to find Varroa this far south.  But I am also relieved that I am sure it was not Varroa.  I won’t be lying awake at night wondering.",
+"size": 11.0,
+"y": 132.3,
+"x": 307.1
+},
+{
+"t": "That last sentence carries a bit of ironic foreshadowing, 17 months later he was indeed the first beekeeper to find Varroa this close to Geelong (which distinction he held for an hour or two that day only).  It’s no coincidence that it’s the people looking most closely who find it first.",
+"size": 11.0,
+"y": 237.2,
+"x": 307.1
+},
+{
+"t": "Other Things",
+"size": 11.0,
+"y": 307.1,
+"x": 307.1
+},
+{
+"t": "John Edmonds recently sent me this picture of a pseudoscorpion he found in a hive (see photo next page).  While there’s nothing for scale in this picture they’re tiny but bigger than mites, typically 2-8mm (Varroa is about 1.6mm for comparison).",
+"size": 11.0,
+"y": 330.3,
+"x": 307.1
+},
+{
+"t": "(Continued from page 10)",
+"size": 8.0,
+"y": 77.9,
+"x": 39.7
+},
+{
+"t": "(Continued on page 12)",
+"size": 8.0,
+"y": 392.4,
+"x": 478.2
+}
+]
+},
+{
+"lines": [
+"The Australian Bee Journal ",
+"welcomes contributions for ",
+"inclusion in the journal.  ",
+"Please send your original ",
+"photos, articles, handy hints, ",
+"anecdotes, club activities etc ",
+"to abjeditors@yahoo.com ",
+"12 ",
+"Australian Bee Journal ",
+"Mystery Mites, cont’d ",
+"Various interesting and uncommon little creatures ",
+"have been found recently by Victoria’s beekeepers now ",
+"that people are looking more closely at the tiny things ",
+"in their hives than ever before.  Some are just interest-",
+"ing novelties, but there are still other mites that would ",
+"be a five alarm alert if discovered here (Tropilaelaps!) ",
+"so if you’re at all unsure, don’t hesitate to report it.  As ",
+"Bruce’s original article concluded: ",
+"If you are like me, it is hard to think straight ",
+"when your alarm bells are ringing loudly. ",
+"I have a couple of pointers from my experience: ",
+"If you have a suspect Varroa test, make a report ",
+"through the Exotic Plant Pest Hotline.  The best way ",
+"to find that is to search for “plant pest hot-",
+"line Victoria.”  The first site that comes up is ",
+"the national hotline.  You want the Victorian ",
+"one, which was second on my search results. ",
+"The online report is very easy to do. ",
+"The ‘Suspected threat’ list does not in-",
+"clude Varroa, so choose “Exotic Bee Mite”. ",
+"Suspect Varroa cases are investigated by ",
+"the Honeybee Biosecurity staff at Agriculture ",
+"Victoria ",
+"—————————————————— ",
+"References ",
+"1. Klimov P, O'Connor B, Ochoa R, ",
+"Bauchan G, Redford A, Scher J. 2016. Para-",
+"situs [fact sheet]. Bee Mite ID. USDA APHIS PPQ; ",
+"University of Michigan. Available from: https://",
+"idtools.org/bee_mite/index.cfm?",
+"packageID=1&entityID=128 [accessed 2026-04-28]. ",
+"2.https://bie.ala.org.au/species/https://",
+"biodiversity.org.au/afd/taxa/48d71300-d37c-45f1-b071-",
+"4e666a43f7b5. Accessed 2026-04-28 ",
+"3. Belbin L, Wallis E, Hobern D, Zerger A (2021) ",
+"The Atlas of Living Australia: History, current state and ",
+"future directions. Biodiversity Data Journal 9: e65023. ",
+"https://doi.org/10.3897/BDJ.9.e65023 ",
+"4. Gibbins, B.L. & R.F. van Toor. 1990. Investigation ",
+"of the parasitic status of Melittiphis alvearius (Berlese) ",
+"on honeybees, Apis mellifera L., by immunoassay. J. ",
+"Apic. Res. 29: 46-52. ",
+"(Continued from page 11) ",
+"Pseudoscorpion.  ",
+"Credit: John Edmonds, Geelong ",
+"Pollen mite (left), braula fly (top), Varroa (right) and ",
+"Tropilaelaps (bottom) – Courtesy of the Animal and ",
+"Plant Health Agency (APHA), Crown Copyright "
+],
+"paras": [
+{
+"t": "The Australian Bee Journal",
+"size": 14.0,
+"y": 662.6,
+"x": 49.9
+},
+{
+"t": "welcomes contributions for",
+"size": 14.0,
+"y": 677.1,
+"x": 51.9
+},
+{
+"t": "inclusion in the journal.",
+"size": 14.0,
+"y": 691.8,
+"x": 61.5
+},
+{
+"t": "Please send your original photos, articles, handy hints,",
+"size": 14.0,
+"y": 706.4,
+"x": 47.1
+},
+{
+"t": "anecdotes, club activities etc",
+"size": 14.0,
+"y": 750.2,
+"x": 48.6
+},
+{
+"t": "to abjeditors@yahoo.com",
+"size": 14.0,
+"y": 764.8,
+"x": 56.2
+},
+{
+"t": "12 Australian Bee Journal",
+"size": 10.0,
+"y": 809.1,
+"x": 38.8
+},
+{
+"t": "Mystery Mites, cont’d",
+"size": 24.0,
+"y": 38.4,
+"x": 39.1
+},
+{
+"t": "Various interesting and uncommon little creatures have been found recently by Victoria’s beekeepers now that people are looking more closely at the tiny things in their hives than ever before.  Some are just interesting novelties, but there are still other mites that would be a five alarm alert if discovered here (Tropilaelaps!) so if you’re at all unsure, don’t hesitate to report it.  As Bruce’s original article concluded:",
+"size": 11.0,
+"y": 321.1,
+"x": 39.2
+},
+{
+"t": "If you are like me, it is hard to think straight when your alarm bells are ringing loudly.",
+"size": 11.0,
+"y": 414.3,
+"x": 39.2
+},
+{
+"t": "I have a couple of pointers from my experience: If you have a suspect Varroa test, make a report through the Exotic Plant Pest Hotline.  The best way to find that is to search for “plant pest hotline Victoria.”  The first site that comes up is the national hotline.  You want the Victorian one, which was second on my search results.",
+"size": 11.0,
+"y": 437.6,
+"x": 39.2
+},
+{
+"t": "The online report is very easy to do. The ‘Suspected threat’ list does not include Varroa, so choose “Exotic Bee Mite”.",
+"size": 11.0,
+"y": 519.2,
+"x": 39.2
+},
+{
+"t": "Suspect Varroa cases are investigated by the Honeybee Biosecurity staff at Agriculture Victoria",
+"size": 11.0,
+"y": 554.3,
+"x": 39.2
+},
+{
+"t": "—————————————————— References",
+"size": 11.0,
+"y": 589.2,
+"x": 39.2
+},
+{
+"t": "1. Klimov P, O'Connor B, Ochoa R, Bauchan G, Redford A, Scher J. 2016. Para-",
+"size": 11.0,
+"y": 610.8,
+"x": 39.2
+},
+{
+"t": "situs [fact sheet]. Bee Mite ID. USDA APHIS PPQ; University of Michigan. Available from: https:// idtools.org/bee_mite/index.cfm? packageID=1&entityID=128 [accessed 2026-04-28].",
+"size": 11.0,
+"y": 297.8,
+"x": 307.4
+},
+{
+"t": "2.https://bie.ala.org.au/species/https:// biodiversity.org.au/afd/taxa/48d71300-d37c-45f1-b071- 4e666a43f7b5. Accessed 2026-04-28 3. Belbin L, Wallis E, Hobern D, Zerger A (2021) The Atlas of Living Australia: History, current state and future directions. Biodiversity Data Journal 9: e65023. https://doi.org/10.3897/BDJ.9.e65023",
+"size": 11.0,
+"y": 342.8,
+"x": 307.4
+},
+{
+"t": "4. Gibbins, B.L. & R.F. van Toor. 1990. Investigation of the parasitic status of Melittiphis alvearius (Berlese) on honeybees, Apis mellifera L., by immunoassay. J. Apic. Res. 29: 46-52.",
+"size": 11.0,
+"y": 424.5,
+"x": 307.4
+},
+{
+"t": "(Continued from page 11)",
+"size": 8.0,
+"y": 80.3,
+"x": 39.2
+},
+{
+"t": "Pseudoscorpion. Credit: John Edmonds, Geelong",
+"size": 11.0,
+"y": 283.9,
+"x": 78.9
+},
+{
+"t": "Pollen mite (left), braula fly (top), Varroa (right) and",
+"size": 11.0,
+"y": 247.9,
+"x": 300.9
+},
+{
+"t": "Tropilaelaps (bottom) – Courtesy of the Animal and",
+"size": 11.0,
+"y": 261.3,
+"x": 304.1
+},
+{
+"t": "Plant Health Agency (APHA), Crown Copyright",
+"size": 11.0,
+"y": 274.6,
+"x": 312.3
+}
+]
+}
+],
+"links": [
+"https://bie.ala.org.au/species/https:/biodiversity.org.au/afd/taxa/48d71300-d37c-45f1-b071-4e666a43f7b5",
+"https://doi.org/10.3897/BDJ.9.e65023",
+"https://idtools.org/bee_mite/index.cfm?packageID=1&entityID=128",
+"mailto:abjeditors@yahoo.com"
+],
+"pt": [
+595.3200073242188,
+841.9199829101562
+]
+}

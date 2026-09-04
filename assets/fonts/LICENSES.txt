@@ -1,0 +1,7 @@
+Bundled web fonts (metric-compatible stand-ins so the page text keeps its printed measure):
+
+Carlito (Calibri metrics)          — SIL Open Font License 1.1, (c) tyPoland Lukasz Dziedzic / Google
+Liberation Serif (Times metrics)   — SIL Open Font License 1.1, (c) Red Hat / Ascender
+TeX Gyre Pagella (Palatino design) — GUST Font License, GUST e-foundry
+
+All three permit redistribution with the software that uses them.
