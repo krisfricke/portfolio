@@ -213,8 +213,10 @@ body.inlane .edge.back{display:flex}
 .rail .go{display:block;width:100%;background:var(--gold);color:#111;font-weight:700;border:none;border-radius:16px;padding:7px 11px;font-size:12px;margin:0 0 8px;cursor:pointer;font-family:inherit}
 .rail .go:hover{background:#ffd733}
 .deck{position:relative;display:block;margin:0 auto}
-.deck img{position:relative;z-index:5;display:block;width:100%;height:100%;box-sizing:border-box;border:5px solid #fff;box-shadow:0 16px 44px rgba(0,0,0,.5);transition:transform .15s}
-.arc:hover .deck img{transform:translate(-2px,-2px)}
+.deck .top{position:relative;z-index:5;display:block;width:100%;height:100%;overflow:hidden;background:#fff;box-shadow:0 16px 44px rgba(0,0,0,.5);transition:transform .15s}
+.deck .top iframe{position:absolute;left:0;top:0;border:0;transform-origin:top left;background:#fff}  /* live: its links work, and it tells the parent about other clicks */
+.deck .top::after{content:'';position:absolute;inset:0;border:5px solid #fff;box-sizing:border-box;pointer-events:none;z-index:1}  /* the white rim the photo used to carry */
+.arc:hover .deck .top{transform:translate(-2px,-2px)}
 /* the pages underneath: one white sheet per remaining page, each stepped a little right and down */
 .deck .sh{position:absolute;left:0;top:0;width:100%;height:100%;box-sizing:border-box;background:#fff;border:5px solid #fff;
  box-shadow:0 4px 14px rgba(0,0,0,.28);transform:translate(calc(var(--i)*4px),calc(var(--i)*4px));

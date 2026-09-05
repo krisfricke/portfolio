@@ -1,0 +1,313 @@
+{
+"pages": [
+{
+"lines": [
+"14 ",
+"Australian Bee Journal ",
+"Varroosis ",
+"By Kris Fricke ",
+"What do you think when you hear the term PMS? ",
+"What if your friend tells you, as you catch him  get-",
+"ting out of his bee truck looking harried, “ah, mate, the ",
+"girls have PMS”? ",
+"“Parasitic Mite Syndrome” was coined in the United ",
+"States in 1994 when both tracheal and varroa mites ",
+"were causing similar symptoms, and the USDA Bee ",
+"Research Laboratory in Beltsville, Maryland, was un-",
+"sure which mite was causing the damage: ",
+"Beekeepers in the United States have been forced ",
+"to adjust their bee disease management systems ever ",
+"since the parasitic mites Acarapis woodi and Varroa ",
+"[destructor] were discovered there in 1984 and ",
+"1987, respectively.  The impact of both of these ",
+"mites has been devastating […]  In addition to re-",
+"ports of field observations, the Bee Research Labor-",
+"atory (BRL) has seen an increase in the number of ",
+"bee disease samples that we in the Laboratory have ",
+"chosen to call the \"parasitic mite syndrome.\"  It is ",
+"quite likely that this syndrome is similar to that re-",
+"ported by Ball (1988) in which she refers to the con-",
+"dition as a \"secondary infection\" in colonies infested ",
+"with V. [destructor].  The purpose of this report is to ",
+"heighten the awareness of beekeepers, regulators, ",
+"and research scientists to this syndrome.  It is our ",
+"desire that this report will encourage others who ",
+"have made similar observations to share their ",
+"knowledge so that together we can identify the possi-",
+"ble causes.1 ",
+"However, for varroa-specific damage, the more pre-",
+"cise term varroosis (pronounced like varroa with “sis” ",
+"on the end) was officially adopted by the World Organ-",
+"ization for Animal Health in 1989.2,3  This term is im-",
+"mediately and intuitively clear – even if you’ve never ",
+"heard of “varroosis,” if someone says their hive has ",
+"varroosis you’d know immediately what they’re talking ",
+"about.  Compare that to if someone not up on their var-",
+"roa reading hears someone say their hive has PMS. ",
+"While Parasitic Mite Syndrome has come to mostly ",
+"be used in the context of varroa mite damage, if we ",
+"were to have tracheal or Tropilaelaps mites arrive on ",
+"our shores, and we wanted to discuss symptoms specif-",
+"ic to them, we would now find that we have unfortu-",
+"nately gotten used to using a term that already generi-",
+"cally refers to all types of mite damage ambiguously. ",
+"In addition to varroosis being more official and pre-",
+"cise, PMS, as you will be aware, is already the univer-",
+"sally recognized acronym for a condition affecting ",
+"nearly half of all adult humans.4  Acronyms should be ",
+"unique, that’s the idea: you say GST, someone knows ",
+"what you’re talking about; you say HIV, someone ",
+"knows what you mean.  You say PMS, well, that re-",
+"quires context to get to this meaning rather than the ",
+"more conventional meaning.  Yes, the context is usually ",
+"clear, but it’s an unnecessary distraction.  One would ",
+"probably avoid saying the example sentence I gave at ",
+"the top of this editorial for exactly the reason that it ",
+"could be misunderstood, and a word that has to be care-",
+"fully framed is certainly less ideal than one that doesn’t. ",
+"Notably the original article introducing “Parasitic ",
+"Mite Syndrome” never shortened the three words to the ",
+"acronym “PMS.”   A year later in a follow up paper ",
+"they used “BPMS,”5 no doubt realizing exactly the ac-",
+"ronym problems I am now writing about.  But even this ",
+"solution isn’t great, as verbally that just sounds like ",
+"“bee PMS,” implying the bees are suffering from the ",
+"reproductive syndrome, which, needless to say, they do ",
+"not experience.6 ",
+"  And there’s a practical consequence to this: can ",
+"you or I google “PMS” and expect varroa management ",
+"advice?  No, we certainly cannot.  Instead, standing in ",
+"the field we can type all 23 characters of the full phrase ",
+"into our phone, or, more likely, we’re typing in ",
+"“varroa” anyway and if we adopted “varroosis” it ",
+"would autocomplete by the fourth letter. ",
+"Here in Australia with the varroa journey just begin-",
+"ning for most beekeepers, we have a chance to break ",
+"with the inaccurate folksy term coined as a research ",
+"shorthand for an unknown syndrome in America in ",
+"1994, a term that is imprecise, unofficial, and already ",
+"loaded with an overwhelmingly more recognized mean-",
+"(Continued on page 15) ",
+"A simple google search for \"PMS\" (left) vs \"Varroosis\" (right)  "
+],
+"paras": [
+{
+"t": "14 Australian Bee Journal",
+"size": 10.0,
+"y": 807.7,
+"x": 39.5
+},
+{
+"t": "Varroosis",
+"size": 24.0,
+"y": 38.4,
+"x": 38.4
+},
+{
+"t": "By Kris Fricke",
+"size": 11.0,
+"y": 76.3,
+"x": 39.2
+},
+{
+"t": "What do you think when you hear the term PMS? What if your friend tells you, as you catch him  getting out of his bee truck looking harried, “ah, mate, the girls have PMS”?",
+"size": 11.0,
+"y": 88.0,
+"x": 39.2
+},
+{
+"t": "“Parasitic Mite Syndrome” was coined in the United States in 1994 when both tracheal and varroa mites were causing similar symptoms, and the USDA Bee Research Laboratory in Beltsville, Maryland, was unsure which mite was causing the damage:",
+"size": 11.0,
+"y": 146.3,
+"x": 39.2
+},
+{
+"t": "Beekeepers in the United States have been forced to adjust their bee disease management systems ever since the parasitic mites Acarapis woodi and Varroa [destructor] were discovered there in 1984 and 1987, respectively.  The impact of both of these mites has been devastating […]  In addition to reports of field observations, the Bee Research Laboratory (BRL) has seen an increase in the number of bee disease samples that we in the Laboratory have chosen to call the \"parasitic mite syndrome.\"  It is quite likely that this syndrome is similar to that reported by Ball (1988) in which she refers to the condition as a \"secondary infection\" in colonies infested with V. [destructor].  The purpose of this report is to heighten the awareness of beekeepers, regulators, and research scientists to this syndrome.  It is our desire that this report will encourage others who have made similar observations to share their knowledge so that together we can identify the possible causes.1",
+"size": 11.0,
+"y": 204.5,
+"x": 39.2
+},
+{
+"t": "However, for varroa-specific damage, the more precise term varroosis (pronounced like varroa with “sis” on the end) was officially adopted by the World Organization for Animal Health in 1989.2,3  This term is immediately and intuitively clear – even if you’ve never heard of “varroosis,” if someone says their hive has varroosis you’d know immediately what they’re talking about.  Compare that to if someone not up on their varroa reading hears someone say their hive has PMS.",
+"size": 11.0,
+"y": 437.8,
+"x": 39.2
+},
+{
+"t": "While Parasitic Mite Syndrome has come to mostly be used in the context of varroa mite damage, if we",
+"size": 11.0,
+"y": 542.6,
+"x": 39.2
+},
+{
+"t": "were to have tracheal or Tropilaelaps mites arrive on our shores, and we wanted to discuss symptoms specific to them, we would now find that we have unfortunately gotten used to using a term that already generically refers to all types of mite damage ambiguously.",
+"size": 11.0,
+"y": 76.3,
+"x": 307.4
+},
+{
+"t": "In addition to varroosis being more official and precise, PMS, as you will be aware, is already the universally recognized acronym for a condition affecting nearly half of all adult humans.4  Acronyms should be unique, that’s the idea: you say GST, someone knows what you’re talking about; you say HIV, someone knows what you mean.  You say PMS, well, that requires context to get to this meaning rather than the more conventional meaning.  Yes, the context is usually clear, but it’s an unnecessary distraction.  One would probably avoid saying the example sentence I gave at the top of this editorial for exactly the reason that it could be misunderstood, and a word that has to be carefully framed is certainly less ideal than one that doesn’t.",
+"size": 11.0,
+"y": 134.7,
+"x": 307.4
+},
+{
+"t": "Notably the original article introducing “Parasitic Mite Syndrome” never shortened the three words to the acronym “PMS.”   A year later in a follow up paper they used “BPMS,”5 no doubt realizing exactly the acronym problems I am now writing about.  But even this solution isn’t great, as verbally that just sounds like “bee PMS,” implying the bees are suffering from the reproductive syndrome, which, needless to say, they do not experience.6",
+"size": 11.0,
+"y": 297.8,
+"x": 307.4
+},
+{
+"t": "And there’s a practical consequence to this: can you or I google “PMS” and expect varroa management advice?  No, we certainly cannot.  Instead, standing in the field we can type all 23 characters of the full phrase into our phone, or, more likely, we’re typing in “varroa” anyway and if we adopted “varroosis” it would autocomplete by the fourth letter.",
+"size": 11.0,
+"y": 402.7,
+"x": 307.4
+},
+{
+"t": "Here in Australia with the varroa journey just beginning for most beekeepers, we have a chance to break with the inaccurate folksy term coined as a research shorthand for an unknown syndrome in America in 1994, a term that is imprecise, unofficial, and already loaded with an overwhelmingly more recognized mean-",
+"size": 11.0,
+"y": 484.2,
+"x": 307.4
+},
+{
+"t": "(Continued on page 15)",
+"size": 8.0,
+"y": 558.4,
+"x": 479.2
+},
+{
+"t": "A simple google search for \"PMS\" (left) vs \"Varroosis\" (right)",
+"size": 11.0,
+"y": 786.3,
+"x": 166.5
+}
+]
+},
+{
+"lines": [
+"April 2026  ",
+"15 ",
+"Varroosis, cont’d ",
+"(Continued from page 14) ",
+"ing, to cleanly adopt the precise and official term Var-",
+"roosis when talking about the effects of Varroa on a ",
+"hive. ",
+"References ",
+"1. Shimanuki, H., Calderone, N.W. & Knox, D. ",
+"1994. Parasitic mite syndrome: the symptoms. Ameri-",
+"can Bee Journal, 134: 827–828. ",
+"2. World Organisation for Animal Health (WOAH). ",
+"2021. Varroosis of honey bees (infestation of honey ",
+"bees with Varroa spp.). In: Terrestrial Animal Health ",
+"Code, Chapter 3.2.7. WOAH, Paris. Available at: ",
+"https://www.woah.org/fileadmin/Home/eng/",
+"Health_standards/tahm/3.02.07_VARROOSIS.pdf ",
+"(accessed 2026-03-27). ",
+"3. WOAH (World Organisation for Animal Health). ",
+"2024. Terrestrial Animal Health Code, 32nd edition, ",
+"Chapter 9.6: Infestation of honey bees with Varroa spp. ",
+"(Varroosis). Paris: WOAH. https://www.woah.org/",
+"fileadmin/Home/eng/Health_standards/tahc/2024/",
+"en_sommaire.htm ",
+"4. Greene, R. & Dalton, K. 1953. The premenstrual ",
+"syndrome. British Medical Journal, 1(4818): 1007–",
+"1014. https://doi.org/10.1136/bmj.1.4818.1007 ",
+"5. Hung, A.C.F., Adams, J.R. & Shimanuki, H. ",
+"1995. Bee parasitic mite syndrome (II): the role of Var-",
+"roa mite and viruses. American Bee Journal, 135: 702–",
+"704. ",
+"6. Winston, M.L. 1987. The Biology of the Honey ",
+"Bee. Harvard University Press, Cambridge, Massachu-",
+"setts. 281 pp. ",
+"Scientists uncovered the nutrients bees were missing — Colonies surged 15-fold ",
+"University of Oxford ",
+"A lab-made diet supercharged bee colonies and could help save our food supply. ",
+"Scientists have developed a breakthrough “superfood” for honeybees by engineering yeast to produce the essential ",
+"nutrients normally found in pollen.  In controlled trials, colonies fed this specially designed diet produced up to 15 ",
+"times more young, showing a dramatic boost in reproduction and overall health.  As climate change and modern ",
+"agriculture reduce the availability of natural pollen, this innovation could offer a practical way to support struggling ",
+"bee populations. ",
+"See the full story here ",
+"Photo: Tino Corsetti "
+],
+"paras": [
+{
+"t": "April 2026 15",
+"size": 10.0,
+"y": 808.6,
+"x": 430.8
+},
+{
+"t": "Varroosis, cont’d",
+"size": 24.0,
+"y": 38.4,
+"x": 38.9
+},
+{
+"t": "(Continued from page 14)",
+"size": 8.0,
+"y": 78.8,
+"x": 39.5
+},
+{
+"t": "ing, to cleanly adopt the precise and official term Varroosis when talking about the effects of Varroa on a hive.",
+"size": 11.0,
+"y": 98.4,
+"x": 39.8
+},
+{
+"t": "References",
+"size": 11.0,
+"y": 133.5,
+"x": 39.8
+},
+{
+"t": "1. Shimanuki, H., Calderone, N.W. & Knox, D. 1994. Parasitic mite syndrome: the symptoms. American Bee Journal, 134: 827–828.",
+"size": 11.0,
+"y": 156.5,
+"x": 39.8
+},
+{
+"t": "2. World Organisation for Animal Health (WOAH). 2021. Varroosis of honey bees (infestation of honey bees with Varroa spp.). In: Terrestrial Animal Health Code, Chapter 3.2.7. WOAH, Paris. Available at: https://www.woah.org/fileadmin/Home/eng/ Health_standards/tahm/3.02.07_VARROOSIS.pdf (accessed 2026-03-27).",
+"size": 11.0,
+"y": 191.5,
+"x": 39.8
+},
+{
+"t": "3. WOAH (World Organisation for Animal Health). 2024. Terrestrial Animal Health Code, 32nd edition, Chapter 9.6: Infestation of honey bees with Varroa spp. (Varroosis). Paris: WOAH. https://www.woah.org/ fileadmin/Home/eng/Health_standards/tahc/2024/ en_sommaire.htm",
+"size": 11.0,
+"y": 75.1,
+"x": 308.4
+},
+{
+"t": "4. Greene, R. & Dalton, K. 1953. The premenstrual syndrome. British Medical Journal, 1(4818): 1007– 1014. https://doi.org/10.1136/bmj.1.4818.1007 5. Hung, A.C.F., Adams, J.R. & Shimanuki, H. 1995. Bee parasitic mite syndrome (II): the role of Varroa mite and viruses. American Bee Journal, 135: 702– 704. 6. Winston, M.L. 1987. The Biology of the Honey Bee. Harvard University Press, Cambridge, Massachusetts. 281 pp.",
+"size": 11.0,
+"y": 145.1,
+"x": 308.4
+},
+{
+"t": "Scientists uncovered the nutrients bees were missing — Colonies surged 15-fold University of Oxford A lab-made diet supercharged bee colonies and could help save our food supply. Scientists have developed a breakthrough “superfood” for honeybees by engineering yeast to produce the essential nutrients normally found in pollen.  In controlled trials, colonies fed this specially designed diet produced up to 15 times more young, showing a dramatic boost in reproduction and overall health.  As climate change and modern agriculture reduce the availability of natural pollen, this innovation could offer a practical way to support struggling bee populations. See the full story here",
+"size": 11.0,
+"y": 290.9,
+"x": 40.4
+},
+{
+"t": "Photo: Tino Corsetti",
+"size": 11.0,
+"y": 445.6,
+"x": 37.3
+}
+]
+}
+],
+"links": [
+"https://doi.org/10.1136/bmj.1.4818.1007",
+"https://www.sciencedaily.com/releases/2026/03/260327000518.htm",
+"https://www.woah.org/fileadmin/Home/eng/Health_standards/tahc/2024/en_sommaire.htm",
+"https://www.woah.org/fileadmin/Home/eng/Health_standards/tahm/3.02.07_VARROOSIS.pdf"
+],
+"pt": [
+595.3200073242188,
+841.9199829101562
+]
+}

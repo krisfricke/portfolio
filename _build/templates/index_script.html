@@ -79,6 +79,8 @@ function fitFrames(){
       const W=parseFloat(dk.dataset.wmm)*MM, H=parseFloat(dk.dataset.hmm)*MM, off=(parseInt(dk.dataset.extra,10)||0)*4;
       const k=Math.min(1,(availWidth(dk)-off)/W)*(ZOOM/100);
       dk.style.width=(W*k)+'px'; dk.style.height=(H*k)+'px'; dk.style.margin='0 '+off+'px '+off+'px';
+      const ifr=dk.querySelector('iframe');
+      if(ifr){ ifr.style.width=W+'px'; ifr.style.height=H+'px'; ifr.style.transform='scale('+k+')'; }
     });
     document.querySelectorAll('.pframe.htmlpage').forEach(function(fr){
       const ifr=fr.querySelector('iframe'); if(!ifr) return;
@@ -101,7 +103,9 @@ const LANES={
 function deck(a,extra){
   let sh=''; for(let i=extra;i>=1;i--) sh+='<div class="sh" style="--i:'+i+'"></div>';
   return '<div class="deck" data-wmm="'+a.mm[0]+'" data-hmm="'+a.mm[1]+'" data-extra="'+extra+'">'+sh+
-         '<img src="pages/'+a.id+'/cover.jpg" loading="lazy" alt="'+esc(a.title)+' — first page"></div>';
+         /* the real page 1, same as the open view, so the words are text rather than pixels of text;
+            inert (pointer-events:none, out of the tab order) - it is a picture of the page until opened */
+         '<div class="top"><iframe loading="lazy" src="pages/'+a.id+'/1.html" title="'+esc(a.title)+' — first page" tabindex="-1" aria-hidden="true"></iframe></div></div>';
 }
 const q=v=>"'"+String(v).replace(/\\/g,'\\\\').replace(/'/g,"\\'")+"'";
 /* n=0: the stacked card (full details + Read); n=1: page 1 (full details); n>1: continuation (title + chips) */
@@ -323,6 +327,17 @@ window.addEventListener('keydown',function(e){
   if(e.key==='Escape') setLane(0);
 });
 
+/* ---------- clicks inside a stacked page ----------
+   The page in a stacked card is a live iframe so its words are real text and its links work. Its script
+   reports any click that was NOT on a link; here that opens the card, as clicking the photo used to.
+   Not part of the bee block below: that only runs on hover devices, and a tap has to do this too. */
+window.addEventListener('message',function(e){
+  const m=e.data; if(!m||m.abj!=='click') return;
+  let fr=null; for(const f of document.querySelectorAll('iframe')){ if(f.contentWindow===e.source){ fr=f; break; } }
+  const arc=fr && fr.closest('.deck') ? fr.closest('.arc') : null;   /* only pages sitting in the stack */
+  if(arc) arc.click();
+});
+
 /* ---------- bee follower ---------- */
 (function(){
   if(!matchMedia('(hover:hover)').matches) return;
@@ -357,7 +372,7 @@ window.addEventListener('keydown',function(e){
     /* Some rules put the pointer on a whole card, not on the thing you aim at: the card fills the
        column, so she would sit folded the entire time you scroll the stack. The deck and the rail
        buttons inside them are the real targets, and they match on their own. */
-    const NOFOLD=['.arc','.cov'];
+    const NOFOLD=['.arc','.cov','.arc .page','.cov img'];   /* whole cards and page decks: too big to be a "link" */
     for(const q of sel){
       if(NOFOLD.indexOf(q.trim())>=0) continue;
       try{ document.querySelector(q); CLICK+=','+q; }catch(e){}   /* keep only selectors closest() accepts */

@@ -648,5 +648,37 @@
    210.23,
    297.01
   ]
+ },
+ {
+  "id": "aus-2026-04",
+  "pub": "Australian Bee Journal",
+  "year": 2026,
+  "month": 4,
+  "vol": 107,
+  "no": 4,
+  "pages": [
+   14,
+   15
+  ],
+  "title": "Varroosis",
+  "src": {
+   "iss": "apr",
+   "dir": "apr",
+   "p": [
+    14,
+    15
+   ]
+  },
+  "tags": [
+   "Varroa",
+   "Philosophy",
+   "Research",
+   "Terminology"
+  ],
+  "n": 2,
+  "mm": [
+   210.02,
+   297.01
+  ]
  }
 ]

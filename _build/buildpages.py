@@ -281,6 +281,15 @@ TAIL = '''<script>
    and hide this document's own cursor only once the parent confirms the bee is on. */
 (function(){
   if(window.parent===window) return;
+  /* a click on the page itself (not on one of its links) is the parent's business - in the stack it opens
+     the card. A drag is a text selection, not a click. This runs on touch devices too. */
+  var cx0=0, cy0=0;
+  document.addEventListener('mousedown',function(e){ cx0=e.clientX; cy0=e.clientY; });
+  document.addEventListener('click',function(e){
+    if(e.target&&e.target.closest&&e.target.closest('a[href]')) return;
+    if(Math.abs(e.clientX-cx0)>6||Math.abs(e.clientY-cy0)>6) return;
+    try{ parent.postMessage({abj:'click'},'*'); }catch(err){}
+  });
   if(!matchMedia('(hover:hover)').matches) return;
   if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   window.addEventListener('message',function(e){
@@ -318,7 +327,7 @@ if __name__ == '__main__':
     meta = json.load(open(os.path.join(site, '_articles_meta.json')))
     src_us = os.path.dirname(site)
     src_au = os.environ.get('VBJ', os.path.join(os.path.dirname(os.path.dirname(site)), 'VBJ'))
-    AU = {'may': '2026 05 Victorian Bee Journal.pdf', 'jun': '2026 06 Victorian Bee Journal.pdf',
+    AU = {'apr': '2026 04 Victorian Bee Journal.pdf', 'may': '2026 05 Victorian Bee Journal.pdf', 'jun': '2026 06 Victorian Bee Journal.pdf',
           'jul': 'VABJ 2026 07 Final.pdf', 'aug': '2026 08 Victorian Bee Journal.pdf'}
     only = sys.argv[1:]
     for a in meta:
