@@ -653,6 +653,29 @@ window.addEventListener('keydown',function(e){
   /* landing: hold still for 2s over something solid and she settles; any movement and she is airborne again */
   const SKY='html,body,.track,.lane,.sheet,.cov,.arc,.iscrim,.bscrim,.rail,.pn';
   const SURF='iframe,.pframe,.chrome,.tophead,.edge,.zoombar,.ibox,.bpanel,.hit,.gate,img,button,a,input,.rail .ti,.rail .meta';
+  /* What counts as clickable? The stylesheet already says so: every rule that asks for a pointer
+     cursor. bee-on suppresses those cursors (that is the cue we are replacing), so we read the rules
+     themselves and fold her wings over exactly the things that would have shown a pointing finger. */
+  let CLICK='a[href],button,[role="button"]';
+  (function(){
+    const sel=[];
+    (function walk(rules){
+      if(!rules) return;
+      for(const r of rules){
+        if(r.cssRules) walk(r.cssRules);                       /* @media and friends */
+        if(r.style && r.style.cursor==='pointer' && r.selectorText && r.selectorText.indexOf('::')<0)
+          sel.push(r.selectorText.replace(/:hover/g,''));
+      }
+    })(function(){ const a=[]; for(const sh of document.styleSheets){ try{ if(sh.cssRules) a.push(...sh.cssRules); }catch(e){} } return a; }());
+    /* Some rules put the pointer on a whole card, not on the thing you aim at: the card fills the
+       column, so she would sit folded the entire time you scroll the stack. The deck and the rail
+       buttons inside them are the real targets, and they match on their own. */
+    const NOFOLD=['.arc','.cov'];
+    for(const q of sel){
+      if(NOFOLD.indexOf(q.trim())>=0) continue;
+      try{ document.querySelector(q); CLICK+=','+q; }catch(e){}   /* keep only selectors closest() accepts */
+    }
+  })();
   let landT=null, landed=false;
   function onSurface(){
     const el=document.elementFromPoint(tx,ty); if(!el) return false;
@@ -663,15 +686,25 @@ window.addEventListener('keydown',function(e){
     }
     return false;
   }
+  function overClick(){
+    const el=document.elementFromPoint(tx,ty);
+    return !!(el && el.closest && el.closest(CLICK));
+  }
   function land(){ landT=null; if(bee.classList.contains('on') && onSurface()){ landed=true; bee.classList.add('landed'); } }
   function takeoff(){ if(landed){ landed=false; bee.classList.remove('landed'); } }
   function rearm(){ clearTimeout(landT); landT=setTimeout(land,2000); }
-  function aim(nx,ny){
+  function aim(nx,ny,isLink){
     const dx=nx-tx, dy=ny-ty; tx=nx; ty=ny;
     if(!started){ x=tx; y=ty; started=true; }
     if(dx*dx+dy*dy>6) ta=Math.atan2(dy,dx)*180/Math.PI+90;       /* head leads the way */
-    if(dx*dx+dy*dy>1){ takeoff(); rearm(); }
     bee.classList.add('on');
+    /* pages report their own hit-test (isLink); elsewhere we test the document under her */
+    if(isLink===undefined ? overClick() : !!isLink){
+      clearTimeout(landT); landT=null;
+      if(!landed){ landed=true; bee.classList.add('landed'); }
+      return;
+    }
+    if(dx*dx+dy*dy>1){ takeoff(); rearm(); }
   }
   function hide(){ bee.classList.remove('on'); takeoff(); clearTimeout(landT); landT=null; }
   document.addEventListener('mousemove',e=>aim(e.clientX,e.clientY),{passive:true});
@@ -687,7 +720,7 @@ window.addEventListener('keydown',function(e){
     let fr=null; for(const f of frames){ if(f.contentWindow===e.source){ fr=f; break; } }
     if(!fr) return;
     const r=fr.getBoundingClientRect(), k=r.width/(fr.offsetWidth||r.width);
-    aim(r.left+m.x*k, r.top+m.y*k);
+    aim(r.left+m.x*k, r.top+m.y*k, m.link);
   });
   (function frame(){
     x+=(tx-x)*0.5; y+=(ty-y)*0.5;
