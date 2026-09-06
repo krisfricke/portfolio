@@ -41,6 +41,7 @@ GitHub Pages' default Jekyll processing, so the build tooling stays in the repo 
 3. Run, from this folder:
 
         python3 _build/buildpages.py <id>     # renders pages/<id>/
+        python3 _build/pics.py <id>           # cuts the pictures out at native resolution for the enlarger
         python3 _build/assemble.py            # rebuilds index.html
         python3 _build/static.py              # rebuilds article/, sitemap.xml, robots.txt
 
@@ -74,4 +75,5 @@ left alone). It also works as a prefix on any other link:
   the article you were looking at. **Back to top** closes anything open and returns to the head of the list.
 - **By publication** and **By topic** open a lane to the right; the left-edge tab goes to krisfricke.github.io.
 - The **−/+** control bottom-right sets page size; 100% is true printed size.
+- Rest the pointer on a picture and it grows (slowly, then faster) to its full size; click early to jump there, click again to close.
 - On mouse devices the pointer is a bee; hold still over a page for two seconds and she lands.

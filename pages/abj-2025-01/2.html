@@ -4,14 +4,15 @@
 <link rel="stylesheet" href="../../assets/fonts.css">
 <style>
 html,body{margin:0;padding:0;background:#fff}
-.sheet{width:203.20mm;height:276.22mm;overflow:hidden;position:relative}
-.scaler{transform:scale(0.83297);transform-origin:top left}
+.sheet{width:calc(203.20mm * var(--k,1));height:calc(276.22mm * var(--k,1));overflow:hidden;position:relative}
+.scaler{transform:scale(calc(0.83297 * var(--k,1)));transform-origin:top left}
 .page{position:relative;width:922px;height:1253px}
 .page img.bg{position:absolute;left:0;top:0;width:922px;height:1253px}
 p{margin:0;position:absolute}
 a{color:inherit}
 a:hover{text-decoration:underline}
-</style></head><body><div class="sheet"><div class="scaler"><div class="page">
+</style><style>a.pic{position:absolute;display:block;z-index:4;cursor:zoom-in}</style>
+</head><body><div class="sheet"><div class="scaler"><div class="page">
 <img class="bg" src="p2.jpg" alt="">
 <p style="position:absolute;left:66.4px;top:1189.1px;font-size:19.2px;white-space:nowrap" data-w="109.8" data-j="1"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif">January 2025</span></p>
 <p style="position:absolute;left:833.6px;top:1189.1px;font-size:19.2px;white-space:nowrap" data-w="28.8"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif">107</span></p>
@@ -118,6 +119,8 @@ a:hover{text-decoration:underline}
 <p style="position:absolute;left:612.2px;top:1111.0px;font-size:15.2px;white-space:nowrap" data-w="255.6" data-j="1"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif">to keep bees on their property.”</span><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif;vertical-align:super;font-size:.7em">1</span><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif"> So </span></p>
 <p style="position:absolute;left:612.2px;top:1127.8px;font-size:15.2px;white-space:nowrap" data-w="255.5" data-j="1"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif">he rehomed the unwanted bees to the </span></p>
 <p style="position:absolute;left:612.2px;top:1144.6px;font-size:15.2px;white-space:nowrap" data-w="178.7"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif">people who wanted them.</span></p>
+<a class="pic" data-src="hi2_1.jpg" data-nw="681" data-nh="681" style="left:336.5px;top:59.2px;width:525.9px;height:525.9px" title="Enlarge picture" aria-label="Picture"></a>
+<a class="pic" data-src="hi2_2.jpg" data-nw="328" data-nh="580" style="left:64.8px;top:687.0px;width:252.3px;height:447.8px" title="Enlarge picture" aria-label="Picture"></a>
 </div></div></div>
 <script>
 /* Fit each line to the width it occupied in the PDF: stretch the spaces on
@@ -154,6 +157,29 @@ a:hover{text-decoration:underline}
   fit();
   if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fit);
   window.addEventListener('resize',fit);
+})();
+</script>
+<script>
+/* The reader tells this page how big to draw itself, so text is re-rendered at the new size
+   instead of being stretched as a bitmap (which is what happens when an iframe is transform-scaled). */
+(function(){
+  function setK(k){ document.documentElement.style.setProperty('--k', String(k)); }
+  window.addEventListener('message',function(e){ var m=e.data; if(m&&m.abj==='zoom'&&isFinite(m.k)&&m.k>0) setK(m.k); });
+})();
+</script>
+<script>
+/* Pictures: tell the reader when the pointer is over one (it grows it there); on its own, open the file. */
+(function(){
+  var inParent=(window.parent&&window.parent!==window);
+  document.querySelectorAll('a.pic').forEach(function(a,i){
+    var src=new URL(a.getAttribute('data-src'),location.href).href;
+    a.href=src; a.target='_blank'; a.rel='noopener';
+    function rect(){ var r=a.getBoundingClientRect(); return {x:r.left,y:r.top,w:r.width,h:r.height}; }
+    a.addEventListener('mouseenter',function(){ if(!inParent) return;
+      try{ parent.postMessage({abj:'pic',id:location.pathname+'#'+i,src:src,r:rect(),nw:+a.getAttribute('data-nw'),nh:+a.getAttribute('data-nh')},'*'); }catch(e){} });
+    a.addEventListener('mouseleave',function(){ if(!inParent) return; try{ parent.postMessage({abj:'picleave',id:location.pathname+'#'+i},'*'); }catch(e){} });
+    a.addEventListener('click',function(e){ if(inParent){ e.preventDefault(); try{ parent.postMessage({abj:'picclick',id:location.pathname+'#'+i,src:src,r:rect(),nw:+a.getAttribute('data-nw'),nh:+a.getAttribute('data-nh')},'*'); }catch(err){} } });
+  });
 })();
 </script>
 <style>html.bee-on,html.bee-on *{cursor:none !important}</style>

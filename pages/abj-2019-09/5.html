@@ -4,14 +4,15 @@
 <link rel="stylesheet" href="../../assets/fonts.css">
 <style>
 html,body{margin:0;padding:0;background:#fff}
-.sheet{width:203.20mm;height:276.22mm;overflow:hidden;position:relative}
-.scaler{transform:scale(0.83297);transform-origin:top left}
+.sheet{width:calc(203.20mm * var(--k,1));height:calc(276.22mm * var(--k,1));overflow:hidden;position:relative}
+.scaler{transform:scale(calc(0.83297 * var(--k,1)));transform-origin:top left}
 .page{position:relative;width:922px;height:1253px}
 .page img.bg{position:absolute;left:0;top:0;width:922px;height:1253px}
 p{margin:0;position:absolute}
 a{color:inherit}
 a:hover{text-decoration:underline}
-</style></head><body><div class="sheet"><div class="scaler"><div class="page">
+</style><style>a.pic{position:absolute;display:block;z-index:4;cursor:zoom-in}</style>
+</head><body><div class="sheet"><div class="scaler"><div class="page">
 <img class="bg" src="p5.jpg" alt="">
 <p style="position:absolute;left:67.1px;top:1191.4px;font-size:19.2px;white-space:nowrap" data-w="133.6" data-j="1"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif">September 2019</span></p>
 <p style="position:absolute;left:823.4px;top:1191.4px;font-size:19.2px;white-space:nowrap" data-w="38.3"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif">1039</span></p>
@@ -72,6 +73,10 @@ a:hover{text-decoration:underline}
 <p style="position:absolute;left:64.7px;top:861.9px;font-size:15.2px;white-space:nowrap" data-w="251.2"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif">hope among the people, the organi-</span></p>
 <p style="position:absolute;left:64.7px;top:878.7px;font-size:15.2px;white-space:nowrap" data-w="255.0" data-j="1"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif">zations and volunteers dedicated to </span></p>
 <p style="position:absolute;left:64.7px;top:895.5px;font-size:15.2px;white-space:nowrap" data-w="168.4"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif">providing it will remain.</span></p>
+<a class="pic" data-src="hi5_1.jpg" data-nw="151" data-nh="141" style="left:204.4px;top:950.8px;width:115.7px;height:107.6px" title="Enlarge picture" aria-label="Picture"></a>
+<a class="pic" data-src="hi5_2.jpg" data-nw="332" data-nh="355" style="left:63.8px;top:56.6px;width:254.7px;height:271.8px" title="Enlarge picture" aria-label="Picture"></a>
+<a class="pic" data-src="hi5_3.jpg" data-nw="674" data-nh="1050" style="left:342.6px;top:57.1px;width:517.5px;height:805.4px" title="Enlarge picture" aria-label="Picture"></a>
+<a class="pic" data-src="hi5_4.jpg" data-nw="680" data-nh="380" style="left:340.6px;top:871.1px;width:521.4px;height:291.5px" title="Enlarge picture" aria-label="Picture"></a>
 </div></div></div>
 <script>
 /* Fit each line to the width it occupied in the PDF: stretch the spaces on
@@ -108,6 +113,29 @@ a:hover{text-decoration:underline}
   fit();
   if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fit);
   window.addEventListener('resize',fit);
+})();
+</script>
+<script>
+/* The reader tells this page how big to draw itself, so text is re-rendered at the new size
+   instead of being stretched as a bitmap (which is what happens when an iframe is transform-scaled). */
+(function(){
+  function setK(k){ document.documentElement.style.setProperty('--k', String(k)); }
+  window.addEventListener('message',function(e){ var m=e.data; if(m&&m.abj==='zoom'&&isFinite(m.k)&&m.k>0) setK(m.k); });
+})();
+</script>
+<script>
+/* Pictures: tell the reader when the pointer is over one (it grows it there); on its own, open the file. */
+(function(){
+  var inParent=(window.parent&&window.parent!==window);
+  document.querySelectorAll('a.pic').forEach(function(a,i){
+    var src=new URL(a.getAttribute('data-src'),location.href).href;
+    a.href=src; a.target='_blank'; a.rel='noopener';
+    function rect(){ var r=a.getBoundingClientRect(); return {x:r.left,y:r.top,w:r.width,h:r.height}; }
+    a.addEventListener('mouseenter',function(){ if(!inParent) return;
+      try{ parent.postMessage({abj:'pic',id:location.pathname+'#'+i,src:src,r:rect(),nw:+a.getAttribute('data-nw'),nh:+a.getAttribute('data-nh')},'*'); }catch(e){} });
+    a.addEventListener('mouseleave',function(){ if(!inParent) return; try{ parent.postMessage({abj:'picleave',id:location.pathname+'#'+i},'*'); }catch(e){} });
+    a.addEventListener('click',function(e){ if(inParent){ e.preventDefault(); try{ parent.postMessage({abj:'picclick',id:location.pathname+'#'+i,src:src,r:rect(),nw:+a.getAttribute('data-nw'),nh:+a.getAttribute('data-nh')},'*'); }catch(err){} } });
+  });
 })();
 </script>
 <style>html.bee-on,html.bee-on *{cursor:none !important}</style>

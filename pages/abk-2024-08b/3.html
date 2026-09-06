@@ -4,14 +4,15 @@
 <link rel="stylesheet" href="../../assets/fonts.css">
 <style>
 html,body{margin:0;padding:0;background:#fff}
-.sheet{width:210.00mm;height:294.00mm;overflow:hidden;position:relative}
-.scaler{transform:scale(0.83372);transform-origin:top left}
+.sheet{width:calc(210.00mm * var(--k,1));height:calc(294.00mm * var(--k,1));overflow:hidden;position:relative}
+.scaler{transform:scale(calc(0.83372 * var(--k,1)));transform-origin:top left}
 .page{position:relative;width:952px;height:1333px}
 .page img.bg{position:absolute;left:0;top:0;width:952px;height:1333px}
 p{margin:0;position:absolute}
 a{color:inherit}
 a:hover{text-decoration:underline}
-</style></head><body><div class="sheet"><div class="scaler"><div class="page">
+</style><style>a.pic{position:absolute;display:block;z-index:4;cursor:zoom-in}</style>
+</head><body><div class="sheet"><div class="scaler"><div class="page">
 <img class="bg" src="p3.jpg" alt="">
 <p style="position:absolute;left:485.3px;top:837.2px;font-size:17.6px;white-space:nowrap" data-w="104.0"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-weight:700">REFERENCES </span></p>
 <p style="position:absolute;left:485.3px;top:855.2px;font-size:12.5px;white-space:nowrap" data-w="382.8"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">*.     Where bees had arrived in 1857 from California,3 where bees had only </span></p>
@@ -127,6 +128,9 @@ a:hover{text-decoration:underline}
 <p style="position:absolute;left:777.6px;top:134.7px;font-size:14.6px;white-space:nowrap" data-w="73.6"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">April 2021</span></p>
 <p style="position:absolute;left:59.0px;top:1270.6px;font-size:16.0px;white-space:nowrap" data-w="35.8"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">40</span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">  </span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">|</span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">   </span></p>
 <p style="position:absolute;left:169.1px;top:1270.6px;font-size:16.0px;white-space:nowrap" data-w="264.3"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">  Celebrating 125 years  </span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">|</span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">  </span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">Vol. 126  |  No. 02</span></p>
+<a class="pic" data-src="hi3_1.jpg" data-nw="329" data-nh="400" style="left:485.3px;top:315.8px;width:251.2px;height:306.5px" title="Enlarge picture" aria-label="Picture"></a>
+<a class="pic" data-src="hi3_2.jpg" data-nw="328" data-nh="340" style="left:485.3px;top:52.5px;width:250.8px;height:260.1px" title="Enlarge picture" aria-label="Picture"></a>
+<a class="pic" data-src="hi3_3.jpg" data-nw="533" data-nh="495" style="left:59.0px;top:54.4px;width:408.2px;height:379.2px" title="Enlarge picture" aria-label="Picture"></a>
 </div></div></div>
 <script>
 /* Fit each line to the width it occupied in the PDF: stretch the spaces on
@@ -163,6 +167,29 @@ a:hover{text-decoration:underline}
   fit();
   if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fit);
   window.addEventListener('resize',fit);
+})();
+</script>
+<script>
+/* The reader tells this page how big to draw itself, so text is re-rendered at the new size
+   instead of being stretched as a bitmap (which is what happens when an iframe is transform-scaled). */
+(function(){
+  function setK(k){ document.documentElement.style.setProperty('--k', String(k)); }
+  window.addEventListener('message',function(e){ var m=e.data; if(m&&m.abj==='zoom'&&isFinite(m.k)&&m.k>0) setK(m.k); });
+})();
+</script>
+<script>
+/* Pictures: tell the reader when the pointer is over one (it grows it there); on its own, open the file. */
+(function(){
+  var inParent=(window.parent&&window.parent!==window);
+  document.querySelectorAll('a.pic').forEach(function(a,i){
+    var src=new URL(a.getAttribute('data-src'),location.href).href;
+    a.href=src; a.target='_blank'; a.rel='noopener';
+    function rect(){ var r=a.getBoundingClientRect(); return {x:r.left,y:r.top,w:r.width,h:r.height}; }
+    a.addEventListener('mouseenter',function(){ if(!inParent) return;
+      try{ parent.postMessage({abj:'pic',id:location.pathname+'#'+i,src:src,r:rect(),nw:+a.getAttribute('data-nw'),nh:+a.getAttribute('data-nh')},'*'); }catch(e){} });
+    a.addEventListener('mouseleave',function(){ if(!inParent) return; try{ parent.postMessage({abj:'picleave',id:location.pathname+'#'+i},'*'); }catch(e){} });
+    a.addEventListener('click',function(e){ if(inParent){ e.preventDefault(); try{ parent.postMessage({abj:'picclick',id:location.pathname+'#'+i,src:src,r:rect(),nw:+a.getAttribute('data-nw'),nh:+a.getAttribute('data-nh')},'*'); }catch(err){} } });
+  });
 })();
 </script>
 <style>html.bee-on,html.bee-on *{cursor:none !important}</style>

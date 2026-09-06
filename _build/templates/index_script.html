@@ -87,11 +87,19 @@ function fitFrames(){
       const W=parseFloat(fr.dataset.wmm)*MM, H=parseFloat(fr.dataset.hmm)*MM;
       const k=Math.min(1, availWidth(fr)/W)*(ZOOM/100);
       fr.style.width=(W*k)+'px'; fr.style.height=(H*k)+'px';
-      ifr.style.width=W+'px'; ifr.style.height=H+'px'; ifr.style.transform='scale('+k+')';
+      /* no transform on the iframe: the page draws itself at this size, so type stays sharp at any zoom */
+      ifr.style.width=(W*k)+'px'; ifr.style.height=(H*k)+'px'; ifr.style.transform='none'; ifr.dataset.k=k;
+      try{ ifr.contentWindow.postMessage({abj:'zoom',k:k},'*'); }catch(e){}
     });
   });
 }
 window.addEventListener('resize',fitFrames);
+/* a page that has just loaded says hello; answer with the size it should draw itself at (works on touch devices too) */
+window.addEventListener('message',function(e){
+  const m=e.data; if(!m||m.abj!=='hello'||!e.source) return;
+  document.querySelectorAll('iframe').forEach(function(f){
+    if(f.contentWindow===e.source && f.dataset.k){ try{ e.source.postMessage({abj:'zoom',k:parseFloat(f.dataset.k)},'*'); }catch(err){} } });
+});
 
 /* ---------- stacks: lane 0 is every article, lane 1 is a filtered set (a topic or a publication) ----------
    Both render the same way: a stack of covers, each on its remaining pages, with the full rail beside it;
@@ -198,7 +206,7 @@ function jumpTo(id,p){ closeTopic(); if(LANES[0].active!==id){ LANES[0].active=i
   const l=laneEl(li);
   l.addEventListener('click',function(e){
     if(LANES[li].active===null) return;
-    if(e.target.closest('.pframe,.rail,.arc,.next,.tophead,button,a,input,img,.hint,.cap')) return;   /* only the empty sky closes */
+    if(e.target.closest('.pframe,.rail,.arc,.next,.tophead,button,a,input,img,.hint,.cap,#picz,#picscrim')) return;   /* only the empty sky closes */
     closeArticle(li);
   });
   /* touch: ordinary panning stops at the end of the article; a brisk flick upward from there goes on to the next one */
@@ -338,6 +346,89 @@ window.addEventListener('message',function(e){
   if(arc) arc.click();
 });
 
+/* ---------- picture enlarger ----------
+   Hover a picture and it starts to grow - slowly at first, then faster - towards its full size or the window,
+   whichever is smaller. Click while it is under half way and it jumps to full size and stays; click once it is
+   past half way (or full) and it closes. Leaving it before you click lets it settle back. Esc closes. */
+const PIC={el:null,scrim:null,p:0,goal:0,mode:'idle',id:null,from:null,to:null,cool:null,last:0,over:false};
+function picRects(m,frame){
+  const fr=frame.getBoundingClientRect();
+  const from={x:fr.left+m.r.x,y:fr.top+m.r.y,w:m.r.w,h:m.r.h};
+  const top=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--chromeH'))||58;
+  const vw=innerWidth-48, vh=innerHeight-top-48;
+  const k=Math.min(1, vw/m.nw, vh/m.nh), w=m.nw*k, h=m.nh*k;
+  const to={x:(innerWidth-w)/2, y:top+24+(vh-h)/2, w:w, h:h};
+  return {from:from,to:to};
+}
+function picFrameFor(source){ let f=null; document.querySelectorAll('iframe').forEach(x=>{ if(x.contentWindow===source) f=x; }); return f; }
+function picStart(m,source,jump){
+  const frame=picFrameFor(source); if(!frame) return;
+  if(PIC.cool===m.id && !jump) return;
+  if(PIC.id!==m.id || PIC.mode==='idle'){
+    const r=picRects(m,frame); PIC.from=r.from; PIC.to=r.to; PIC.id=m.id; PIC.p=0;
+    PIC.el.src=m.src; PIC.el.classList.add('on'); PIC.el.classList.remove('big');
+  }
+  picGo(jump?'lock':'grow',1);
+}
+function picGo(mode,goal){ const was=PIC.mode; PIC.mode=mode; PIC.goal=goal; PIC.last=performance.now(); if(was==='idle'||was==='lock'||was==='close'||PIC.p>=1||PIC.p<=0) picTick(); }
+function picClick(){
+  if(PIC.mode==='idle') return;
+  if(PIC.p<0.5 && PIC.mode!=='lock') picGo('lock',1);
+  else picClose();
+}
+function picClose(){ if(PIC.mode==='idle') return; PIC.cool=PIC.id; PIC.scrim.classList.remove('on'); picGo('close',0); }
+function picDraw(){
+  const f=PIC.from,t=PIC.to,p=PIC.p, e=PIC.el;
+  e.style.left=(f.x+(t.x-f.x)*p)+'px'; e.style.top=(f.y+(t.y-f.y)*p)+'px';
+  e.style.width=(f.w+(t.w-f.w)*p)+'px'; e.style.height=(f.h+(t.h-f.h)*p)+'px';
+  e.classList.toggle('big',p>=0.5);
+}
+function picTick(){
+  PIC.ticking=false;
+  if(PIC.mode==='idle') return;
+  const now=performance.now(), dt=Math.min(.05,(now-PIC.last)/1000); PIC.last=now;
+  let rate;
+  if(PIC.mode==='grow') rate=0.06+1.4*PIC.p;            /* slow start, gathering pace: ~2.3s to full */
+  else if(PIC.mode==='lock') rate=4;                     /* the click: straight to full */
+  else rate=3;                                           /* closing / settling back */
+  PIC.p += (PIC.goal>PIC.p?1:-1)*rate*dt;
+  if(PIC.goal>=1 && PIC.p>=1){ PIC.p=1; picDraw(); if(PIC.mode==='lock') PIC.scrim.classList.add('on'); if(PIC.mode==='grow'){ PIC.mode='lock'; PIC.scrim.classList.add('on'); } return; }
+  if(PIC.goal<=0 && PIC.p<=0){ PIC.p=0; PIC.mode='idle'; PIC.el.classList.remove('on','big'); return; }
+  picDraw(); if(!PIC.ticking){ PIC.ticking=true; requestAnimationFrame(picTick); }
+}
+(function(){
+  PIC.el=document.getElementById('picz'); PIC.scrim=document.getElementById('picscrim'); if(!PIC.el) return;
+  PIC.el.addEventListener('mouseenter',()=>{ PIC.over=true; if(PIC.mode==='settle') picGo('grow',1); });
+  PIC.el.addEventListener('mouseleave',()=>{ PIC.over=false; if(PIC.mode==='grow') picGo('settle',0); });
+  window.addEventListener('message',function(e){
+    const m=e.data; if(!m||!m.abj) return;
+    if(m.abj==='pic'){ picStart(m,e.source,false); return; }
+    if(m.abj==='picclick'){ picStart(m,e.source,true); return; }
+    if(m.abj==='picleave'){ if(PIC.cool===m.id) PIC.cool=null; /* the pointer has left the picture: it may grow again next time */
+      if(PIC.mode==='grow' && !PIC.over && PIC.p<0.02) picGo('settle',0); return; }
+  });
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') picClose(); });
+
+  /* Scrolling on is a decision not to look at it. Whatever the picture is doing - creeping open, fully
+     open, locked open by a click - it settles back and the scroll goes through, rather than the reader
+     being held in place. The delta has to be passed on by hand: once #picz (or the lit scrim) is under
+     the pointer the wheel lands on a fixed element with nothing scrollable above it, so the browser
+     would scroll nothing at all. */
+  function picLane(){ return laneEl(document.body.classList.contains('inlane')?1:0); }
+  window.addEventListener('wheel',function(e){
+    if(PIC.mode==='idle') return;
+    const onOverlay = e.target===PIC.el || e.target===PIC.scrim || PIC.scrim.classList.contains('on');
+    picClose();
+    if(!onOverlay) return;                                   /* pointer still over the page: it scrolls itself */
+    const ln=picLane(); if(!ln) return;
+    const unit = e.deltaMode===1 ? 16 : e.deltaMode===2 ? ln.clientHeight : 1;
+    ln.scrollTop += e.deltaY*unit;
+    ln.scrollLeft += e.deltaX*unit;
+  },{passive:true,capture:true});
+  /* same trap on a touch screen, where a tap can lock a picture open and there is nothing to hover away to */
+  window.addEventListener('touchmove',function(){ if(PIC.mode!=='idle') picClose(); },{passive:true,capture:true});
+})();
+
 /* ---------- bee follower ---------- */
 (function(){
   if(!matchMedia('(hover:hover)').matches) return;
@@ -354,7 +445,7 @@ window.addEventListener('message',function(e){
   window.addEventListener('pagehide',function(){ try{ localStorage.setItem(HAND,JSON.stringify({x:x,y:y,a:a,t:Date.now()})); }catch(e){} });
   /* landing: hold still for 2s over something solid and she settles; any movement and she is airborne again */
   const SKY='html,body,.track,.lane,.sheet,.cov,.arc,.iscrim,.bscrim,.rail,.pn';
-  const SURF='iframe,.pframe,.chrome,.tophead,.edge,.zoombar,.ibox,.bpanel,.hit,.gate,img,button,a,input,.rail .ti,.rail .meta';
+  const SURF='iframe,.pframe,.chrome,.tophead,.edge,.zoombar,.ibox,.bpanel,.hit,.gate,img,button,a,input,.rail .ti,.rail .meta,#picz';
   /* What counts as clickable? The stylesheet already says so: every rule that asks for a pointer
      cursor. bee-on suppresses those cursors (that is the cue we are replacing), so we read the rules
      themselves and fold her wings over exactly the things that would have shown a pointing finger. */

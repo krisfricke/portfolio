@@ -45,7 +45,7 @@ ul.list li .c{font-size:14px;color:#3a3a3a;margin-top:2px}
 '''
 def shell(title,body,canon,desc):
     return ('<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
-        '<title>%s</title><meta name="description" content="%s"><link rel="canonical" href="%s"><style>%s</style></head><body><main><div class="card">%s</div></main></body></html>')%(E(title),E(desc),E(canon),CSS,body)
+        '<title>%s</title><meta name="description" content="%s"><link rel="canonical" href="%s"><link rel="icon" type="image/png" href="../../assets/bee/favicon.png"><style>%s</style></head><body><main><div class="card">%s</div></main></body></html>')%(E(title),E(desc),E(canon),CSS,body)
 
 def clean_paras(a,pages):
     """Reading text from the block list: drop running heads, merge drop caps, keep body-sized blocks in order."""
@@ -136,7 +136,7 @@ for pub,items in pubs.items():
     for a in items:
         hub.append('<li><a class="t" href="%s/index.html">%s</a><div class="c">%s</div></li>'%(a['id'],E(a['title']),cite(a)))
     hub.append('</ul>')
-open(os.path.join(adir,'index.html'),'w',encoding='utf-8').write(shell('Articles by '+AUTHOR,''.join(hub),BASE+'article/','All articles by %s, with citations and plain-text versions.'%AUTHOR))
+open(os.path.join(adir,'index.html'),'w',encoding='utf-8').write(shell('Articles by '+AUTHOR,''.join(hub),BASE+'article/','All articles by %s, with citations and plain-text versions.'%AUTHOR).replace('href="../../assets/bee/favicon.png"','href="../assets/bee/favicon.png"'))
 today=datetime.date.today().isoformat()
 open(os.path.join(site,'sitemap.xml'),'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+''.join('  <url><loc>%s</loc><lastmod>%s</lastmod></url>\n'%(E(u),today) for u in urls)+'</urlset>\n')
 open(os.path.join(site,'robots.txt'),'w').write('User-agent: *\nAllow: /\n\nSitemap: %ssitemap.xml\n'%BASE)

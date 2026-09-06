@@ -4,8 +4,8 @@
 <link rel="stylesheet" href="../../assets/fonts.css">
 <style>
 html,body{margin:0;padding:0;background:#fff}
-.sheet{width:210.23mm;height:297.01mm;overflow:hidden;position:relative}
-.scaler{transform:scale(0.83375);transform-origin:top left}
+.sheet{width:calc(210.23mm * var(--k,1));height:calc(297.01mm * var(--k,1));overflow:hidden;position:relative}
+.scaler{transform:scale(calc(0.83375 * var(--k,1)));transform-origin:top left}
 .page{position:relative;width:953px;height:1347px}
 .page img.bg{position:absolute;left:0;top:0;width:953px;height:1347px}
 p{margin:0;position:absolute;color:transparent}
@@ -79,6 +79,14 @@ a:hover{text-decoration:underline}
   fit();
   if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fit);
   window.addEventListener('resize',fit);
+})();
+</script>
+<script>
+/* The reader tells this page how big to draw itself, so text is re-rendered at the new size
+   instead of being stretched as a bitmap (which is what happens when an iframe is transform-scaled). */
+(function(){
+  function setK(k){ document.documentElement.style.setProperty('--k', String(k)); }
+  window.addEventListener('message',function(e){ var m=e.data; if(m&&m.abj==='zoom'&&isFinite(m.k)&&m.k>0) setK(m.k); });
 })();
 </script>
 <style>html.bee-on,html.bee-on *{cursor:none !important}</style>

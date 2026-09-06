@@ -228,8 +228,8 @@ HEAD = '''<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <link rel="stylesheet" href="../../assets/fonts.css">
 <style>
 html,body{margin:0;padding:0;background:#fff}
-.sheet{width:%(wmm).2fmm;height:%(hmm).2fmm;overflow:hidden;position:relative}
-.scaler{transform:scale(%(scaler).5f);transform-origin:top left}
+.sheet{width:calc(%(wmm).2fmm * var(--k,1));height:calc(%(hmm).2fmm * var(--k,1));overflow:hidden;position:relative}
+.scaler{transform:scale(calc(%(scaler).5f * var(--k,1)));transform-origin:top left}
 .page{position:relative;width:%(pw)dpx;height:%(ph)dpx}
 .page img.bg{position:absolute;left:0;top:0;width:%(pw)dpx;height:%(ph)dpx}
 p{margin:0;position:absolute}
@@ -239,6 +239,14 @@ a:hover{text-decoration:underline}
 '''
 
 TAIL = '''<script>
+/* The reader tells this page how big to draw itself, so text is re-rendered at the new size
+   instead of being stretched as a bitmap (which is what happens when an iframe is transform-scaled). */
+(function(){
+  function setK(k){ document.documentElement.style.setProperty('--k', String(k)); }
+  window.addEventListener('message',function(e){ var m=e.data; if(m&&m.abj==='zoom'&&isFinite(m.k)&&m.k>0) setK(m.k); });
+})();
+</script>
+<script>
 /* Fit each line to the width it occupied in the PDF: stretch the spaces on
    justified lines, and tighten any line the substitute font renders too wide
    (which would otherwise run into the next column). Backs off rather than

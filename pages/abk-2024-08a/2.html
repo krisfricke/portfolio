@@ -4,14 +4,15 @@
 <link rel="stylesheet" href="../../assets/fonts.css">
 <style>
 html,body{margin:0;padding:0;background:#fff}
-.sheet{width:210.00mm;height:294.00mm;overflow:hidden;position:relative}
-.scaler{transform:scale(0.83372);transform-origin:top left}
+.sheet{width:calc(210.00mm * var(--k,1));height:calc(294.00mm * var(--k,1));overflow:hidden;position:relative}
+.scaler{transform:scale(calc(0.83372 * var(--k,1)));transform-origin:top left}
 .page{position:relative;width:952px;height:1333px}
 .page img.bg{position:absolute;left:0;top:0;width:952px;height:1333px}
 p{margin:0;position:absolute}
 a{color:inherit}
 a:hover{text-decoration:underline}
-</style></head><body><div class="sheet"><div class="scaler"><div class="page">
+</style><style>a.pic{position:absolute;display:block;z-index:4;cursor:zoom-in}</style>
+</head><body><div class="sheet"><div class="scaler"><div class="page">
 <img class="bg" src="p2.jpg" alt="">
 <p style="position:absolute;left:72.6px;top:63.3px;font-size:16.2px;white-space:nowrap" data-w="399.1"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">So as you can see, the mite population if left unchecked </span></p>
 <p style="position:absolute;left:59.0px;top:82.5px;font-size:16.2px;white-space:nowrap" data-w="412.8" data-j="1"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">can quickly get completely out of control, which causes the </span></p>
@@ -96,6 +97,9 @@ a:hover{text-decoration:underline}
 <p style="position:absolute;left:485.3px;top:1234.5px;font-size:16.0px;white-space:nowrap" data-w="343.5"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">apiary department will want to confirm the finding.</span></p>
 <p style="position:absolute;left:530.2px;top:1272.2px;font-size:14.4px;white-space:nowrap" data-w="114.9"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">Vol. 126  </span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">|</span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">  No. 02 |  </span></p>
 <p style="position:absolute;left:719.5px;top:1270.6px;font-size:16.0px;white-space:nowrap" data-w="176.8"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">  Celebrating 125 years </span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">|</span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">  </span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">25</span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif"> </span></p>
+<a class="pic" data-src="hi2_1.jpg" data-nw="537" data-nh="322" style="left:57.3px;top:243.8px;width:411.6px;height:246.4px" title="Enlarge picture" aria-label="Picture"></a>
+<a class="pic" data-src="hi2_2.jpg" data-nw="539" data-nh="338" style="left:55.0px;top:861.0px;width:416.2px;height:260.1px" title="Enlarge picture" aria-label="Picture"></a>
+<a class="pic" data-src="hi2_3.jpg" data-nw="539" data-nh="326" style="left:481.3px;top:240.7px;width:416.1px;height:251.7px" title="Enlarge picture" aria-label="Picture"></a>
 </div></div></div>
 <script>
 /* Fit each line to the width it occupied in the PDF: stretch the spaces on
@@ -132,6 +136,29 @@ a:hover{text-decoration:underline}
   fit();
   if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fit);
   window.addEventListener('resize',fit);
+})();
+</script>
+<script>
+/* The reader tells this page how big to draw itself, so text is re-rendered at the new size
+   instead of being stretched as a bitmap (which is what happens when an iframe is transform-scaled). */
+(function(){
+  function setK(k){ document.documentElement.style.setProperty('--k', String(k)); }
+  window.addEventListener('message',function(e){ var m=e.data; if(m&&m.abj==='zoom'&&isFinite(m.k)&&m.k>0) setK(m.k); });
+})();
+</script>
+<script>
+/* Pictures: tell the reader when the pointer is over one (it grows it there); on its own, open the file. */
+(function(){
+  var inParent=(window.parent&&window.parent!==window);
+  document.querySelectorAll('a.pic').forEach(function(a,i){
+    var src=new URL(a.getAttribute('data-src'),location.href).href;
+    a.href=src; a.target='_blank'; a.rel='noopener';
+    function rect(){ var r=a.getBoundingClientRect(); return {x:r.left,y:r.top,w:r.width,h:r.height}; }
+    a.addEventListener('mouseenter',function(){ if(!inParent) return;
+      try{ parent.postMessage({abj:'pic',id:location.pathname+'#'+i,src:src,r:rect(),nw:+a.getAttribute('data-nw'),nh:+a.getAttribute('data-nh')},'*'); }catch(e){} });
+    a.addEventListener('mouseleave',function(){ if(!inParent) return; try{ parent.postMessage({abj:'picleave',id:location.pathname+'#'+i},'*'); }catch(e){} });
+    a.addEventListener('click',function(e){ if(inParent){ e.preventDefault(); try{ parent.postMessage({abj:'picclick',id:location.pathname+'#'+i,src:src,r:rect(),nw:+a.getAttribute('data-nw'),nh:+a.getAttribute('data-nh')},'*'); }catch(err){} } });
+  });
 })();
 </script>
 <style>html.bee-on,html.bee-on *{cursor:none !important}</style>

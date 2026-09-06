@@ -4,14 +4,15 @@
 <link rel="stylesheet" href="../../assets/fonts.css">
 <style>
 html,body{margin:0;padding:0;background:#fff}
-.sheet{width:210.02mm;height:297.01mm;overflow:hidden;position:relative}
-.scaler{transform:scale(0.83291);transform-origin:top left}
+.sheet{width:calc(210.02mm * var(--k,1));height:calc(297.01mm * var(--k,1));overflow:hidden;position:relative}
+.scaler{transform:scale(calc(0.83291 * var(--k,1)));transform-origin:top left}
 .page{position:relative;width:953px;height:1347px}
 .page img.bg{position:absolute;left:0;top:0;width:953px;height:1347px}
 p{margin:0;position:absolute}
 a{color:inherit}
 a:hover{text-decoration:underline}
-</style></head><body><div class="sheet"><div class="scaler"><div class="page">
+</style><style>a.pic{position:absolute;display:block;z-index:4;cursor:zoom-in}</style>
+</head><body><div class="sheet"><div class="scaler"><div class="page">
 <img class="bg" src="p2.jpg" alt="">
 <p style="position:absolute;left:694.8px;top:1293.4px;font-size:15.9px;white-space:nowrap" data-w="94.8" data-j="1"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">May 2026  </span></p>
 <p style="position:absolute;left:875.9px;top:1293.4px;font-size:15.9px;white-space:nowrap" data-w="22.1"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">17 </span></p>
@@ -72,6 +73,7 @@ a:hover{text-decoration:underline}
 <p style="position:absolute;left:491.4px;top:603.0px;font-size:17.7px;white-space:nowrap" data-w="398.9"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">field trials, preventatively treating healthy cattle before </span></p>
 <p style="position:absolute;left:63.6px;top:124.2px;font-size:12.9px;white-space:nowrap" data-w="136.2"><span style="font-family:Carlito,Calibri,'Segoe UI',Arial,sans-serif;font-style:italic">(Continued from page 16) </span></p>
 <p style="position:absolute;left:765.1px;top:638.3px;font-size:12.9px;white-space:nowrap" data-w="124.3"><span style="font-family:Carlito,Calibri,'Segoe UI',Arial,sans-serif;font-style:italic">(Continued on page 18) </span></p>
+<a class="pic" data-src="hi2_1.jpg" data-nw="1086" data-nh="768" style="left:61.5px;top:697.2px;width:838.6px;height:592.6px" title="Enlarge picture" aria-label="Picture"></a>
 </div></div></div>
 <script>
 /* Fit each line to the width it occupied in the PDF: stretch the spaces on
@@ -108,6 +110,29 @@ a:hover{text-decoration:underline}
   fit();
   if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fit);
   window.addEventListener('resize',fit);
+})();
+</script>
+<script>
+/* The reader tells this page how big to draw itself, so text is re-rendered at the new size
+   instead of being stretched as a bitmap (which is what happens when an iframe is transform-scaled). */
+(function(){
+  function setK(k){ document.documentElement.style.setProperty('--k', String(k)); }
+  window.addEventListener('message',function(e){ var m=e.data; if(m&&m.abj==='zoom'&&isFinite(m.k)&&m.k>0) setK(m.k); });
+})();
+</script>
+<script>
+/* Pictures: tell the reader when the pointer is over one (it grows it there); on its own, open the file. */
+(function(){
+  var inParent=(window.parent&&window.parent!==window);
+  document.querySelectorAll('a.pic').forEach(function(a,i){
+    var src=new URL(a.getAttribute('data-src'),location.href).href;
+    a.href=src; a.target='_blank'; a.rel='noopener';
+    function rect(){ var r=a.getBoundingClientRect(); return {x:r.left,y:r.top,w:r.width,h:r.height}; }
+    a.addEventListener('mouseenter',function(){ if(!inParent) return;
+      try{ parent.postMessage({abj:'pic',id:location.pathname+'#'+i,src:src,r:rect(),nw:+a.getAttribute('data-nw'),nh:+a.getAttribute('data-nh')},'*'); }catch(e){} });
+    a.addEventListener('mouseleave',function(){ if(!inParent) return; try{ parent.postMessage({abj:'picleave',id:location.pathname+'#'+i},'*'); }catch(e){} });
+    a.addEventListener('click',function(e){ if(inParent){ e.preventDefault(); try{ parent.postMessage({abj:'picclick',id:location.pathname+'#'+i,src:src,r:rect(),nw:+a.getAttribute('data-nw'),nh:+a.getAttribute('data-nh')},'*'); }catch(err){} } });
+  });
 })();
 </script>
 <style>html.bee-on,html.bee-on *{cursor:none !important}</style>

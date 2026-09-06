@@ -4,14 +4,15 @@
 <link rel="stylesheet" href="../../assets/fonts.css">
 <style>
 html,body{margin:0;padding:0;background:#fff}
-.sheet{width:203.20mm;height:276.22mm;overflow:hidden;position:relative}
-.scaler{transform:scale(0.83297);transform-origin:top left}
+.sheet{width:calc(203.20mm * var(--k,1));height:calc(276.22mm * var(--k,1));overflow:hidden;position:relative}
+.scaler{transform:scale(calc(0.83297 * var(--k,1)));transform-origin:top left}
 .page{position:relative;width:922px;height:1253px}
 .page img.bg{position:absolute;left:0;top:0;width:922px;height:1253px}
 p{margin:0;position:absolute}
 a{color:inherit}
 a:hover{text-decoration:underline}
-</style></head><body><div class="sheet"><div class="scaler"><div class="page">
+</style><style>a.pic{position:absolute;display:block;z-index:4;cursor:zoom-in}</style>
+</head><body><div class="sheet"><div class="scaler"><div class="page">
 <img class="bg" src="p1.jpg" alt="">
 <p style="position:absolute;left:67.1px;top:1191.4px;font-size:19.2px;white-space:nowrap" data-w="81.4" data-j="1"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif">June 2019</span></p>
 <p style="position:absolute;left:833.0px;top:1191.4px;font-size:19.2px;white-space:nowrap" data-w="28.8"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif">701</span></p>
@@ -121,6 +122,8 @@ a:hover{text-decoration:underline}
 <p style="position:absolute;left:597.6px;top:70.1px;font-size:38.3px;white-space:nowrap" data-w="211.7"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-weight:700">Beekeeping</span></p>
 <p style="position:absolute;left:584.9px;top:118.0px;font-size:38.3px;white-space:nowrap" data-w="237.0"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-weight:700">Development</span></p>
 <p style="position:absolute;left:633.2px;top:165.9px;font-size:38.3px;white-space:nowrap" data-w="140.5"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-weight:700">Project:</span></p>
+<a class="pic" data-src="hi1_1.jpg" data-nw="501" data-nh="458" style="left:480.0px;top:818.4px;width:383.4px;height:350.5px" title="Enlarge picture" aria-label="Picture"></a>
+<a class="pic" data-src="hi1_2.jpg" data-nw="605" data-nh="420" style="left:67.1px;top:56.5px;width:464.2px;height:321.7px" title="Enlarge picture" aria-label="Picture"></a>
 </div></div></div>
 <script>
 /* Fit each line to the width it occupied in the PDF: stretch the spaces on
@@ -157,6 +160,29 @@ a:hover{text-decoration:underline}
   fit();
   if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fit);
   window.addEventListener('resize',fit);
+})();
+</script>
+<script>
+/* The reader tells this page how big to draw itself, so text is re-rendered at the new size
+   instead of being stretched as a bitmap (which is what happens when an iframe is transform-scaled). */
+(function(){
+  function setK(k){ document.documentElement.style.setProperty('--k', String(k)); }
+  window.addEventListener('message',function(e){ var m=e.data; if(m&&m.abj==='zoom'&&isFinite(m.k)&&m.k>0) setK(m.k); });
+})();
+</script>
+<script>
+/* Pictures: tell the reader when the pointer is over one (it grows it there); on its own, open the file. */
+(function(){
+  var inParent=(window.parent&&window.parent!==window);
+  document.querySelectorAll('a.pic').forEach(function(a,i){
+    var src=new URL(a.getAttribute('data-src'),location.href).href;
+    a.href=src; a.target='_blank'; a.rel='noopener';
+    function rect(){ var r=a.getBoundingClientRect(); return {x:r.left,y:r.top,w:r.width,h:r.height}; }
+    a.addEventListener('mouseenter',function(){ if(!inParent) return;
+      try{ parent.postMessage({abj:'pic',id:location.pathname+'#'+i,src:src,r:rect(),nw:+a.getAttribute('data-nw'),nh:+a.getAttribute('data-nh')},'*'); }catch(e){} });
+    a.addEventListener('mouseleave',function(){ if(!inParent) return; try{ parent.postMessage({abj:'picleave',id:location.pathname+'#'+i},'*'); }catch(e){} });
+    a.addEventListener('click',function(e){ if(inParent){ e.preventDefault(); try{ parent.postMessage({abj:'picclick',id:location.pathname+'#'+i,src:src,r:rect(),nw:+a.getAttribute('data-nw'),nh:+a.getAttribute('data-nh')},'*'); }catch(err){} } });
+  });
 })();
 </script>
 <style>html.bee-on,html.bee-on *{cursor:none !important}</style>
