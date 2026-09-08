@@ -43,8 +43,16 @@ ul.list li a.t:hover{text-decoration:underline}
 ul.list li .c{font-size:14px;color:#3a3a3a;margin-top:2px}
 .links li{font-size:14px;word-break:break-all}
 '''
-def shell(title,body,canon,desc):
-    return ('<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+
+# A shared or searched-for link lands on this plain-text page (it is the crawlable, no-JavaScript front door),
+# but the pages themselves are what people should read - on a phone as much as anywhere. So, with JavaScript,
+# the page forwards straight to the reader unless the URL carries ?text (the reader's own "Text version"
+# link, and anyone who wants plain text on purpose). Without JavaScript, or with ?text, the text stays.
+def fwd(reader):
+    return ('<script>if(!/[?&]text(=|&|$)/.test(location.search))location.replace(%s)</script>'%json.dumps(reader)) if reader else ''
+
+def shell(title,body,canon,desc,reader=None):
+    return ('<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'+fwd(reader)+
         '<title>%s</title><meta name="description" content="%s"><link rel="canonical" href="%s"><link rel="icon" type="image/png" href="../../assets/bee/favicon.png"><style>%s</style></head><body><main><div class="card">%s</div></main></body></html>')%(E(title),E(desc),E(canon),CSS,body)
 
 def clean_paras(a,pages):
@@ -125,7 +133,7 @@ for a in ordered:
     parts.append('<p class="note">This is the plain-text version, extracted from the printed pages for readers who use screen readers, text-only browsers, or prefer reflowable text. Captions and sidebars appear where they fell in the page layout. The typeset pages are available in the <a href="%s">reader</a>.</p>'%reader)
     desc='%s — %s, %s. By %s.'%(a['title'],a['pub'],when(a),AUTHOR)
     d=os.path.join(adir,a['id']); os.makedirs(d,exist_ok=True)
-    open(os.path.join(d,'index.html'),'w',encoding='utf-8').write(shell(a['title']+' — '+AUTHOR,''.join(parts),BASE+'article/'+a['id']+'/',desc))
+    open(os.path.join(d,'index.html'),'w',encoding='utf-8').write(shell(a['title']+' — '+AUTHOR,''.join(parts),BASE+'article/'+a['id']+'/',desc,reader='../../index.html#/article/'+a['id']+'/1'))
     urls.append(BASE+'article/'+a['id']+'/')
 # hub
 pubs={}

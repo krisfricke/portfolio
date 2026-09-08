@@ -24,7 +24,7 @@ function cite(a){
 }
 const LOCAL=(location.protocol==='file:');
 const webDir=()=> LOCAL ? BASE : location.href.split('#')[0].replace(/[^\/]*$/,'');
-const textURL=a=>'article/'+a.id+'/index.html';
+const textURL=a=>'article/'+a.id+'/index.html?text';   /* ?text: stay on the plain text rather than forwarding to the reader */
 
 /* ---------- state ---------- */
 const ZSTEPS=[50,60,70,80,90,100,110,125,150,175,200];
