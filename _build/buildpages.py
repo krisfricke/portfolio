@@ -14,6 +14,8 @@ import json, os, re, sys, html
 import pymupdf as fitz
 
 SCALE = 1.6
+PIC_DPI = 150          # the enlargeable copy of each picture: generous on screen, modest on disk
+PIC_Q = 86
 PT_MM = 25.4 / 72.0
 
 SERIF_HINTS = ('times', 'palatino', 'georgia', 'garamond', 'minion', 'book antiqua', 'palladio',
@@ -166,12 +168,32 @@ def build_page(doc, pno, outdir, n, title, links_out, manual=(), ocr=False):
         page.get_pixmap(matrix=fitz.Matrix(1.0, 1.0), alpha=False).save(os.path.join(outdir, 'cover.jpg'), jpg_quality=85)
     bg.close()
 
+    # Pictures. p<n>.jpg keeps the artwork, so each hotspot is invisible - it marks where a picture is
+    # so the reader can grow it, and hi<n>_<i>.jpg is the copy it grows into. Rendered from the page
+    # rather than pulled from the PDF's image store, so anything drawn over a picture comes with it.
+    pics_html = []
+    for inf in page.get_image_info():
+        r = fitz.Rect(inf['bbox'])
+        if r.is_empty or r.is_infinite: continue
+        if r.width < 4 or r.height < 4: continue                    # a hairline or a slice: nothing to enlarge
+        pm = page.get_pixmap(clip=r, matrix=fitz.Matrix(PIC_DPI / 72.0, PIC_DPI / 72.0), alpha=False)
+        if pm.width < 2 or pm.height < 2: continue
+        name = 'hi%d_%d.jpg' % (n, len(pics_html) + 1)
+        pm.save(os.path.join(outdir, name), jpg_quality=PIC_Q)
+        pics_html.append('<a class="pic" data-src="%s" data-nw="%d" data-nh="%d" '
+                         'style="left:%.1fpx;top:%.1fpx;width:%.1fpx;height:%.1fpx" '
+                         'title="Enlarge picture" aria-label="Picture"></a>'
+                         % (name, pm.width, pm.height,
+                            r.x0 * SCALE, r.y0 * SCALE, r.width * SCALE, r.height * SCALE))
+
     pw, ph = round(W * SCALE), round(H * SCALE)
     wmm, hmm = W * PT_MM, H * PT_MM
     scaler = (wmm * 96 / 25.4) / pw
     doc_html = HEAD % dict(title=html.escape(title), n=n, wmm=wmm, hmm=hmm, scaler=scaler, pw=pw, ph=ph)
     if ocr: doc_html = doc_html.replace('p{margin:0;position:absolute}', 'p{margin:0;position:absolute;color:transparent}\np::selection,p *::selection{background:rgba(249,197,0,.45);color:transparent}')
-    doc_html += '<img class="bg" src="p%d.jpg" alt="">\n' % n + '\n'.join(lines_html) + '\n</div></div></div>\n' + TAIL
+    doc_html += ('<img class="bg" src="p%d.jpg" alt="">\n' % n + '\n'.join(lines_html)
+                 + ('\n' + '\n'.join(pics_html) if pics_html else '')
+                 + '\n</div></div></div>\n' + TAIL)
     open(os.path.join(outdir, '%d.html' % n), 'w', encoding='utf-8').write(doc_html)
     return {'lines': textlines, 'paras': paras}
 
@@ -235,6 +257,11 @@ html,body{margin:0;padding:0;background:#fff}
 p{margin:0;position:absolute}
 a{color:inherit}
 a:hover{text-decoration:underline}
+a.pic{position:absolute;display:block;z-index:4;cursor:zoom-in;border-radius:2px}
+/* one pulse as the pointer arrives - a ring that swells and fades - to say 'this one opens'; nothing more until a click */
+a.pic.pulse{animation:picpulse .8s ease-out 1}
+@keyframes picpulse{0%%{box-shadow:0 0 0 0 rgba(249,197,0,.85),inset 0 0 0 0 rgba(255,255,255,.0)}35%%{box-shadow:0 0 0 7px rgba(249,197,0,.55),inset 0 0 0 0 rgba(255,255,255,.18)}100%%{box-shadow:0 0 0 16px rgba(249,197,0,0),inset 0 0 0 0 rgba(255,255,255,0)}}
+@media (prefers-reduced-motion:reduce){a.pic.pulse{animation:none;box-shadow:0 0 0 3px rgba(249,197,0,.6)}}
 </style></head><body><div class="sheet"><div class="scaler"><div class="page">
 '''
 
@@ -244,6 +271,21 @@ TAIL = '''<script>
 (function(){
   function setK(k){ document.documentElement.style.setProperty('--k', String(k)); }
   window.addEventListener('message',function(e){ var m=e.data; if(m&&m.abj==='zoom'&&isFinite(m.k)&&m.k>0) setK(m.k); });
+})();
+</script>
+<script>
+/* Pictures: a single pulse when the pointer arrives over one (once per visit), and a click opens it
+   in the reader at full size. Nothing grows on hover. On its own, the link opens the file. */
+(function(){
+  var inParent=(window.parent&&window.parent!==window);
+  document.querySelectorAll('a.pic').forEach(function(a,i){
+    var src=new URL(a.getAttribute('data-src'),location.href).href;
+    a.href=src; a.target='_blank'; a.rel='noopener';
+    function rect(){ var r=a.getBoundingClientRect(); return {x:r.left,y:r.top,w:r.width,h:r.height}; }
+    a.addEventListener('mouseenter',function(){ a.classList.remove('pulse'); void a.offsetWidth; a.classList.add('pulse'); });
+    a.addEventListener('animationend',function(){ a.classList.remove('pulse'); });
+    a.addEventListener('click',function(e){ if(inParent){ e.preventDefault(); try{ parent.postMessage({abj:'picclick',id:location.pathname+'#'+i,src:src,r:rect(),nw:+a.getAttribute('data-nw'),nh:+a.getAttribute('data-nh')},'*'); }catch(err){} } });
+  });
 })();
 </script>
 <script>

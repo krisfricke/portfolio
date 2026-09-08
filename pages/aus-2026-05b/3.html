@@ -11,6 +11,11 @@ html,body{margin:0;padding:0;background:#fff}
 p{margin:0;position:absolute}
 a{color:inherit}
 a:hover{text-decoration:underline}
+a.pic{position:absolute;display:block;z-index:4;cursor:zoom-in;border-radius:2px}
+/* one pulse as the pointer arrives - a ring that swells and fades - to say 'this one opens'; nothing more until a click */
+a.pic.pulse{animation:picpulse .8s ease-out 1}
+@keyframes picpulse{0%{box-shadow:0 0 0 0 rgba(249,197,0,.85),inset 0 0 0 0 rgba(255,255,255,.0)}35%{box-shadow:0 0 0 7px rgba(249,197,0,.55),inset 0 0 0 0 rgba(255,255,255,.18)}100%{box-shadow:0 0 0 16px rgba(249,197,0,0),inset 0 0 0 0 rgba(255,255,255,0)}}
+@media (prefers-reduced-motion:reduce){a.pic.pulse{animation:none;box-shadow:0 0 0 3px rgba(249,197,0,.6)}}
 </style></head><body><div class="sheet"><div class="scaler"><div class="page">
 <img class="bg" src="p3.jpg" alt="">
 <p style="position:absolute;left:61.6px;top:1294.6px;font-size:15.9px;white-space:nowrap" data-w="22.1"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">18 </span></p>
@@ -105,7 +110,36 @@ a:hover{text-decoration:underline}
 <p style="position:absolute;left:493.6px;top:727.2px;font-size:17.7px;white-space:nowrap" data-w="333.2"><a href="https://www.nsw.gov.au/regional-and-primary-industries/livestock/health-diseases/bovine-respiratory" target="_blank" rel="noopener"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">https://www.nsw.gov.au/regional-and-primary-</span></a></p>
 <p style="position:absolute;left:493.6px;top:745.8px;font-size:17.7px;white-space:nowrap" data-w="392.2"><a href="https://www.nsw.gov.au/regional-and-primary-industries/livestock/health-diseases/bovine-respiratory" target="_blank" rel="noopener"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">industries/livestock/health-diseases/bovine-respiratory</span></a><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">  </span></p>
 <p style="position:absolute;left:63.4px;top:128.6px;font-size:12.9px;white-space:nowrap" data-w="136.2"><span style="font-family:Carlito,Calibri,'Segoe UI',Arial,sans-serif;font-style:italic">(Continued from page 17) </span></p>
+<a class="pic" data-src="hi3_1.jpg" data-nw="176" data-nh="100" style="left:547.5px;top:807.3px;width:134.5px;height:75.9px" title="Enlarge picture" aria-label="Picture"></a>
+<a class="pic" data-src="hi3_2.jpg" data-nw="101" data-nh="103" style="left:806.4px;top:803.9px;width:77.4px;height:78.0px" title="Enlarge picture" aria-label="Picture"></a>
+<a class="pic" data-src="hi3_3.jpg" data-nw="97" data-nh="97" style="left:811.5px;top:899.7px;width:73.6px;height:73.6px" title="Enlarge picture" aria-label="Picture"></a>
+<a class="pic" data-src="hi3_4.jpg" data-nw="101" data-nh="101" style="left:810.7px;top:1001.5px;width:76.8px;height:76.8px" title="Enlarge picture" aria-label="Picture"></a>
+<a class="pic" data-src="hi3_5.jpg" data-nw="98" data-nh="99" style="left:811.1px;top:1115.8px;width:74.5px;height:75.3px" title="Enlarge picture" aria-label="Picture"></a>
+<a class="pic" data-src="hi3_6.jpg" data-nw="95" data-nh="94" style="left:812.8px;top:1214.4px;width:72.7px;height:71.9px" title="Enlarge picture" aria-label="Picture"></a>
 </div></div></div>
+<script>
+/* The reader tells this page how big to draw itself, so text is re-rendered at the new size
+   instead of being stretched as a bitmap (which is what happens when an iframe is transform-scaled). */
+(function(){
+  function setK(k){ document.documentElement.style.setProperty('--k', String(k)); }
+  window.addEventListener('message',function(e){ var m=e.data; if(m&&m.abj==='zoom'&&isFinite(m.k)&&m.k>0) setK(m.k); });
+})();
+</script>
+<script>
+/* Pictures: a single pulse when the pointer arrives over one (once per visit), and a click opens it
+   in the reader at full size. Nothing grows on hover. On its own, the link opens the file. */
+(function(){
+  var inParent=(window.parent&&window.parent!==window);
+  document.querySelectorAll('a.pic').forEach(function(a,i){
+    var src=new URL(a.getAttribute('data-src'),location.href).href;
+    a.href=src; a.target='_blank'; a.rel='noopener';
+    function rect(){ var r=a.getBoundingClientRect(); return {x:r.left,y:r.top,w:r.width,h:r.height}; }
+    a.addEventListener('mouseenter',function(){ a.classList.remove('pulse'); void a.offsetWidth; a.classList.add('pulse'); });
+    a.addEventListener('animationend',function(){ a.classList.remove('pulse'); });
+    a.addEventListener('click',function(e){ if(inParent){ e.preventDefault(); try{ parent.postMessage({abj:'picclick',id:location.pathname+'#'+i,src:src,r:rect(),nw:+a.getAttribute('data-nw'),nh:+a.getAttribute('data-nh')},'*'); }catch(err){} } });
+  });
+})();
+</script>
 <script>
 /* Fit each line to the width it occupied in the PDF: stretch the spaces on
    justified lines, and tighten any line the substitute font renders too wide
@@ -141,14 +175,6 @@ a:hover{text-decoration:underline}
   fit();
   if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fit);
   window.addEventListener('resize',fit);
-})();
-</script>
-<script>
-/* The reader tells this page how big to draw itself, so text is re-rendered at the new size
-   instead of being stretched as a bitmap (which is what happens when an iframe is transform-scaled). */
-(function(){
-  function setK(k){ document.documentElement.style.setProperty('--k', String(k)); }
-  window.addEventListener('message',function(e){ var m=e.data; if(m&&m.abj==='zoom'&&isFinite(m.k)&&m.k>0) setK(m.k); });
 })();
 </script>
 <style>html.bee-on,html.bee-on *{cursor:none !important}</style>

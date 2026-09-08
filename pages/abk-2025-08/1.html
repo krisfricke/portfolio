@@ -12,6 +12,11 @@ p{margin:0;position:absolute;color:transparent}
 p::selection,p *::selection{background:rgba(249,197,0,.45);color:transparent}
 a{color:inherit}
 a:hover{text-decoration:underline}
+a.pic{position:absolute;display:block;z-index:4;cursor:zoom-in;border-radius:2px}
+/* one pulse as the pointer arrives - a ring that swells and fades - to say 'this one opens'; nothing more until a click */
+a.pic.pulse{animation:picpulse .8s ease-out 1}
+@keyframes picpulse{0%{box-shadow:0 0 0 0 rgba(249,197,0,.85),inset 0 0 0 0 rgba(255,255,255,.0)}35%{box-shadow:0 0 0 7px rgba(249,197,0,.55),inset 0 0 0 0 rgba(255,255,255,.18)}100%{box-shadow:0 0 0 16px rgba(249,197,0,0),inset 0 0 0 0 rgba(255,255,255,0)}}
+@media (prefers-reduced-motion:reduce){a.pic.pulse{animation:none;box-shadow:0 0 0 3px rgba(249,197,0,.6)}}
 </style></head><body><div class="sheet"><div class="scaler"><div class="page">
 <img class="bg" src="p1.jpg" alt="">
 <p style="position:absolute;left:789.1px;top:654.5px;font-size:17.3px;white-space:nowrap" data-w="48.9"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">Coast.</span></p>
@@ -31,7 +36,31 @@ a:hover{text-decoration:underline}
 <p style="position:absolute;left:105.8px;top:1203.8px;font-size:21.2px;white-space:nowrap" data-w="60.1"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">again.</span></p>
 <p style="position:absolute;left:181.2px;top:1203.8px;font-size:25.7px;white-space:nowrap" data-w="666.5"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">In</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">light</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">of</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">this</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">obvious</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">burden</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">a</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">motion</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">was</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">later</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">made</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">and</span></p>
 <p style="position:absolute;left:105.8px;top:1232.5px;font-size:26.7px;white-space:nowrap" data-w="721.2"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">passed</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">to</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">allow</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">the</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">QBA</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">board</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">to</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">hire</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">a</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">paid</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">“president’s</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">assistant.”</span></p>
+<a class="pic" data-src="hi1_1.jpg" data-nw="1242" data-nh="1754" style="left:-1.2px;top:-1.2px;width:956.0px;height:1354.7px" title="Enlarge picture" aria-label="Picture"></a>
 </div></div></div>
+<script>
+/* The reader tells this page how big to draw itself, so text is re-rendered at the new size
+   instead of being stretched as a bitmap (which is what happens when an iframe is transform-scaled). */
+(function(){
+  function setK(k){ document.documentElement.style.setProperty('--k', String(k)); }
+  window.addEventListener('message',function(e){ var m=e.data; if(m&&m.abj==='zoom'&&isFinite(m.k)&&m.k>0) setK(m.k); });
+})();
+</script>
+<script>
+/* Pictures: a single pulse when the pointer arrives over one (once per visit), and a click opens it
+   in the reader at full size. Nothing grows on hover. On its own, the link opens the file. */
+(function(){
+  var inParent=(window.parent&&window.parent!==window);
+  document.querySelectorAll('a.pic').forEach(function(a,i){
+    var src=new URL(a.getAttribute('data-src'),location.href).href;
+    a.href=src; a.target='_blank'; a.rel='noopener';
+    function rect(){ var r=a.getBoundingClientRect(); return {x:r.left,y:r.top,w:r.width,h:r.height}; }
+    a.addEventListener('mouseenter',function(){ a.classList.remove('pulse'); void a.offsetWidth; a.classList.add('pulse'); });
+    a.addEventListener('animationend',function(){ a.classList.remove('pulse'); });
+    a.addEventListener('click',function(e){ if(inParent){ e.preventDefault(); try{ parent.postMessage({abj:'picclick',id:location.pathname+'#'+i,src:src,r:rect(),nw:+a.getAttribute('data-nw'),nh:+a.getAttribute('data-nh')},'*'); }catch(err){} } });
+  });
+})();
+</script>
 <script>
 /* Fit each line to the width it occupied in the PDF: stretch the spaces on
    justified lines, and tighten any line the substitute font renders too wide
@@ -67,14 +96,6 @@ a:hover{text-decoration:underline}
   fit();
   if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fit);
   window.addEventListener('resize',fit);
-})();
-</script>
-<script>
-/* The reader tells this page how big to draw itself, so text is re-rendered at the new size
-   instead of being stretched as a bitmap (which is what happens when an iframe is transform-scaled). */
-(function(){
-  function setK(k){ document.documentElement.style.setProperty('--k', String(k)); }
-  window.addEventListener('message',function(e){ var m=e.data; if(m&&m.abj==='zoom'&&isFinite(m.k)&&m.k>0) setK(m.k); });
 })();
 </script>
 <style>html.bee-on,html.bee-on *{cursor:none !important}</style>

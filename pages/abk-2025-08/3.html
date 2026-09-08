@@ -12,6 +12,11 @@ p{margin:0;position:absolute;color:transparent}
 p::selection,p *::selection{background:rgba(249,197,0,.45);color:transparent}
 a{color:inherit}
 a:hover{text-decoration:underline}
+a.pic{position:absolute;display:block;z-index:4;cursor:zoom-in;border-radius:2px}
+/* one pulse as the pointer arrives - a ring that swells and fades - to say 'this one opens'; nothing more until a click */
+a.pic.pulse{animation:picpulse .8s ease-out 1}
+@keyframes picpulse{0%{box-shadow:0 0 0 0 rgba(249,197,0,.85),inset 0 0 0 0 rgba(255,255,255,.0)}35%{box-shadow:0 0 0 7px rgba(249,197,0,.55),inset 0 0 0 0 rgba(255,255,255,.18)}100%{box-shadow:0 0 0 16px rgba(249,197,0,0),inset 0 0 0 0 rgba(255,255,255,0)}}
+@media (prefers-reduced-motion:reduce){a.pic.pulse{animation:none;box-shadow:0 0 0 3px rgba(249,197,0,.6)}}
 </style></head><body><div class="sheet"><div class="scaler"><div class="page">
 <img class="bg" src="p3.jpg" alt="">
 <p style="position:absolute;left:129.3px;top:95.8px;font-size:24.3px;white-space:nowrap" data-w="722.5"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">Another</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">valuable</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> panel</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> with</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> asimilar</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">format</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> consisted</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> ofrepresentatives</span></p>
@@ -26,7 +31,31 @@ a:hover{text-decoration:underline}
 <p style="position:absolute;left:162.3px;top:926.2px;font-size:19.6px;white-space:nowrap" data-w="54.9"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">hi</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">a</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">oe</span></p>
 <p style="position:absolute;left:101.6px;top:1238.8px;font-size:27.2px;white-space:nowrap" data-w="666.2"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">S</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> Some</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">of</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">the</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">editor's</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">hives</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">near</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">Bundaberg,</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">January</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">2013.</span></p>
 <p style="position:absolute;left:102.6px;top:1264.5px;font-size:15.9px;white-space:nowrap" data-w="126.6"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">Photo</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">by</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">K</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">Fricke</span></p>
+<a class="pic" data-src="hi3_1.jpg" data-nw="1242" data-nh="1754" style="left:-1.2px;top:-1.2px;width:956.0px;height:1354.7px" title="Enlarge picture" aria-label="Picture"></a>
 </div></div></div>
+<script>
+/* The reader tells this page how big to draw itself, so text is re-rendered at the new size
+   instead of being stretched as a bitmap (which is what happens when an iframe is transform-scaled). */
+(function(){
+  function setK(k){ document.documentElement.style.setProperty('--k', String(k)); }
+  window.addEventListener('message',function(e){ var m=e.data; if(m&&m.abj==='zoom'&&isFinite(m.k)&&m.k>0) setK(m.k); });
+})();
+</script>
+<script>
+/* Pictures: a single pulse when the pointer arrives over one (once per visit), and a click opens it
+   in the reader at full size. Nothing grows on hover. On its own, the link opens the file. */
+(function(){
+  var inParent=(window.parent&&window.parent!==window);
+  document.querySelectorAll('a.pic').forEach(function(a,i){
+    var src=new URL(a.getAttribute('data-src'),location.href).href;
+    a.href=src; a.target='_blank'; a.rel='noopener';
+    function rect(){ var r=a.getBoundingClientRect(); return {x:r.left,y:r.top,w:r.width,h:r.height}; }
+    a.addEventListener('mouseenter',function(){ a.classList.remove('pulse'); void a.offsetWidth; a.classList.add('pulse'); });
+    a.addEventListener('animationend',function(){ a.classList.remove('pulse'); });
+    a.addEventListener('click',function(e){ if(inParent){ e.preventDefault(); try{ parent.postMessage({abj:'picclick',id:location.pathname+'#'+i,src:src,r:rect(),nw:+a.getAttribute('data-nw'),nh:+a.getAttribute('data-nh')},'*'); }catch(err){} } });
+  });
+})();
+</script>
 <script>
 /* Fit each line to the width it occupied in the PDF: stretch the spaces on
    justified lines, and tighten any line the substitute font renders too wide
@@ -62,14 +91,6 @@ a:hover{text-decoration:underline}
   fit();
   if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fit);
   window.addEventListener('resize',fit);
-})();
-</script>
-<script>
-/* The reader tells this page how big to draw itself, so text is re-rendered at the new size
-   instead of being stretched as a bitmap (which is what happens when an iframe is transform-scaled). */
-(function(){
-  function setK(k){ document.documentElement.style.setProperty('--k', String(k)); }
-  window.addEventListener('message',function(e){ var m=e.data; if(m&&m.abj==='zoom'&&isFinite(m.k)&&m.k>0) setK(m.k); });
 })();
 </script>
 <style>html.bee-on,html.bee-on *{cursor:none !important}</style>

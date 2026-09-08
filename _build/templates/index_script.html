@@ -140,7 +140,7 @@ function pageRow(a,n,li){
   return '<div class="pframe htmlpage" data-wmm="'+a.mm[0]+'" data-hmm="'+a.mm[1]+'" style="aspect-ratio:'+a.mm[0]+'/'+a.mm[1]+'">'+
     '<iframe loading="lazy" title="'+esc(a.title)+' page '+n+'" src="pages/'+a.id+'/'+n+'.html"></iframe></div><div class="rail">'+railFor(a,n,li)+'</div>';
 }
-function buildStack(li){
+function buildStack(li){ setTimeout(syncEdge,0);
   const L=LANES[li], s=document.getElementById(L.sheet); s.innerHTML=L.head||'';
   const order=sorted(L.list(),ORDER);
   if(L.active===null){ order.forEach(a=>s.appendChild(card(a,li))); fitFrames(); return; }
@@ -264,13 +264,13 @@ function setLane(pos){ const t=document.getElementById('track');
     document.querySelector('.gate').classList.add('leaving');
     setTimeout(function(){ location.href=HOME; },780); return; }
   t.classList.toggle('right',pos===1); t.classList.toggle('left',pos===-1);
-  document.body.classList.toggle('inlane',pos===1);
-  if(pos===1) placeBackTab(); }
+  document.body.classList.toggle('inlane',pos===1); syncEdge(); }
 function closeTopic(){ setLane(0); }
-function placeBackTab(){ requestAnimationFrame(function(){
-  const v=document.getElementById('edgeHome'), b=document.getElementById('edgeBack'); if(!v||!b) return;
-  b.style.left=(v.getBoundingClientRect().right+4)+'px'; }); }
-window.addEventListener('resize',placeBackTab);
+/* which edge tabs apply right now: "Stacked" whenever an article is open in the lane on view */
+function syncEdge(){ const li=document.body.classList.contains('inlane')?1:0;
+  document.body.classList.toggle('hasopen',LANES[li].active!==null); }
+function toStack(){ const li=document.body.classList.contains('inlane')?1:0;
+  if(LANES[li].active!==null) closeArticle(li); else backToTop(); }
 
 /* ---------- browse panel ---------- */
 var BMODE='pub';
@@ -342,14 +342,15 @@ window.addEventListener('keydown',function(e){
 window.addEventListener('message',function(e){
   const m=e.data; if(!m||m.abj!=='click') return;
   let fr=null; for(const f of document.querySelectorAll('iframe')){ if(f.contentWindow===e.source){ fr=f; break; } }
+  if(PIC.mode!=='idle'){ picClose(true); return; }                   /* spend it on the picture instead */
   const arc=fr && fr.closest('.deck') ? fr.closest('.arc') : null;   /* only pages sitting in the stack */
   if(arc) arc.click();
 });
 
 /* ---------- picture enlarger ----------
-   Hover a picture and it starts to grow - slowly at first, then faster - towards its full size or the window,
-   whichever is smaller. Click while it is under half way and it jumps to full size and stays; click once it is
-   past half way (or full) and it closes. Leaving it before you click lets it settle back. Esc closes. */
+   Click a picture and it opens to its full size or the window, whichever is smaller, and stays. Click it
+   again, click anywhere else, scroll, or press Esc and it closes. (Hover used to grow it; readers found
+   that annoying, so the page just pulses the picture once when the pointer arrives.) */
 const PIC={el:null,scrim:null,p:0,goal:0,mode:'idle',id:null,from:null,to:null,cool:null,last:0,over:false};
 function picRects(m,frame){
   const fr=frame.getBoundingClientRect();
@@ -366,7 +367,7 @@ function picStart(m,source,jump){
   if(PIC.cool===m.id && !jump) return;
   if(PIC.id!==m.id || PIC.mode==='idle'){
     const r=picRects(m,frame); PIC.from=r.from; PIC.to=r.to; PIC.id=m.id; PIC.p=0;
-    PIC.el.src=m.src; PIC.el.classList.add('on'); PIC.el.classList.remove('big');
+    PIC.el.src=m.src; PIC.el.classList.add('on'); PIC.el.classList.remove('big'); PIC.fast=false;
   }
   picGo(jump?'lock':'grow',1);
 }
@@ -376,7 +377,7 @@ function picClick(){
   if(PIC.p<0.5 && PIC.mode!=='lock') picGo('lock',1);
   else picClose();
 }
-function picClose(){ if(PIC.mode==='idle') return; PIC.cool=PIC.id; PIC.scrim.classList.remove('on'); picGo('close',0); }
+function picClose(fast){ if(PIC.mode==='idle') return; PIC.fast=!!fast; PIC.cool=PIC.id; PIC.scrim.classList.remove('on'); picGo('close',0); }
 function picDraw(){
   const f=PIC.from,t=PIC.to,p=PIC.p, e=PIC.el;
   e.style.left=(f.x+(t.x-f.x)*p)+'px'; e.style.top=(f.y+(t.y-f.y)*p)+'px';
@@ -390,7 +391,7 @@ function picTick(){
   let rate;
   if(PIC.mode==='grow') rate=0.06+1.4*PIC.p;            /* slow start, gathering pace: ~2.3s to full */
   else if(PIC.mode==='lock') rate=4;                     /* the click: straight to full */
-  else rate=3;                                           /* closing / settling back */
+  else rate=PIC.fast?9:3;                                /* dismissed outright / settling back */
   PIC.p += (PIC.goal>PIC.p?1:-1)*rate*dt;
   if(PIC.goal>=1 && PIC.p>=1){ PIC.p=1; picDraw(); if(PIC.mode==='lock') PIC.scrim.classList.add('on'); if(PIC.mode==='grow'){ PIC.mode='lock'; PIC.scrim.classList.add('on'); } return; }
   if(PIC.goal<=0 && PIC.p<=0){ PIC.p=0; PIC.mode='idle'; PIC.el.classList.remove('on','big'); return; }
@@ -402,7 +403,7 @@ function picTick(){
   PIC.el.addEventListener('mouseleave',()=>{ PIC.over=false; if(PIC.mode==='grow') picGo('settle',0); });
   window.addEventListener('message',function(e){
     const m=e.data; if(!m||!m.abj) return;
-    if(m.abj==='pic'){ picStart(m,e.source,false); return; }
+    /* hover no longer grows a picture: the page pulses it once instead; only a click opens it */
     if(m.abj==='picclick'){ picStart(m,e.source,true); return; }
     if(m.abj==='picleave'){ if(PIC.cool===m.id) PIC.cool=null; /* the pointer has left the picture: it may grow again next time */
       if(PIC.mode==='grow' && !PIC.over && PIC.p<0.02) picGo('settle',0); return; }
@@ -425,6 +426,15 @@ function picTick(){
     ln.scrollTop += e.deltaY*unit;
     ln.scrollLeft += e.deltaX*unit;
   },{passive:true,capture:true});
+  /* A picture growing when you did not want one: click anywhere off it and it drops straight back.
+     Until it is fully open the scrim is not listening (it only takes the pointer once lit), so there
+     was nothing out there to click. Capture, so this runs before whatever was clicked - the click is
+     spent on dismissing the picture and should not also open an article or close the one you are in. */
+  window.addEventListener('click',function(e){
+    if(PIC.mode==='idle' || e.target===PIC.el) return;      /* on the picture itself: picClick decides */
+    picClose(true);
+    e.stopPropagation(); e.preventDefault();
+  },true);
   /* same trap on a touch screen, where a tap can lock a picture open and there is nothing to hover away to */
   window.addEventListener('touchmove',function(){ if(PIC.mode!=='idle') picClose(); },{passive:true,capture:true});
 })();

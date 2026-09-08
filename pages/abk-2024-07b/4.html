@@ -11,8 +11,12 @@ html,body{margin:0;padding:0;background:#fff}
 p{margin:0;position:absolute}
 a{color:inherit}
 a:hover{text-decoration:underline}
-</style><style>a.pic{position:absolute;display:block;z-index:4;cursor:zoom-in}</style>
-</head><body><div class="sheet"><div class="scaler"><div class="page">
+a.pic{position:absolute;display:block;z-index:4;cursor:zoom-in;border-radius:2px}
+/* one pulse as the pointer arrives - a ring that swells and fades - to say 'this one opens'; nothing more until a click */
+a.pic.pulse{animation:picpulse .8s ease-out 1}
+@keyframes picpulse{0%{box-shadow:0 0 0 0 rgba(249,197,0,.85),inset 0 0 0 0 rgba(255,255,255,.0)}35%{box-shadow:0 0 0 7px rgba(249,197,0,.55),inset 0 0 0 0 rgba(255,255,255,.18)}100%{box-shadow:0 0 0 16px rgba(249,197,0,0),inset 0 0 0 0 rgba(255,255,255,0)}}
+@media (prefers-reduced-motion:reduce){a.pic.pulse{animation:none;box-shadow:0 0 0 3px rgba(249,197,0,.6)}}
+</style></head><body><div class="sheet"><div class="scaler"><div class="page">
 <img class="bg" src="p4.jpg" alt="">
 <p style="position:absolute;left:329.9px;top:631.4px;font-size:14.1px;white-space:nowrap" data-w="302.7"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> The author with some </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-style:italic">L nitens </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">manuka plants.</span></p>
 <p style="position:absolute;left:158.9px;top:270.1px;font-size:14.1px;white-space:nowrap" data-w="209.4"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> WA conference closing banquet</span></p>
@@ -33,9 +37,33 @@ a:hover{text-decoration:underline}
 <p style="position:absolute;left:530.2px;top:1272.2px;font-size:14.4px;white-space:nowrap" data-w="114.9"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">Vol. 126  </span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">|</span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">  No. 01 |  </span></p>
 <p style="position:absolute;left:719.5px;top:1270.6px;font-size:16.0px;white-space:nowrap" data-w="176.8"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">  Celebrating 125 years </span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">|</span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">  </span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">23</span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif"> </span></p>
 <a class="pic" data-src="hi4_1.jpg" data-nw="1088" data-nh="766" style="left:58.2px;top:661.3px;width:834.5px;height:588.2px" title="Enlarge picture" aria-label="Picture"></a>
-<a class="pic" data-src="hi4_2.jpg" data-nw="537" data-nh="271" style="left:57.4px;top:57.3px;width:411.4px;height:207.4px" title="Enlarge picture" aria-label="Picture"></a>
-<a class="pic" data-src="hi4_3.jpg" data-nw="1092" data-nh="422" style="left:57.2px;top:303.8px;width:838.1px;height:323.1px" title="Enlarge picture" aria-label="Picture"></a>
+<a class="pic" data-src="hi4_2.jpg" data-nw="1153" data-nh="806" style="left:33.6px;top:36.8px;width:884.8px;height:617.6px" title="Enlarge picture" aria-label="Picture"></a>
+<a class="pic" data-src="hi4_3.jpg" data-nw="537" data-nh="271" style="left:57.4px;top:57.3px;width:411.4px;height:207.4px" title="Enlarge picture" aria-label="Picture"></a>
+<a class="pic" data-src="hi4_4.jpg" data-nw="1092" data-nh="422" style="left:57.2px;top:303.8px;width:838.1px;height:323.1px" title="Enlarge picture" aria-label="Picture"></a>
 </div></div></div>
+<script>
+/* The reader tells this page how big to draw itself, so text is re-rendered at the new size
+   instead of being stretched as a bitmap (which is what happens when an iframe is transform-scaled). */
+(function(){
+  function setK(k){ document.documentElement.style.setProperty('--k', String(k)); }
+  window.addEventListener('message',function(e){ var m=e.data; if(m&&m.abj==='zoom'&&isFinite(m.k)&&m.k>0) setK(m.k); });
+})();
+</script>
+<script>
+/* Pictures: a single pulse when the pointer arrives over one (once per visit), and a click opens it
+   in the reader at full size. Nothing grows on hover. On its own, the link opens the file. */
+(function(){
+  var inParent=(window.parent&&window.parent!==window);
+  document.querySelectorAll('a.pic').forEach(function(a,i){
+    var src=new URL(a.getAttribute('data-src'),location.href).href;
+    a.href=src; a.target='_blank'; a.rel='noopener';
+    function rect(){ var r=a.getBoundingClientRect(); return {x:r.left,y:r.top,w:r.width,h:r.height}; }
+    a.addEventListener('mouseenter',function(){ a.classList.remove('pulse'); void a.offsetWidth; a.classList.add('pulse'); });
+    a.addEventListener('animationend',function(){ a.classList.remove('pulse'); });
+    a.addEventListener('click',function(e){ if(inParent){ e.preventDefault(); try{ parent.postMessage({abj:'picclick',id:location.pathname+'#'+i,src:src,r:rect(),nw:+a.getAttribute('data-nw'),nh:+a.getAttribute('data-nh')},'*'); }catch(err){} } });
+  });
+})();
+</script>
 <script>
 /* Fit each line to the width it occupied in the PDF: stretch the spaces on
    justified lines, and tighten any line the substitute font renders too wide
@@ -71,29 +99,6 @@ a:hover{text-decoration:underline}
   fit();
   if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fit);
   window.addEventListener('resize',fit);
-})();
-</script>
-<script>
-/* The reader tells this page how big to draw itself, so text is re-rendered at the new size
-   instead of being stretched as a bitmap (which is what happens when an iframe is transform-scaled). */
-(function(){
-  function setK(k){ document.documentElement.style.setProperty('--k', String(k)); }
-  window.addEventListener('message',function(e){ var m=e.data; if(m&&m.abj==='zoom'&&isFinite(m.k)&&m.k>0) setK(m.k); });
-})();
-</script>
-<script>
-/* Pictures: tell the reader when the pointer is over one (it grows it there); on its own, open the file. */
-(function(){
-  var inParent=(window.parent&&window.parent!==window);
-  document.querySelectorAll('a.pic').forEach(function(a,i){
-    var src=new URL(a.getAttribute('data-src'),location.href).href;
-    a.href=src; a.target='_blank'; a.rel='noopener';
-    function rect(){ var r=a.getBoundingClientRect(); return {x:r.left,y:r.top,w:r.width,h:r.height}; }
-    a.addEventListener('mouseenter',function(){ if(!inParent) return;
-      try{ parent.postMessage({abj:'pic',id:location.pathname+'#'+i,src:src,r:rect(),nw:+a.getAttribute('data-nw'),nh:+a.getAttribute('data-nh')},'*'); }catch(e){} });
-    a.addEventListener('mouseleave',function(){ if(!inParent) return; try{ parent.postMessage({abj:'picleave',id:location.pathname+'#'+i},'*'); }catch(e){} });
-    a.addEventListener('click',function(e){ if(inParent){ e.preventDefault(); try{ parent.postMessage({abj:'picclick',id:location.pathname+'#'+i,src:src,r:rect(),nw:+a.getAttribute('data-nw'),nh:+a.getAttribute('data-nh')},'*'); }catch(err){} } });
-  });
 })();
 </script>
 <style>html.bee-on,html.bee-on *{cursor:none !important}</style>

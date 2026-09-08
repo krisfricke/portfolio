@@ -63,17 +63,26 @@ noscript .nojs a{color:#0f4b70}
 .gate .handoff{color:#8a8472;font-size:12.5px;margin:12px 0 0;opacity:0;transition:opacity .3s}
 .gate.leaving .handoff{opacity:1}
 .gate .back{background:#111;color:#fff;border:none;border-radius:20px;padding:9px 20px;font-size:13.5px;cursor:pointer;font-family:inherit}
-.edge{position:fixed;top:50%;transform:translateY(-50%);z-index:70;background:rgba(17,17,17,.80);
+/* the tabs down the left edge live in one column, so they cannot land on top of each other */
+.edgecol{position:fixed;left:0;top:50%;transform:translateY(-50%);z-index:70;
+  display:flex;flex-direction:column;align-items:flex-start;gap:7px;pointer-events:none}
+.edgecol>*{pointer-events:auto}
+.edge{background:rgba(17,17,17,.80);
   color:#c9c4b5;border:none;border-radius:0 8px 8px 0;padding:13px 8px 13px 5px;cursor:pointer;font-family:inherit;
   display:flex;flex-direction:row;align-items:center;gap:6px;transition:background .15s,color .15s}
 .edge .chev{width:0;height:0;flex:0 0 auto;
   border-top:6px solid transparent;border-bottom:6px solid transparent;border-right:8px solid currentColor}
 .edge .lbl{writing-mode:vertical-rl;letter-spacing:.12em;font-size:12px;font-weight:700}
 .edge:hover{background:var(--gold);color:#111}
-.edge.back{display:none;background:rgba(15,75,112,.86);color:#eaf3fa;border-radius:8px}
+.edge.back{display:none;background:rgba(15,75,112,.86);color:#eaf3fa}
 .edge.back:hover{background:var(--gold);color:#111}
 body.inlane .edge.back{display:flex}
-.edge.w{left:0}
+/* back to the stacked list — shown whenever an article is open */
+.edge.stack{display:none;background:var(--gold);color:#111}
+.edge.stack:hover{background:#111;color:var(--gold)}
+.edge.stack .chev{width:10px;height:2px;border:none;background:currentColor;
+  box-shadow:0 4px 0 currentColor,0 8px 0 currentColor;margin:0 1px 8px 0}
+body.hasopen .edge.stack{display:flex}
 /* ---------- light woodgrain ---------- */
 .wood{background-color:#ecd9b7;
   background-image:linear-gradient(180deg,rgba(255,255,255,.30),rgba(255,255,255,0) 55%,rgba(120,85,40,.07)),url(assets/wood.jpg);
@@ -333,8 +342,11 @@ body.inlane .edge.back{display:flex}
   <div class="rt"><span class="iss" id="issLabel"></span></div>
 </div>
 
-<button class="edge w back" id="edgeBack" onclick="closeTopic()" title="Back to the article you were reading"><span class="chev" aria-hidden="true"></span><span class="lbl">Back to the article</span></button>
-<button class="edge w" id="edgeHome" onclick="setLane(-1)" title="Go to krisfricke.github.io"><span class="chev" aria-hidden="true"></span><span class="lbl">krisfricke.github.io</span></button>
+<div class="edgecol">
+  <button class="edge back" id="edgeBack" onclick="closeTopic()" title="Back to the article you were reading"><span class="chev" aria-hidden="true"></span><span class="lbl">Back to the article</span></button>
+  <button class="edge stack" id="edgeStack" onclick="toStack()" title="Close the article and go back to the stacked list"><span class="chev" aria-hidden="true"></span><span class="lbl">Stacked</span></button>
+  <button class="edge" id="edgeHome" onclick="setLane(-1)" title="Go to krisfricke.github.io"><span class="chev" aria-hidden="true"></span><span class="lbl">krisfricke.github.io</span></button>
+</div>
 <div class="track" id="track">
   <div class="lane" id="laneL"><div class="gate">
     <img src="assets/bee/gold.png" alt="">
@@ -488,7 +500,7 @@ function pageRow(a,n,li){
   return '<div class="pframe htmlpage" data-wmm="'+a.mm[0]+'" data-hmm="'+a.mm[1]+'" style="aspect-ratio:'+a.mm[0]+'/'+a.mm[1]+'">'+
     '<iframe loading="lazy" title="'+esc(a.title)+' page '+n+'" src="pages/'+a.id+'/'+n+'.html"></iframe></div><div class="rail">'+railFor(a,n,li)+'</div>';
 }
-function buildStack(li){
+function buildStack(li){ setTimeout(syncEdge,0);
   const L=LANES[li], s=document.getElementById(L.sheet); s.innerHTML=L.head||'';
   const order=sorted(L.list(),ORDER);
   if(L.active===null){ order.forEach(a=>s.appendChild(card(a,li))); fitFrames(); return; }
@@ -612,13 +624,13 @@ function setLane(pos){ const t=document.getElementById('track');
     document.querySelector('.gate').classList.add('leaving');
     setTimeout(function(){ location.href=HOME; },780); return; }
   t.classList.toggle('right',pos===1); t.classList.toggle('left',pos===-1);
-  document.body.classList.toggle('inlane',pos===1);
-  if(pos===1) placeBackTab(); }
+  document.body.classList.toggle('inlane',pos===1); syncEdge(); }
 function closeTopic(){ setLane(0); }
-function placeBackTab(){ requestAnimationFrame(function(){
-  const v=document.getElementById('edgeHome'), b=document.getElementById('edgeBack'); if(!v||!b) return;
-  b.style.left=(v.getBoundingClientRect().right+4)+'px'; }); }
-window.addEventListener('resize',placeBackTab);
+/* which edge tabs apply right now: "Stacked" whenever an article is open in the lane on view */
+function syncEdge(){ const li=document.body.classList.contains('inlane')?1:0;
+  document.body.classList.toggle('hasopen',LANES[li].active!==null); }
+function toStack(){ const li=document.body.classList.contains('inlane')?1:0;
+  if(LANES[li].active!==null) closeArticle(li); else backToTop(); }
 
 /* ---------- browse panel ---------- */
 var BMODE='pub';
@@ -690,14 +702,15 @@ window.addEventListener('keydown',function(e){
 window.addEventListener('message',function(e){
   const m=e.data; if(!m||m.abj!=='click') return;
   let fr=null; for(const f of document.querySelectorAll('iframe')){ if(f.contentWindow===e.source){ fr=f; break; } }
+  if(PIC.mode!=='idle'){ picClose(true); return; }                   /* spend it on the picture instead */
   const arc=fr && fr.closest('.deck') ? fr.closest('.arc') : null;   /* only pages sitting in the stack */
   if(arc) arc.click();
 });
 
 /* ---------- picture enlarger ----------
-   Hover a picture and it starts to grow - slowly at first, then faster - towards its full size or the window,
-   whichever is smaller. Click while it is under half way and it jumps to full size and stays; click once it is
-   past half way (or full) and it closes. Leaving it before you click lets it settle back. Esc closes. */
+   Click a picture and it opens to its full size or the window, whichever is smaller, and stays. Click it
+   again, click anywhere else, scroll, or press Esc and it closes. (Hover used to grow it; readers found
+   that annoying, so the page just pulses the picture once when the pointer arrives.) */
 const PIC={el:null,scrim:null,p:0,goal:0,mode:'idle',id:null,from:null,to:null,cool:null,last:0,over:false};
 function picRects(m,frame){
   const fr=frame.getBoundingClientRect();
@@ -714,7 +727,7 @@ function picStart(m,source,jump){
   if(PIC.cool===m.id && !jump) return;
   if(PIC.id!==m.id || PIC.mode==='idle'){
     const r=picRects(m,frame); PIC.from=r.from; PIC.to=r.to; PIC.id=m.id; PIC.p=0;
-    PIC.el.src=m.src; PIC.el.classList.add('on'); PIC.el.classList.remove('big');
+    PIC.el.src=m.src; PIC.el.classList.add('on'); PIC.el.classList.remove('big'); PIC.fast=false;
   }
   picGo(jump?'lock':'grow',1);
 }
@@ -724,7 +737,7 @@ function picClick(){
   if(PIC.p<0.5 && PIC.mode!=='lock') picGo('lock',1);
   else picClose();
 }
-function picClose(){ if(PIC.mode==='idle') return; PIC.cool=PIC.id; PIC.scrim.classList.remove('on'); picGo('close',0); }
+function picClose(fast){ if(PIC.mode==='idle') return; PIC.fast=!!fast; PIC.cool=PIC.id; PIC.scrim.classList.remove('on'); picGo('close',0); }
 function picDraw(){
   const f=PIC.from,t=PIC.to,p=PIC.p, e=PIC.el;
   e.style.left=(f.x+(t.x-f.x)*p)+'px'; e.style.top=(f.y+(t.y-f.y)*p)+'px';
@@ -738,7 +751,7 @@ function picTick(){
   let rate;
   if(PIC.mode==='grow') rate=0.06+1.4*PIC.p;            /* slow start, gathering pace: ~2.3s to full */
   else if(PIC.mode==='lock') rate=4;                     /* the click: straight to full */
-  else rate=3;                                           /* closing / settling back */
+  else rate=PIC.fast?9:3;                                /* dismissed outright / settling back */
   PIC.p += (PIC.goal>PIC.p?1:-1)*rate*dt;
   if(PIC.goal>=1 && PIC.p>=1){ PIC.p=1; picDraw(); if(PIC.mode==='lock') PIC.scrim.classList.add('on'); if(PIC.mode==='grow'){ PIC.mode='lock'; PIC.scrim.classList.add('on'); } return; }
   if(PIC.goal<=0 && PIC.p<=0){ PIC.p=0; PIC.mode='idle'; PIC.el.classList.remove('on','big'); return; }
@@ -750,7 +763,7 @@ function picTick(){
   PIC.el.addEventListener('mouseleave',()=>{ PIC.over=false; if(PIC.mode==='grow') picGo('settle',0); });
   window.addEventListener('message',function(e){
     const m=e.data; if(!m||!m.abj) return;
-    if(m.abj==='pic'){ picStart(m,e.source,false); return; }
+    /* hover no longer grows a picture: the page pulses it once instead; only a click opens it */
     if(m.abj==='picclick'){ picStart(m,e.source,true); return; }
     if(m.abj==='picleave'){ if(PIC.cool===m.id) PIC.cool=null; /* the pointer has left the picture: it may grow again next time */
       if(PIC.mode==='grow' && !PIC.over && PIC.p<0.02) picGo('settle',0); return; }
@@ -773,6 +786,15 @@ function picTick(){
     ln.scrollTop += e.deltaY*unit;
     ln.scrollLeft += e.deltaX*unit;
   },{passive:true,capture:true});
+  /* A picture growing when you did not want one: click anywhere off it and it drops straight back.
+     Until it is fully open the scrim is not listening (it only takes the pointer once lit), so there
+     was nothing out there to click. Capture, so this runs before whatever was clicked - the click is
+     spent on dismissing the picture and should not also open an article or close the one you are in. */
+  window.addEventListener('click',function(e){
+    if(PIC.mode==='idle' || e.target===PIC.el) return;      /* on the picture itself: picClick decides */
+    picClose(true);
+    e.stopPropagation(); e.preventDefault();
+  },true);
   /* same trap on a touch screen, where a tap can lock a picture open and there is nothing to hover away to */
   window.addEventListener('touchmove',function(){ if(PIC.mode!=='idle') picClose(); },{passive:true,capture:true});
 })();
