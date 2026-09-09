@@ -19,6 +19,15 @@ scripts below (the base URL is baked into share links, citations' links, the sit
 Files and folders starting with an underscore (`_build/`, `_config.json`, `_articles_meta.json`) are ignored by
 GitHub Pages' default Jekyll processing, so the build tooling stays in the repo without being published.
 
+## Footnotes as hover text
+
+A superscript number (or * †) in an article that has a matching note - at the foot of the page or in the
+references at the end - shows that note when the pointer rests on it, when it is tapped, or when it takes
+keyboard focus. `_build/notes.py` finds the notes automatically: a line starting with the number, in sequence
+from 1 (or set smaller than the body text), followed by a capital, a quote or a web address; the note runs on
+down its column, and across a column break when the last word is split. Articles whose references were not
+extracted show no hover for those numbers; the build prints which notes it found for each article.
+
 ## Layout
 
     index.html              the reader
