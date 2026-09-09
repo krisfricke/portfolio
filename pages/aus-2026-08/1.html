@@ -12,6 +12,13 @@ p{margin:0;position:absolute}
 a{color:inherit}
 a:hover{text-decoration:underline}
 a.pic{position:absolute;display:block;z-index:4;cursor:zoom-in;border-radius:2px}
+
+.fn{cursor:help;border-bottom:1px dotted rgba(0,0,0,.35)}
+.fn:hover,.fn:focus{outline:none;background:rgba(249,197,0,.28)}
+.fnpop{position:fixed;z-index:20;display:none;max-width:380px;padding:9px 12px 10px;border-radius:8px;background:#fffdf5;color:#1a1a1a;
+  border:1px solid #c9a95f;box-shadow:0 8px 24px rgba(0,0,0,.22);font:13px/1.45 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;white-space:pre-line;pointer-events:none}
+.fnpop b{color:#6a5a3a;font-weight:700;margin-right:6px}
+
 /* one pulse as the pointer arrives - a ring that swells and fades - to say 'this one opens'; nothing more until a click */
 a.pic.pulse{animation:picpulse .8s ease-out 1}
 @keyframes picpulse{0%{box-shadow:0 0 0 0 rgba(249,197,0,.85),inset 0 0 0 0 rgba(255,255,255,.0)}35%{box-shadow:0 0 0 7px rgba(249,197,0,.55),inset 0 0 0 0 rgba(255,255,255,.18)}100%{box-shadow:0 0 0 16px rgba(249,197,0,0),inset 0 0 0 0 rgba(255,255,255,0)}}
@@ -42,7 +49,7 @@ a.pic.pulse{animation:picpulse .8s ease-out 1}
 <p style="position:absolute;left:62.6px;top:361.8px;font-size:17.7px;white-space:nowrap" data-w="830.6" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">site near them.  This can be a real challenge, although it’s also part of what I enjoy about beekeeping here – when </span></p>
 <p style="position:absolute;left:62.6px;top:380.4px;font-size:17.7px;white-space:nowrap" data-w="829.7" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">telling non-beekeepers about what we do I like to characterize it like a giant scavenger hunt across the entire region, </span></p>
 <p style="position:absolute;left:62.6px;top:399.1px;font-size:17.7px;white-space:nowrap" data-w="788.2"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">challenging your knowledge of the climate and ecosystem to come up with the winning hive movement choice. </span></p>
-<p style="position:absolute;left:85.3px;top:415.3px;font-size:17.7px;white-space:nowrap" data-w="807.6" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">Thanks to a 2001 RIRDC (the predecessor of Agrifutures) report</span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;vertical-align:super;font-size:.7em">1</span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif"> I can put solid numbers to this behaviour.  This </span></p>
+<p style="position:absolute;left:85.3px;top:415.3px;font-size:17.7px;white-space:nowrap" data-w="807.6" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">Thanks to a 2001 RIRDC (the predecessor of Agrifutures) report</span><span class="fn" tabindex="0" data-n="1" data-note="Goodman, R. (2001). Beekeepers&#x27; Use of Honey and Pollen Flora Resources in Victoria. A report for the Rural Industries Research and Development Corporation (RIRDC), Barton, ACT. RIRDC Publication No. 01/050, RIRDC Project No. DAV-109A. ISBN 0 642 58272 6; ISSN 1440-6845." aria-label="Note 1: Goodman, R. (2001). Beekeepers&#x27; Use of Honey and Pollen Flora Resources in Victoria. A report for the Rural Industries Research and Development Corporation (RIRDC), Barton, ACT. RIRDC Publication No. 01/050, RIRDC Project No. DAV-109A. ISBN 0 642 58272 6; ISSN 1440-6845."><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;vertical-align:super;font-size:.7em">1</span></span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif"> I can put solid numbers to this behaviour.  This </span></p>
 <p style="position:absolute;left:62.6px;top:436.3px;font-size:17.7px;white-space:nowrap" data-w="609.6"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">study was conducted in 1996 in collaboration with the Victorian Apiarist Association. </span></p>
 <p style="position:absolute;left:85.3px;top:987.4px;font-size:17.7px;white-space:nowrap" data-w="530.4"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">Above: Fig 1. Top nectar sources in Victoria identified in the 1996 survey. </span></p>
 <a class="pic" data-src="hi1_1.jpg" data-nw="1080" data-nh="652" style="left:62.3px;top:466.7px;width:829.0px;height:499.9px" title="Enlarge picture" aria-label="Picture"></a>
@@ -50,6 +57,35 @@ a.pic.pulse{animation:picpulse .8s ease-out 1}
 <a class="pic" data-src="hi1_3.jpg" data-nw="93" data-nh="93" style="left:802.4px;top:1130.9px;width:70.3px;height:70.3px" title="Enlarge picture" aria-label="Picture"></a>
 <a class="pic" data-src="hi1_4.jpg" data-nw="96" data-nh="95" style="left:802.4px;top:1208.9px;width:72.7px;height:72.7px" title="Enlarge picture" aria-label="Picture"></a>
 </div></div></div>
+<script>
+/* Footnotes as hover text: rest on a superscript that has a note and the note appears beside it;
+   a tap does the same on a touch screen; Esc or moving away hides it. */
+(function(){
+  var pop=null, cur=null;
+  function show(el){
+    if(!pop){ pop=document.createElement('div'); pop.className='fnpop'; pop.setAttribute('role','tooltip'); document.body.appendChild(pop); }
+    var n=el.getAttribute('data-n'); pop.innerHTML=(n?'<b>'+n+'</b>':'')+el.getAttribute('data-note').replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});
+    pop.style.display='block'; pop.style.left='0px'; pop.style.top='0px';
+    var r=el.getBoundingClientRect(), pw=pop.offsetWidth, ph=pop.offsetHeight;
+    var x=Math.min(Math.max(6,r.left+r.width/2-pw/2), innerWidth-pw-6), y=r.top-ph-8;
+    if(y<4) y=r.bottom+8;
+    pop.style.left=x+'px'; pop.style.top=y+'px'; cur=el;
+  }
+  function hide(){ if(pop) pop.style.display='none'; cur=null; }
+  var fns=document.querySelectorAll('.fn');
+  for(var i=0;i<fns.length;i++){
+    var el=fns[i];
+    el.addEventListener('mouseenter',function(){ show(this); });
+    el.addEventListener('mouseleave',hide);
+    el.addEventListener('focus',function(){ show(this); });
+    el.addEventListener('blur',hide);
+    el.addEventListener('click',function(e){ e.preventDefault(); e.stopPropagation(); if(cur===this) hide(); else show(this); });
+  }
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') hide(); });
+  document.addEventListener('click',function(){ hide(); });
+  window.addEventListener('scroll',hide,true);
+})();
+</script>
 <script>
 /* The reader tells this page how big to draw itself, so text is re-rendered at the new size
    instead of being stretched as a bitmap (which is what happens when an iframe is transform-scaled). */

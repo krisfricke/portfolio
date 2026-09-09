@@ -12,6 +12,13 @@ p{margin:0;position:absolute}
 a{color:inherit}
 a:hover{text-decoration:underline}
 a.pic{position:absolute;display:block;z-index:4;cursor:zoom-in;border-radius:2px}
+
+.fn{cursor:help;border-bottom:1px dotted rgba(0,0,0,.35)}
+.fn:hover,.fn:focus{outline:none;background:rgba(249,197,0,.28)}
+.fnpop{position:fixed;z-index:20;display:none;max-width:380px;padding:9px 12px 10px;border-radius:8px;background:#fffdf5;color:#1a1a1a;
+  border:1px solid #c9a95f;box-shadow:0 8px 24px rgba(0,0,0,.22);font:13px/1.45 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;white-space:pre-line;pointer-events:none}
+.fnpop b{color:#6a5a3a;font-weight:700;margin-right:6px}
+
 /* one pulse as the pointer arrives - a ring that swells and fades - to say 'this one opens'; nothing more until a click */
 a.pic.pulse{animation:picpulse .8s ease-out 1}
 @keyframes picpulse{0%{box-shadow:0 0 0 0 rgba(249,197,0,.85),inset 0 0 0 0 rgba(255,255,255,.0)}35%{box-shadow:0 0 0 7px rgba(249,197,0,.55),inset 0 0 0 0 rgba(255,255,255,.18)}100%{box-shadow:0 0 0 16px rgba(249,197,0,0),inset 0 0 0 0 rgba(255,255,255,0)}}
@@ -21,7 +28,7 @@ a.pic.pulse{animation:picpulse .8s ease-out 1}
 <p style="position:absolute;left:72.6px;top:543.3px;font-size:16.0px;white-space:nowrap" data-w="346.9"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">Eradicating an invasive parasite is always a </span></p>
 <p style="position:absolute;left:59.0px;top:562.5px;font-size:16.0px;white-space:nowrap" data-w="360.5" data-j="1"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">worthwhile activity so I thought I’d contact him to </span></p>
 <p style="position:absolute;left:59.0px;top:581.7px;font-size:16.0px;white-space:nowrap" data-w="225.0"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">find out what he had eradicated.</span></p>
-<p style="position:absolute;left:72.6px;top:600.9px;font-size:16.0px;white-space:nowrap" data-w="346.9"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">“Varroa mites” he wrote back.</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif;vertical-align:super;font-size:.7em">2</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> I about fell out of </span></p>
+<p style="position:absolute;left:72.6px;top:600.9px;font-size:16.0px;white-space:nowrap" data-w="346.9"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">“Varroa mites” he wrote back.</span><span class="fn" tabindex="0" data-n="2" data-note="All otherwise uncited quotes and details: from personal communication with Christopher Rosario June and July 2024" aria-label="Note 2: All otherwise uncited quotes and details: from personal communication with Christopher Rosario June and July 2024"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif;vertical-align:super;font-size:.7em">2</span></span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> I about fell out of </span></p>
 <p style="position:absolute;left:59.0px;top:620.0px;font-size:16.0px;white-space:nowrap" data-w="360.5" data-j="1"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">my chair. I recovered myself, repeating </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-style:italic">surely, surely </span></p>
 <p style="position:absolute;left:59.0px;top:639.2px;font-size:16.0px;white-space:nowrap" data-w="360.5" data-j="1"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-style:italic">it was just the less dangerous </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">“Varroa jacobsonii” </span></p>
 <p style="position:absolute;left:59.0px;top:658.4px;font-size:16.0px;white-space:nowrap" data-w="360.5" data-j="1"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-style:italic">though.</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> So I asked him. “</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-style:italic">Varroa destructor</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">,” he </span></p>
@@ -54,7 +61,7 @@ a.pic.pulse{animation:picpulse .8s ease-out 1}
 <p style="position:absolute;left:59.0px;top:1176.9px;font-size:16.0px;white-space:nowrap" data-w="412.6" data-j="1"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">of Guam was signed, which banned further importation </span></p>
 <p style="position:absolute;left:59.0px;top:1196.1px;font-size:16.0px;white-space:nowrap" data-w="412.6" data-j="1"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">of honey bees to Guam. The Northern Mariana Islands </span></p>
 <p style="position:absolute;left:59.0px;top:1215.3px;font-size:16.0px;white-space:nowrap" data-w="412.7" data-j="1"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">continued to import bees from Hawaii until 2010 … varroa </span></p>
-<p style="position:absolute;left:59.0px;top:1234.5px;font-size:16.0px;white-space:nowrap" data-w="210.6"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">had arrived in Hawaii in 2007.</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif;vertical-align:super;font-size:.7em">5</span></p>
+<p style="position:absolute;left:59.0px;top:1234.5px;font-size:16.0px;white-space:nowrap" data-w="210.6"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">had arrived in Hawaii in 2007.</span><span class="fn" tabindex="0" data-n="5" data-note="Prendergast, K., (2017) “Mites Hawaii and the Varroa Mite: A case study” https://blythewoodbeecompany.com/blogs/news/mite-in-hawaii-and-thevarroa-mite-a-case-study" aria-label="Note 5: Prendergast, K., (2017) “Mites Hawaii and the Varroa Mite: A case study” https://blythewoodbeecompany.com/blogs/news/mite-in-hawaii-and-thevarroa-mite-a-case-study"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif;vertical-align:super;font-size:.7em">5</span></span></p>
 <p style="position:absolute;left:59.0px;top:57.9px;font-size:16.0px;white-space:nowrap" data-w="87.3"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-weight:700">ARTICLE BY </span></p>
 <p style="position:absolute;left:59.0px;top:73.9px;font-size:17.6px;white-space:nowrap" data-w="95.8"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-weight:700">KRIS FRICKE</span></p>
 <p style="position:absolute;left:498.9px;top:946.5px;font-size:16.0px;white-space:nowrap" data-w="399.0"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">Which brings us to our story. Christopher Rosario, a native </span></p>
@@ -63,7 +70,7 @@ a.pic.pulse{animation:picpulse .8s ease-out 1}
 <p style="position:absolute;left:485.3px;top:1004.1px;font-size:16.0px;white-space:nowrap" data-w="412.6" data-j="1"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">a veterinarian. In 2013 he found a job opening as a field </span></p>
 <p style="position:absolute;left:485.3px;top:1023.3px;font-size:16.0px;white-space:nowrap" data-w="412.6" data-j="1"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">technician conducting the Project APHIS (USDA Animal and </span></p>
 <p style="position:absolute;left:485.3px;top:1042.5px;font-size:16.0px;white-space:nowrap" data-w="412.7" data-j="1"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">Plant Health Inspection Service) National Honey Bee Survey </span></p>
-<p style="position:absolute;left:485.3px;top:1061.6px;font-size:16.0px;white-space:nowrap" data-w="412.6" data-j="1"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">(NHBS</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif;vertical-align:super;font-size:.7em">†</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">) to see if </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-style:italic">Varroa</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> or </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-style:italic">Tropilaelaps</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> mites were present in </span></p>
+<p style="position:absolute;left:485.3px;top:1061.6px;font-size:16.0px;white-space:nowrap" data-w="412.6" data-j="1"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">(NHBS</span><span class="fn" tabindex="0" data-n="†" data-note="https://ushoneybeehealthsurvey.info/" aria-label="Note †: https://ushoneybeehealthsurvey.info/"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif;vertical-align:super;font-size:.7em">†</span></span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">) to see if </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-style:italic">Varroa</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> or </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-style:italic">Tropilaelaps</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> mites were present in </span></p>
 <p style="position:absolute;left:485.3px;top:1080.9px;font-size:16.0px;white-space:nowrap" data-w="412.6" data-j="1"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">Guam and the Northern Mariana Islands. He did not have a </span></p>
 <p style="position:absolute;left:485.3px;top:1100.1px;font-size:16.0px;white-space:nowrap" data-w="412.6" data-j="1"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">background in beekeeping and was initially afraid of getting </span></p>
 <p style="position:absolute;left:485.3px;top:1119.3px;font-size:16.0px;white-space:nowrap" data-w="412.7" data-j="1"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">stung to death, but he had a lot of debt from his bachelor’s </span></p>
@@ -75,7 +82,7 @@ a.pic.pulse{animation:picpulse .8s ease-out 1}
 <p style="position:absolute;left:485.3px;top:1234.5px;font-size:16.0px;white-space:nowrap" data-w="412.7"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">public to call in feral colonies, and soon three to four times </span></p>
 <p style="position:absolute;left:118.9px;top:393.0px;font-size:22.3px;white-space:nowrap" data-w="720.2"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> I made a shocking discovery the other day … which was that Christopher </span></p>
 <p style="position:absolute;left:95.0px;top:418.6px;font-size:22.3px;white-space:nowrap" data-w="768.0"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">Rosario made a shocking discovery a few years ago.  I was browsing through a </span></p>
-<p style="position:absolute;left:99.3px;top:444.2px;font-size:22.3px;white-space:nowrap" data-w="759.4" data-j="1"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">recent issue of </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-style:italic">Entomology Today</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif;vertical-align:super;font-size:.7em">1</span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">, as one does, and there was an article that </span></p>
+<p style="position:absolute;left:99.3px;top:444.2px;font-size:22.3px;white-space:nowrap" data-w="759.4" data-j="1"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">recent issue of </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-style:italic">Entomology Today</span><span class="fn" tabindex="0" data-n="1" data-note="Serrano, J (2024) “How One Entomologist Works to Combat Invasive Species and Protect Honey Bees on Guam” Entomology Today https:// entomologytoday.org/2024/03/25/entomologist-invasive-species-honeybees-guam-christopher-rosario-standout-early-career-professional/" aria-label="Note 1: Serrano, J (2024) “How One Entomologist Works to Combat Invasive Species and Protect Honey Bees on Guam” Entomology Today https:// entomologytoday.org/2024/03/25/entomologist-invasive-species-honeybees-guam-christopher-rosario-standout-early-career-professional/"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif;vertical-align:super;font-size:.7em">1</span></span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">, as one does, and there was an article that </span></p>
 <p style="position:absolute;left:99.5px;top:469.8px;font-size:22.3px;white-space:nowrap" data-w="759.0"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">mentioned Guam state entomologist Christopher Rosario had “eradicated an </span></p>
 <p style="position:absolute;left:236.1px;top:495.4px;font-size:22.3px;white-space:nowrap" data-w="485.7"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">invasive parasite,” but didn’t mention which one. </span></p>
 <p style="position:absolute;left:462.5px;top:882.3px;font-size:14.6px;white-space:nowrap" data-w="416.0"><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif"> </span><span style="font-family:Carlito,Calibri,'Segoe UI','Helvetica Neue',Arial,sans-serif">Fig 1 Guam fits snugs in Port Philip Bay, &amp; has has almost </span></p>
@@ -86,6 +93,35 @@ a.pic.pulse{animation:picpulse .8s ease-out 1}
 <a class="pic" data-src="hi1_1.jpg" data-nw="1241" data-nh="601" style="left:-36.3px;top:-38.0px;width:988.7px;height:499.2px" title="Enlarge picture" aria-label="Picture"></a>
 <a class="pic" data-src="hi1_2.jpg" data-nw="603" data-nh="445" style="left:431.2px;top:536.5px;width:462.3px;height:340.6px" title="Enlarge picture" aria-label="Picture"></a>
 </div></div></div>
+<script>
+/* Footnotes as hover text: rest on a superscript that has a note and the note appears beside it;
+   a tap does the same on a touch screen; Esc or moving away hides it. */
+(function(){
+  var pop=null, cur=null;
+  function show(el){
+    if(!pop){ pop=document.createElement('div'); pop.className='fnpop'; pop.setAttribute('role','tooltip'); document.body.appendChild(pop); }
+    var n=el.getAttribute('data-n'); pop.innerHTML=(n?'<b>'+n+'</b>':'')+el.getAttribute('data-note').replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});
+    pop.style.display='block'; pop.style.left='0px'; pop.style.top='0px';
+    var r=el.getBoundingClientRect(), pw=pop.offsetWidth, ph=pop.offsetHeight;
+    var x=Math.min(Math.max(6,r.left+r.width/2-pw/2), innerWidth-pw-6), y=r.top-ph-8;
+    if(y<4) y=r.bottom+8;
+    pop.style.left=x+'px'; pop.style.top=y+'px'; cur=el;
+  }
+  function hide(){ if(pop) pop.style.display='none'; cur=null; }
+  var fns=document.querySelectorAll('.fn');
+  for(var i=0;i<fns.length;i++){
+    var el=fns[i];
+    el.addEventListener('mouseenter',function(){ show(this); });
+    el.addEventListener('mouseleave',hide);
+    el.addEventListener('focus',function(){ show(this); });
+    el.addEventListener('blur',hide);
+    el.addEventListener('click',function(e){ e.preventDefault(); e.stopPropagation(); if(cur===this) hide(); else show(this); });
+  }
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') hide(); });
+  document.addEventListener('click',function(){ hide(); });
+  window.addEventListener('scroll',hide,true);
+})();
+</script>
 <script>
 /* The reader tells this page how big to draw itself, so text is re-rendered at the new size
    instead of being stretched as a bitmap (which is what happens when an iframe is transform-scaled). */

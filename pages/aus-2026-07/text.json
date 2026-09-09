@@ -896,9 +896,405 @@
 "x": 478.9
 }
 ]
+},
+{
+"lines": [
+"July 2026 ",
+"23 ",
+"Beekeeping In Cuba, cont’d ",
+"(Continued on page 24) ",
+"spread use of Bayvarol and other treatments in the first ",
+"10 years, but it does appear that import quantities and ",
+"availability of the miticides never did allow constant ",
+"miticide coverage, and people did gradually realize that ",
+"they didn’t need to do these treatments.  As well they ",
+"were supported by a number of state run breeding sta-",
+"tions and bee researchers that really dwarfs what we ",
+"have available here in Victoria and maybe even Austral-",
+"ia on a whole. ",
+"I was additionally puzzled to see the studies showing ",
+"a high degree of hygienic behavior from relatively early ",
+"in their varroa experience, it seemed to me maybe they ",
+"just got lucky with bees that from the start handled var-",
+"roa very well.  Then it occurred to me that the other ",
+"places held up as miracles of resistance, Hawaii and ",
+"Fernando de Noronha island are also in the tropics, and ",
+"tropical South America and Africa also don’t have prob-",
+"lems with varroa (attributed to Africanized and African ",
+"bees, respectively), and I  couldn’t find anything about ",
+"Varroa destructor being particularly devastating in trop-",
+"ical Asia, not that could be teased out from compound-",
+"ing effects such as Tropilaelaps.  Varroa has lower heat ",
+"tolerance than Apis mellifera and the specific lineages ",
+"that jump host are native to northern temperate China, ",
+"Korea, Japan and Vladivostok.  It’s devastating south-",
+"ern Queensland right now but has not yet reached the ",
+"tropical part, it’s possible varroa just doesn’t do well in ",
+"the tropics. ",
+"There’s a lot of unknowns and I don’t presume to ",
+"know all the answers, all I can really say after reading a ",
+"huge number of Cuban articles on Varroa is that they ",
+"did use treatments initially, and they’ve been supported ",
+"by exponentially more local research and state spon-",
+"sored breeding support than we could ever dream of. ",
+"References ",
+"1 Rodríguez Luis, A., et al. (2022) “Recapping and ",
+"mite removal behaviour in Cuba: home to the world’s ",
+"largest population of Varroa-resistant European honey-",
+"bees.” Scientific Reports, 12, 15597. ",
+"2 Bande, J. (2000) “Contribución al estudio de la his-",
+"toria de la apicultura en Cuba, introducción de la abeja ",
+"en ",
+"la ",
+"isla.” ",
+"Apiciencia, ",
+"2(1), ",
+"p02102, ",
+"https://",
+"apiciencia.edicionescervantes.com/index.php/",
+"apiciencia/article/view/225. ",
+"3 Crane, E. (1999) The World History of Beekeeping ",
+"and Honey Hunting. Routledge. ",
+"4 Pérez, A., et al. (2009) “Determinación del estatus ",
+"racial y parasitológico (varroosis) de colmenas (Apis ",
+"mellifera L.) ante la amenaza de africanización.” ",
+"Apiciencia, ",
+"11(3), ",
+"p11302, ",
+"https://",
+"apiciencia.edicionescervantes.com/index.php/",
+"apiciencia/article/view/276. ",
+"5 Demedio, J., et al. (2009) “El registro de productos ",
+"para el control de la varroosis de la abeja melífera en ",
+"(Continued from page 22) "
+],
+"paras": [
+{
+"t": "July 2026 23",
+"size": 10.0,
+"y": 809.2,
+"x": 430.9
+},
+{
+"t": "Beekeeping In Cuba, cont’d",
+"size": 24.0,
+"y": 38.6,
+"x": 38.0
+},
+{
+"t": "(Continued on page 24)",
+"size": 8.0,
+"y": 410.6,
+"x": 478.9
+},
+{
+"t": "spread use of Bayvarol and other treatments in the first 10 years, but it does appear that import quantities and availability of the miticides never did allow constant miticide coverage, and people did gradually realize that they didn’t need to do these treatments.  As well they were supported by a number of state run breeding stations and bee researchers that really dwarfs what we have available here in Victoria and maybe even Australia on a whole.",
+"size": 11.0,
+"y": 98.3,
+"x": 38.2
+},
+{
+"t": "I was additionally puzzled to see the studies showing a high degree of hygienic behavior from relatively early in their varroa experience, it seemed to me maybe they just got lucky with bees that from the start handled varroa very well.  Then it occurred to me that the other places held up as miracles of resistance, Hawaii and Fernando de Noronha island are also in the tropics, and tropical South America and Africa also don’t have problems with varroa (attributed to Africanized and African bees, respectively), and I  couldn’t find anything about Varroa destructor being particularly devastating in tropical Asia, not that could be teased out from compounding effects such as Tropilaelaps.  Varroa has lower heat tolerance than Apis mellifera and the specific lineages that jump host are native to northern temperate China, Korea, Japan and Vladivostok.  It’s devastating southern Queensland right now but has not yet reached the tropical part, it’s possible varroa just doesn’t do well in",
+"size": 11.0,
+"y": 203.2,
+"x": 38.2
+},
+{
+"t": "the tropics.",
+"size": 11.0,
+"y": 75.0,
+"x": 307.5
+},
+{
+"t": "There’s a lot of unknowns and I don’t presume to know all the answers, all I can really say after reading a huge number of Cuban articles on Varroa is that they did use treatments initially, and they’ve been supported by exponentially more local research and state sponsored breeding support than we could ever dream of.",
+"size": 11.0,
+"y": 86.7,
+"x": 307.5
+},
+{
+"t": "References",
+"size": 11.0,
+"y": 156.6,
+"x": 307.5
+},
+{
+"t": "1 Rodríguez Luis, A., et al. (2022) “Recapping and mite removal behaviour in Cuba: home to the world’s largest population of Varroa-resistant European honeybees.” Scientific Reports, 12, 15597.",
+"size": 11.0,
+"y": 178.2,
+"x": 307.5
+},
+{
+"t": "2 Bande, J. (2000) “Contribución al estudio de la historia de la apicultura en Cuba, introducción de la abeja en la isla.” Apiciencia, 2(1), p02102, https:// apiciencia.edicionescervantes.com/index.php/ apiciencia/article/view/225.",
+"size": 11.0,
+"y": 224.9,
+"x": 307.5
+},
+{
+"t": "3 Crane, E. (1999) The World History of Beekeeping and Honey Hunting. Routledge.",
+"size": 11.0,
+"y": 283.1,
+"x": 307.5
+},
+{
+"t": "4 Pérez, A., et al. (2009) “Determinación del estatus racial y parasitológico (varroosis) de colmenas (Apis mellifera L.) ante la amenaza de africanización.” Apiciencia, 11(3), p11302, https:// apiciencia.edicionescervantes.com/index.php/ apiciencia/article/view/276.",
+"size": 11.0,
+"y": 306.5,
+"x": 307.5
+},
+{
+"t": "5 Demedio, J., et al. (2009) “El registro de productos para el control de la varroosis de la abeja melífera en",
+"size": 11.0,
+"y": 376.3,
+"x": 307.5
+},
+{
+"t": "(Continued from page 22)",
+"size": 8.0,
+"y": 78.9,
+"x": 38.2
+}
+]
+},
+{
+"lines": [
+"24 ",
+"Australian Bee Journal ",
+"Honeybees adjust their dances based on information reliability, new study reveals ",
+"A new study demonstrates that honeybees can evaluate the reliability of their own communication, actively adjusting ",
+"the vigor of their \"waggle dance\" based on the truthfulness of the information they provide.  By manipulating wheth-",
+"er a dancing bee's followers successfully found food, experiments revealed that only bees with verified, \"honest\" ",
+"information increased their recruitment effort over time when advertising a new location, whereas \"liar\" or ",
+"\"unverified\" bees did not.  This internal self-control mechanism naturally filters out ambiguous or misleading sig-",
+"nals, allowing the hive to function efficiently as a cooperative superorganism. ",
+"A new study by Dr. Karmi Oxman and Prof. Sharoni Shafir from the Hebrew University of Jerusalem and Prof. Ofer ",
+"Feinderman from the Weizmann Institute of Science has revealed that honeybees have a remarkable ability to assess ",
+"the reliability of the information they communicate to their hive.  The research demonstrates that bees will actively ",
+"increase their recruitment efforts when they know the directions they are providing to food sources are accurate and ",
+"verified. ",
+"The famous \"waggle dance\" is the primary method honeybees use to share the location of profitable food sources ",
+"with their nestmates, utilizing vibration pulses to indicate distance and direction.  However, the precision of these ",
+"dances can vary from bee to bee, prompting researchers to ask how a colony manages the spread of information ",
+"when the quality of that information differs. ",
+"To find out, the research team conducted an experiment at the Benjamin Triwaks Bee Research Center in Rehovot. ",
+"They set up a system to manipulate the quality of information that specific \"focal\" bees communicated to their fol-",
+"lowers. ",
+"The scientists established three distinct scenarios for the recruits who followed the dances of the focal bees.  In the ",
+"\"honest\" treatment, the follower bees flew to the advertised location and successfully fed on sugar solution.  In the ",
+"\"liar\" treatment, the dancer had access to food, but the followers were met with an entirely empty feeder.  Finally, an ",
+"\"unverified\" treatment eliminated all feedback by having researchers safely capture the follower bees as soon as they ",
+"arrived at the location, preventing them from returning to the hive.  Read the article in full here ",
+"Beekeeping In Cuba, cont’d ",
+"Cuba.” ",
+"Apiciencia, ",
+"11(3), ",
+"p11305, ",
+"https://",
+"apiciencia.edicionescervantes.com/index.php/",
+"apiciencia/article/view/279. ",
+"6 Pérez-Morfi, A., et al. (2025) “Selection of honey ",
+"bees in Cuban beekeeping.” Journal of Apicultural Re-",
+"search. ",
+"https://",
+"doi.org/10.1080/00218839.2025.2466254. ",
+"7 Aguirre, J.L., et al. (2009) “Evaluaciones de la efi-",
+"cacia varroicida del ácido oxálico por goteo en col-",
+"menas de Baja California Sur, México, y La Habana, ",
+"Cuba.” Unpublished technical report, Universidad ",
+"Agraria de La Habana / Universidad Autónoma de Baja ",
+"California Sur. ",
+"8 Morales Rodríguez, G. (2015, May 5) “Honey ",
+"‘Made in Cuba’ for export.” Progreso Weekly, reprinted ",
+"in Havana Times. https://havanatimes.org/features/",
+"honey-made-in-cuba-for-export/. ",
+"9 González (1996), preliminary report on the detec-",
+"tion of Varroa jacobsoni in three apiaries in Matanzas ",
+"province, Cuba (specific publication venue not con-",
+"firmed). ",
+"10 Vega Cárdenas, A. (2007) “Efecto acaricida de ",
+"tintura de ajo (Allium sativum) sobre el ácaro Varroa ",
+"destructor Anderson & Truemann en bioensayos de la-",
+"boratorio.” ",
+"Apiciencia, ",
+"9(2), ",
+"p09208, ",
+"https://",
+"apiciencia.edicionescervantes.com/index.php/",
+"apiciencia/article/view/438. ",
+"11 Cuba Ministry of Agriculture (2001a) Apiculture ",
+"Bulletin. National Directorate of Apiculture, Mountain ",
+"Agriculture Business Group. ",
+"12 Demedio, J. (2001) “La varroasis de las abejas en ",
+"una zona de la provincia de La Habana. Agente etiológi-",
+"co, índices de infestación y control biotécnico y quími-",
+"co.” Doctoral thesis, Universidad Agraria de La Habana. ",
+"13 Verde, M. & Demedio, J. (2001) “Evaluación de la ",
+"eficacia del producto orgánico APILIFE VAR, como ",
+"parte de la lucha integrada para el control de la varroasis ",
+"en Apis mellifera.” Apiciencia, 3(1), p03108, https://",
+"apiciencia.edicionescervantes.com/index.php/",
+"apiciencia/article/view/296. ",
+"14 Vázquez Luaces, M., et al. (2001) “Mortalidad ",
+"natural y daños ocasionados por las colonias de abejas ",
+"al ácaro Varroa.” Apiciencia, 3(1), p03105, https://",
+"apiciencia.edicionescervantes.com/index.php/",
+"apiciencia/article/view/292. ",
+"15 Sanabria, J.L., et al. (2005) “Evaluación de dos ",
+"mecanismos de defensa de las abejas Apis mellifera L. ",
+"frente al ácaro Varroa destructor.” Apiciencia, 7(2). ",
+"16 Sanabria, J.L., et al. (2007) “Comportamiento de ",
+"los índices de infestación por Varroa destructor en col-",
+"menas de Apis mellifera de un apiario no sometido a ",
+"tratamiento químico por más de tres años.” Apiciencia, ",
+"9(2), p09202, https://apiciencia.edicionescervantes.com/",
+"index.php/apiciencia/article/view/432. ",
+"17 Sanabria, J.L., et al. (2009) “Evaluación de índices ",
+"de infestación y expresión de mecanismos defensivos ",
+"naturales en colmenas sobrevivientes sin control anti-",
+"varroa.” ",
+"Apiciencia, ",
+"11(3), ",
+"p11306, ",
+"https://",
+"apiciencia.edicionescervantes.com/index.php/",
+"apiciencia/article/view/280. ",
+"18 Pérez Morfi, A., et al. (2017) “Hábitos higiénicos ",
+"de Apis mellifera (Hymenoptera: Apidae) en Cuba.” ",
+"Apiciencia, 19(2). ",
+"19 Valle, Y., et al. (2012) “Relación entre las tasas de ",
+"infestación por Varroa destructor y la producción de ",
+"miel en tres apiarios de producción.” Apiciencia, 14(1), ",
+"pp. 43–50. ",
+"20 Demedio, J., (2026) Personal communication with ",
+"K Fricke 2026-06 ",
+"(Continued from page 23) "
+],
+"paras": [
+{
+"t": "24 Australian Bee Journal",
+"size": 10.0,
+"y": 810.1,
+"x": 39.1
+},
+{
+"t": "Honeybees adjust their dances based on information reliability, new study reveals A new study demonstrates that honeybees can evaluate the reliability of their own communication, actively adjusting the vigor of their \"waggle dance\" based on the truthfulness of the information they provide.  By manipulating whether a dancing bee's followers successfully found food, experiments revealed that only bees with verified, \"honest\" information increased their recruitment effort over time when advertising a new location, whereas \"liar\" or \"unverified\" bees did not.  This internal self-control mechanism naturally filters out ambiguous or misleading signals, allowing the hive to function efficiently as a cooperative superorganism. A new study by Dr. Karmi Oxman and Prof. Sharoni Shafir from the Hebrew University of Jerusalem and Prof. Ofer Feinderman from the Weizmann Institute of Science has revealed that honeybees have a remarkable ability to assess the reliability of the information they communicate to their hive.  The research demonstrates that bees will actively increase their recruitment efforts when they know the directions they are providing to food sources are accurate and verified. The famous \"waggle dance\" is the primary method honeybees use to share the location of profitable food sources with their nestmates, utilizing vibration pulses to indicate distance and direction.  However, the precision of these dances can vary from bee to bee, prompting researchers to ask how a colony manages the spread of information when the quality of that information differs. To find out, the research team conducted an experiment at the Benjamin Triwaks Bee Research Center in Rehovot. They set up a system to manipulate the quality of information that specific \"focal\" bees communicated to their followers. The scientists established three distinct scenarios for the recruits who followed the dances of the focal bees.  In the \"honest\" treatment, the follower bees flew to the advertised location and successfully fed on sugar solution.  In the \"liar\" treatment, the dancer had access to food, but the followers were met with an entirely empty feeder.  Finally, an \"unverified\" treatment eliminated all feedback by having researchers safely capture the follower bees as soon as they arrived at the location, preventing them from returning to the hive.  Read the article in full here",
+"size": 11.0,
+"y": 515.9,
+"x": 40.2
+},
+{
+"t": "Beekeeping In Cuba, cont’d",
+"size": 24.0,
+"y": 38.9,
+"x": 38.3
+},
+{
+"t": "Cuba.” Apiciencia, 11(3), p11305, https:// apiciencia.edicionescervantes.com/index.php/ apiciencia/article/view/279.",
+"size": 11.0,
+"y": 98.4,
+"x": 38.9
+},
+{
+"t": "6 Pérez-Morfi, A., et al. (2025) “Selection of honey bees in Cuban beekeeping.” Journal of Apicultural Research. https:// doi.org/10.1080/00218839.2025.2466254.",
+"size": 11.0,
+"y": 131.8,
+"x": 38.9
+},
+{
+"t": "7 Aguirre, J.L., et al. (2009) “Evaluaciones de la eficacia varroicida del ácido oxálico por goteo en colmenas de Baja California Sur, México, y La Habana, Cuba.” Unpublished technical report, Universidad Agraria de La Habana / Universidad Autónoma de Baja California Sur.",
+"size": 11.0,
+"y": 178.4,
+"x": 38.9
+},
+{
+"t": "8 Morales Rodríguez, G. (2015, May 5) “Honey ‘Made in Cuba’ for export.” Progreso Weekly, reprinted in Havana Times. https://havanatimes.org/features/ honey-made-in-cuba-for-export/.",
+"size": 11.0,
+"y": 248.4,
+"x": 38.9
+},
+{
+"t": "9 González (1996), preliminary report on the detection of Varroa jacobsoni in three apiaries in Matanzas province, Cuba (specific publication venue not confirmed).",
+"size": 11.0,
+"y": 295.0,
+"x": 38.9
+},
+{
+"t": "10 Vega Cárdenas, A. (2007) “Efecto acaricida de tintura de ajo (Allium sativum) sobre el ácaro Varroa destructor Anderson & Truemann en bioensayos de laboratorio.” Apiciencia, 9(2), p09208, https:// apiciencia.edicionescervantes.com/index.php/ apiciencia/article/view/438.",
+"size": 11.0,
+"y": 341.6,
+"x": 38.9
+},
+{
+"t": "11 Cuba Ministry of Agriculture (2001a) Apiculture Bulletin. National Directorate of Apiculture, Mountain Agriculture Business Group.",
+"size": 11.0,
+"y": 411.5,
+"x": 38.9
+},
+{
+"t": "12 Demedio, J. (2001) “La varroasis de las abejas en una zona de la provincia de La Habana. Agente etiológico, índices de infestación y control biotécnico y químico.” Doctoral thesis, Universidad Agraria de La Habana.",
+"size": 11.0,
+"y": 446.5,
+"x": 38.9
+},
+{
+"t": "13 Verde, M. & Demedio, J. (2001) “Evaluación de la eficacia del producto orgánico APILIFE VAR, como parte de la lucha integrada para el control de la varroasis en Apis mellifera.” Apiciencia, 3(1), p03108, https:// apiciencia.edicionescervantes.com/index.php/ apiciencia/article/view/296.",
+"size": 11.0,
+"y": 73.5,
+"x": 308.2
+},
+{
+"t": "14 Vázquez Luaces, M., et al. (2001) “Mortalidad natural y daños ocasionados por las colonias de abejas al ácaro Varroa.” Apiciencia, 3(1), p03105, https:// apiciencia.edicionescervantes.com/index.php/ apiciencia/article/view/292.",
+"size": 11.0,
+"y": 143.5,
+"x": 308.2
+},
+{
+"t": "15 Sanabria, J.L., et al. (2005) “Evaluación de dos mecanismos de defensa de las abejas Apis mellifera L. frente al ácaro Varroa destructor.” Apiciencia, 7(2).",
+"size": 11.0,
+"y": 201.7,
+"x": 308.2
+},
+{
+"t": "16 Sanabria, J.L., et al. (2007) “Comportamiento de los índices de infestación por Varroa destructor en colmenas de Apis mellifera de un apiario no sometido a tratamiento químico por más de tres años.” Apiciencia, 9(2), p09202, https://apiciencia.edicionescervantes.com/ index.php/apiciencia/article/view/432.",
+"size": 11.0,
+"y": 236.8,
+"x": 308.2
+},
+{
+"t": "17 Sanabria, J.L., et al. (2009) “Evaluación de índices de infestación y expresión de mecanismos defensivos naturales en colmenas sobrevivientes sin control antivarroa.” Apiciencia, 11(3), p11306, https:// apiciencia.edicionescervantes.com/index.php/ apiciencia/article/view/280.",
+"size": 11.0,
+"y": 306.6,
+"x": 308.2
+},
+{
+"t": "18 Pérez Morfi, A., et al. (2017) “Hábitos higiénicos de Apis mellifera (Hymenoptera: Apidae) en Cuba.” Apiciencia, 19(2).",
+"size": 11.0,
+"y": 376.6,
+"x": 308.2
+},
+{
+"t": "19 Valle, Y., et al. (2012) “Relación entre las tasas de infestación por Varroa destructor y la producción de miel en tres apiarios de producción.” Apiciencia, 14(1), pp. 43–50.",
+"size": 11.0,
+"y": 411.5,
+"x": 308.2
+},
+{
+"t": "20 Demedio, J., (2026) Personal communication with K Fricke 2026-06",
+"size": 11.0,
+"y": 458.1,
+"x": 308.2
+},
+{
+"t": "(Continued from page 23)",
+"size": 8.0,
+"y": 78.9,
+"x": 38.9
+}
+]
 }
 ],
-"links": [],
+"links": [
+"https://www.eurekalert.org/news-releases/1132291"
+],
 "pt": [
 595.3200073242188,
 841.9199829101562

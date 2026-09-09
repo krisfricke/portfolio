@@ -12,6 +12,13 @@ p{margin:0;position:absolute}
 a{color:inherit}
 a:hover{text-decoration:underline}
 a.pic{position:absolute;display:block;z-index:4;cursor:zoom-in;border-radius:2px}
+
+.fn{cursor:help;border-bottom:1px dotted rgba(0,0,0,.35)}
+.fn:hover,.fn:focus{outline:none;background:rgba(249,197,0,.28)}
+.fnpop{position:fixed;z-index:20;display:none;max-width:380px;padding:9px 12px 10px;border-radius:8px;background:#fffdf5;color:#1a1a1a;
+  border:1px solid #c9a95f;box-shadow:0 8px 24px rgba(0,0,0,.22);font:13px/1.45 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;white-space:pre-line;pointer-events:none}
+.fnpop b{color:#6a5a3a;font-weight:700;margin-right:6px}
+
 /* one pulse as the pointer arrives - a ring that swells and fades - to say 'this one opens'; nothing more until a click */
 a.pic.pulse{animation:picpulse .8s ease-out 1}
 @keyframes picpulse{0%{box-shadow:0 0 0 0 rgba(249,197,0,.85),inset 0 0 0 0 rgba(255,255,255,.0)}35%{box-shadow:0 0 0 7px rgba(249,197,0,.55),inset 0 0 0 0 rgba(255,255,255,.18)}100%{box-shadow:0 0 0 16px rgba(249,197,0,0),inset 0 0 0 0 rgba(255,255,255,0)}}
@@ -58,8 +65,8 @@ a.pic.pulse{animation:picpulse .8s ease-out 1}
 <p style="position:absolute;left:61.1px;top:1147.2px;font-size:17.7px;white-space:nowrap" data-w="402.2" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">they’ll eat Varroa…).  They were unable to identify it to </span></p>
 <p style="position:absolute;left:61.1px;top:1165.8px;font-size:17.7px;white-space:nowrap" data-w="402.2" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">the species level, but I note the most common species of </span></p>
 <p style="position:absolute;left:61.1px;top:1184.5px;font-size:17.7px;white-space:nowrap" data-w="402.1" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;font-style:italic">Parasitus </span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">have all been found in bee hives (though it is </span></p>
-<p style="position:absolute;left:61.1px;top:1200.7px;font-size:17.7px;white-space:nowrap" data-w="398.2" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">not believed to prey on bees or bee larvae).</span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;vertical-align:super;font-size:.7em">1</span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">  Interest-</span></p>
-<p style="position:absolute;left:61.1px;top:1219.3px;font-size:17.7px;white-space:nowrap" data-w="402.5" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">ingly I note on a map</span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;vertical-align:super;font-size:.7em">2</span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif"> on the Atlas of Living Australia</span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;vertical-align:super;font-size:.7em">3</span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif"> </span></p>
+<p style="position:absolute;left:61.1px;top:1200.7px;font-size:17.7px;white-space:nowrap" data-w="398.2" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">not believed to prey on bees or bee larvae).</span><span class="fn" tabindex="0" data-n="1" data-note="Klimov P, O&#x27;Connor B, Ochoa R, Bauchan G, Redford A, Scher J. 2016. Parasitus [fact sheet]. Bee Mite ID. USDA APHIS PPQ; University of Michigan. Available from: https:// idtools.org/bee_mite/index.cfm? packageID=1&amp;entityID=128 [accessed 2026-04-28]." aria-label="Note 1: Klimov P, O&#x27;Connor B, Ochoa R, Bauchan G, Redford A, Scher J. 2016. Parasitus [fact sheet]. Bee Mite ID. USDA APHIS PPQ; University of Michigan. Available from: https:// idtools.org/bee_mite/index.cfm? packageID=1&amp;entityID=128 [accessed 2026-04-28]."><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;vertical-align:super;font-size:.7em">1</span></span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">  Interest-</span></p>
+<p style="position:absolute;left:61.1px;top:1219.3px;font-size:17.7px;white-space:nowrap" data-w="402.5" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">ingly I note on a map</span><span class="fn" tabindex="0" data-n="2" data-note="https://bie.ala.org.au/species/https:// biodiversity.org.au/afd/taxa/48d71300-d37c-45f1-b071- 4e666a43f7b5. Accessed 2026-04-28" aria-label="Note 2: https://bie.ala.org.au/species/https:// biodiversity.org.au/afd/taxa/48d71300-d37c-45f1-b071- 4e666a43f7b5. Accessed 2026-04-28"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;vertical-align:super;font-size:.7em">2</span></span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif"> on the Atlas of Living Australia</span><span class="fn" tabindex="0" data-n="3" data-note="Belbin L, Wallis E, Hobern D, Zerger A (2021) The Atlas of Living Australia: History, current state and future directions. Biodiversity Data Journal 9: e65023. https://doi.org/10.3897/BDJ.9.e65023" aria-label="Note 3: Belbin L, Wallis E, Hobern D, Zerger A (2021) The Atlas of Living Australia: History, current state and future directions. Biodiversity Data Journal 9: e65023. https://doi.org/10.3897/BDJ.9.e65023"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;vertical-align:super;font-size:.7em">3</span></span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif"> </span></p>
 <p style="position:absolute;left:61.1px;top:1240.4px;font-size:17.7px;white-space:nowrap" data-w="398.2" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">while there are a few sporadic identifications of </span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;font-style:italic">Parasi-</span></p>
 <p style="position:absolute;left:61.1px;top:1259.2px;font-size:17.7px;white-space:nowrap" data-w="402.2"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;font-style:italic">tus </span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">mites elsewhere in Australia, findings are more </span></p>
 <p style="position:absolute;left:492.0px;top:121.6px;font-size:17.7px;white-space:nowrap" data-w="397.8" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">common in Central Victoria and in Werribee very spe-</span></p>
@@ -112,6 +119,35 @@ a.pic.pulse{animation:picpulse .8s ease-out 1}
 <a class="pic" data-src="hi1_1.jpg" data-nw="481" data-nh="437" style="left:70.6px;top:370.9px;width:368.4px;height:334.7px" title="Enlarge picture" aria-label="Picture"></a>
 <a class="pic" data-src="hi1_2.jpg" data-nw="512" data-nh="322" style="left:484.1px;top:858.4px;width:392.6px;height:246.0px" title="Enlarge picture" aria-label="Picture"></a>
 </div></div></div>
+<script>
+/* Footnotes as hover text: rest on a superscript that has a note and the note appears beside it;
+   a tap does the same on a touch screen; Esc or moving away hides it. */
+(function(){
+  var pop=null, cur=null;
+  function show(el){
+    if(!pop){ pop=document.createElement('div'); pop.className='fnpop'; pop.setAttribute('role','tooltip'); document.body.appendChild(pop); }
+    var n=el.getAttribute('data-n'); pop.innerHTML=(n?'<b>'+n+'</b>':'')+el.getAttribute('data-note').replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});
+    pop.style.display='block'; pop.style.left='0px'; pop.style.top='0px';
+    var r=el.getBoundingClientRect(), pw=pop.offsetWidth, ph=pop.offsetHeight;
+    var x=Math.min(Math.max(6,r.left+r.width/2-pw/2), innerWidth-pw-6), y=r.top-ph-8;
+    if(y<4) y=r.bottom+8;
+    pop.style.left=x+'px'; pop.style.top=y+'px'; cur=el;
+  }
+  function hide(){ if(pop) pop.style.display='none'; cur=null; }
+  var fns=document.querySelectorAll('.fn');
+  for(var i=0;i<fns.length;i++){
+    var el=fns[i];
+    el.addEventListener('mouseenter',function(){ show(this); });
+    el.addEventListener('mouseleave',hide);
+    el.addEventListener('focus',function(){ show(this); });
+    el.addEventListener('blur',hide);
+    el.addEventListener('click',function(e){ e.preventDefault(); e.stopPropagation(); if(cur===this) hide(); else show(this); });
+  }
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') hide(); });
+  document.addEventListener('click',function(){ hide(); });
+  window.addEventListener('scroll',hide,true);
+})();
+</script>
 <script>
 /* The reader tells this page how big to draw itself, so text is re-rendered at the new size
    instead of being stretched as a bitmap (which is what happens when an iframe is transform-scaled). */

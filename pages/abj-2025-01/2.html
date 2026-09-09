@@ -12,6 +12,13 @@ p{margin:0;position:absolute}
 a{color:inherit}
 a:hover{text-decoration:underline}
 a.pic{position:absolute;display:block;z-index:4;cursor:zoom-in;border-radius:2px}
+
+.fn{cursor:help;border-bottom:1px dotted rgba(0,0,0,.35)}
+.fn:hover,.fn:focus{outline:none;background:rgba(249,197,0,.28)}
+.fnpop{position:fixed;z-index:20;display:none;max-width:380px;padding:9px 12px 10px;border-radius:8px;background:#fffdf5;color:#1a1a1a;
+  border:1px solid #c9a95f;box-shadow:0 8px 24px rgba(0,0,0,.22);font:13px/1.45 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;white-space:pre-line;pointer-events:none}
+.fnpop b{color:#6a5a3a;font-weight:700;margin-right:6px}
+
 /* one pulse as the pointer arrives - a ring that swells and fades - to say 'this one opens'; nothing more until a click */
 a.pic.pulse{animation:picpulse .8s ease-out 1}
 @keyframes picpulse{0%{box-shadow:0 0 0 0 rgba(249,197,0,.85),inset 0 0 0 0 rgba(255,255,255,.0)}35%{box-shadow:0 0 0 7px rgba(249,197,0,.55),inset 0 0 0 0 rgba(255,255,255,.18)}100%{box-shadow:0 0 0 16px rgba(249,197,0,0),inset 0 0 0 0 rgba(255,255,255,0)}}
@@ -32,7 +39,7 @@ a.pic.pulse{animation:picpulse .8s ease-out 1}
 <p style="position:absolute;left:64.8px;top:137.4px;font-size:15.2px;white-space:nowrap" data-w="255.6" data-j="1"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif">of bees. The bees were then funneled </span></p>
 <p style="position:absolute;left:64.8px;top:154.2px;font-size:15.2px;white-space:nowrap" data-w="255.6" data-j="1"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif">into a bottle with ethanol, to be sent to </span></p>
 <p style="position:absolute;left:64.8px;top:171.0px;font-size:15.2px;white-space:nowrap" data-w="251.8"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif">the University of Maryland for analy-</span></p>
-<p style="position:absolute;left:64.8px;top:187.1px;font-size:15.2px;white-space:nowrap" data-w="255.7" data-j="1"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif">sis.</span><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif;vertical-align:super;font-size:.7em">6</span><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif"> Job done, down he went and on </span></p>
+<p style="position:absolute;left:64.8px;top:187.1px;font-size:15.2px;white-space:nowrap" data-w="255.7" data-j="1"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif">sis.</span><span class="fn" tabindex="0" data-n="6" data-note="Rosario, C., Moore, A., &amp; Miller, R. (2014). Varroa mite, Varroa destructor (Acari: Varroidae). Guam New Invasive Species Alert No. 2014-04 (2014). Retrieved from https://guaminsects.net/anr/sites/default/ files/varroa%20mite_0.pdf" aria-label="Note 6: Rosario, C., Moore, A., &amp; Miller, R. (2014). Varroa mite, Varroa destructor (Acari: Varroidae). Guam New Invasive Species Alert No. 2014-04 (2014). Retrieved from https://guaminsects.net/anr/sites/default/ files/varroa%20mite_0.pdf"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif;vertical-align:super;font-size:.7em">6</span></span><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif"> Job done, down he went and on </span></p>
 <p style="position:absolute;left:64.8px;top:204.6px;font-size:15.2px;white-space:nowrap" data-w="251.8"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif">to the next site; he was just a techni-</span></p>
 <p style="position:absolute;left:64.8px;top:221.4px;font-size:15.2px;white-space:nowrap" data-w="251.8"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif">cian after all, it was for the lab to ana-</span></p>
 <p style="position:absolute;left:64.8px;top:238.2px;font-size:15.2px;white-space:nowrap" data-w="255.7" data-j="1"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif">lyze. Altogether he took samples on </span></p>
@@ -82,8 +89,8 @@ a.pic.pulse{animation:picpulse .8s ease-out 1}
 <p style="position:absolute;left:338.5px;top:943.0px;font-size:15.2px;white-space:nowrap" data-w="251.8" data-j="1"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif">in an alcohol wash (in until-recently-</span></p>
 <p style="position:absolute;left:338.5px;top:959.8px;font-size:15.2px;white-space:nowrap" data-w="255.5" data-j="1"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif">mite-free Australia, samples from </span></p>
 <p style="position:absolute;left:338.5px;top:976.6px;font-size:15.2px;white-space:nowrap" data-w="255.6" data-j="1"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif">sentinel hives are also sent for lab </span></p>
-<p style="position:absolute;left:338.5px;top:993.4px;font-size:15.2px;white-space:nowrap" data-w="255.6" data-j="1"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif">analysis,</span><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif;vertical-align:super;font-size:.7em">7</span><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif"> and that’s how mites were </span></p>
-<p style="position:absolute;left:338.5px;top:1009.5px;font-size:15.2px;white-space:nowrap" data-w="255.6" data-j="1"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif">first detected in June 2022</span><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif;vertical-align:super;font-size:.7em">8</span><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif">). Despite </span></p>
+<p style="position:absolute;left:338.5px;top:993.4px;font-size:15.2px;white-space:nowrap" data-w="255.6" data-j="1"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif">analysis,</span><span class="fn" tabindex="0" data-n="7" data-note="Huntsdale, J., (2018) “Sentinel Beehives Provide Coastal Defence Against Catastrophic Varroa Mite Invasion” Australian Broadcasting Corporation Feb 23rd https://www.abc.net.au/news/2018-02- 23/sentinel-bee-hive-program-defendingagainst-varroa-mite/9470992" aria-label="Note 7: Huntsdale, J., (2018) “Sentinel Beehives Provide Coastal Defence Against Catastrophic Varroa Mite Invasion” Australian Broadcasting Corporation Feb 23rd https://www.abc.net.au/news/2018-02- 23/sentinel-bee-hive-program-defendingagainst-varroa-mite/9470992"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif;vertical-align:super;font-size:.7em">7</span></span><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif"> and that’s how mites were </span></p>
+<p style="position:absolute;left:338.5px;top:1009.5px;font-size:15.2px;white-space:nowrap" data-w="255.6" data-j="1"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif">first detected in June 2022</span><span class="fn" tabindex="0" data-n="8" data-note="Hilton, A., (2024) “Varroa mites have infested honey bee hives across NSW. The fight is on to contain their spread to other states” Australian Broadcasting Corporation July 6, https://www.abc.net.au/ news/2024-07-06/states-battle-againstvarroa-mite-spread/104014530" aria-label="Note 8: Hilton, A., (2024) “Varroa mites have infested honey bee hives across NSW. The fight is on to contain their spread to other states” Australian Broadcasting Corporation July 6, https://www.abc.net.au/ news/2024-07-06/states-battle-againstvarroa-mite-spread/104014530"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif;vertical-align:super;font-size:.7em">8</span></span><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif">). Despite </span></p>
 <p style="position:absolute;left:338.5px;top:1027.0px;font-size:15.2px;white-space:nowrap" data-w="255.6" data-j="1"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif">doing alcohol washes at the time of </span></p>
 <p style="position:absolute;left:338.5px;top:1043.8px;font-size:15.2px;white-space:nowrap" data-w="255.6" data-j="1"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif">sample taking, “I have yet to witness </span></p>
 <p style="position:absolute;left:338.5px;top:1060.6px;font-size:15.2px;white-space:nowrap" data-w="251.8" data-j="1"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif">a mite in a bee colony in Guam,” Ro-</span></p>
@@ -120,12 +127,41 @@ a.pic.pulse{animation:picpulse .8s ease-out 1}
 <p style="position:absolute;left:612.2px;top:1060.6px;font-size:15.2px;white-space:nowrap" data-w="255.6" data-j="1"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif">ing. He noticed “a harmony between </span></p>
 <p style="position:absolute;left:612.2px;top:1077.4px;font-size:15.2px;white-space:nowrap" data-w="255.6" data-j="1"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif">people wanting to get rid of bees on </span></p>
 <p style="position:absolute;left:612.2px;top:1094.2px;font-size:15.2px;white-space:nowrap" data-w="255.5" data-j="1"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif">their property, and people wanting </span></p>
-<p style="position:absolute;left:612.2px;top:1111.0px;font-size:15.2px;white-space:nowrap" data-w="255.6" data-j="1"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif">to keep bees on their property.”</span><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif;vertical-align:super;font-size:.7em">1</span><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif"> So </span></p>
+<p style="position:absolute;left:612.2px;top:1111.0px;font-size:15.2px;white-space:nowrap" data-w="255.6" data-j="1"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif">to keep bees on their property.”</span><span class="fn" tabindex="0" data-n="1" data-note="Serrano, J (2024) “How One Entomologist Works to Combat Invasive Species and Protect Honey Bees on Guam.” Entomology Today https://entomologytoday. org/2024/03/25/entomologist-invasivespecies-honey-bees-guam-christopher-rosario-standout-early-career-professional/" aria-label="Note 1: Serrano, J (2024) “How One Entomologist Works to Combat Invasive Species and Protect Honey Bees on Guam.” Entomology Today https://entomologytoday. org/2024/03/25/entomologist-invasivespecies-honey-bees-guam-christopher-rosario-standout-early-career-professional/"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif;vertical-align:super;font-size:.7em">1</span></span><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif"> So </span></p>
 <p style="position:absolute;left:612.2px;top:1127.8px;font-size:15.2px;white-space:nowrap" data-w="255.5" data-j="1"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif">he rehomed the unwanted bees to the </span></p>
 <p style="position:absolute;left:612.2px;top:1144.6px;font-size:15.2px;white-space:nowrap" data-w="178.7"><span style="font-family:'TeX Gyre Pagella','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif">people who wanted them.</span></p>
 <a class="pic" data-src="hi2_1.jpg" data-nw="685" data-nh="685" style="left:336.5px;top:59.2px;width:525.9px;height:525.9px" title="Enlarge picture" aria-label="Picture"></a>
 <a class="pic" data-src="hi2_2.jpg" data-nw="329" data-nh="584" style="left:64.8px;top:687.0px;width:252.3px;height:447.8px" title="Enlarge picture" aria-label="Picture"></a>
 </div></div></div>
+<script>
+/* Footnotes as hover text: rest on a superscript that has a note and the note appears beside it;
+   a tap does the same on a touch screen; Esc or moving away hides it. */
+(function(){
+  var pop=null, cur=null;
+  function show(el){
+    if(!pop){ pop=document.createElement('div'); pop.className='fnpop'; pop.setAttribute('role','tooltip'); document.body.appendChild(pop); }
+    var n=el.getAttribute('data-n'); pop.innerHTML=(n?'<b>'+n+'</b>':'')+el.getAttribute('data-note').replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});
+    pop.style.display='block'; pop.style.left='0px'; pop.style.top='0px';
+    var r=el.getBoundingClientRect(), pw=pop.offsetWidth, ph=pop.offsetHeight;
+    var x=Math.min(Math.max(6,r.left+r.width/2-pw/2), innerWidth-pw-6), y=r.top-ph-8;
+    if(y<4) y=r.bottom+8;
+    pop.style.left=x+'px'; pop.style.top=y+'px'; cur=el;
+  }
+  function hide(){ if(pop) pop.style.display='none'; cur=null; }
+  var fns=document.querySelectorAll('.fn');
+  for(var i=0;i<fns.length;i++){
+    var el=fns[i];
+    el.addEventListener('mouseenter',function(){ show(this); });
+    el.addEventListener('mouseleave',hide);
+    el.addEventListener('focus',function(){ show(this); });
+    el.addEventListener('blur',hide);
+    el.addEventListener('click',function(e){ e.preventDefault(); e.stopPropagation(); if(cur===this) hide(); else show(this); });
+  }
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') hide(); });
+  document.addEventListener('click',function(){ hide(); });
+  window.addEventListener('scroll',hide,true);
+})();
+</script>
 <script>
 /* The reader tells this page how big to draw itself, so text is re-rendered at the new size
    instead of being stretched as a bitmap (which is what happens when an iframe is transform-scaled). */

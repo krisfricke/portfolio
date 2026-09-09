@@ -12,6 +12,8 @@ Coordinates: PDF points x 1.6 = page pixels (same convention as the ABJ reader).
 """
 import json, os, re, sys, html
 import pymupdf as fitz
+import notes as _notes
+NOTES, NOTE_STARTS = {}, set()     # per article: footnote text by marker, and where the notes themselves begin
 
 SCALE = 1.6
 PIC_DPI = 150          # the enlargeable copy of each picture: generous on screen, modest on disk
@@ -147,7 +149,11 @@ def build_page(doc, pno, outdir, n, title, links_out, manual=(), ocr=False):
                     if inter(sb, (r.x0, r.y0, r.x1, r.y1)) > 0.5 * sa:
                         href = u; break
                 if href: links_out.append(href)
-                segs.append([t, span_style(s), href])
+                seg = [t, span_style(s), href]
+                if (s['flags'] & 1) and NOTES and (n, round(y0)) not in NOTE_STARTS:
+                    note = _notes.note_for(_notes.markers(t), NOTES)
+                    if note: seg.append(note)                       # a superscript with a note behind it
+                segs.append(seg)
             if not segs: continue
             just = len(blines) >= 2 and li < len(blines) - 1 and widths[li] >= 0.985 * maxw
             attrs = ' data-w="%.1f"' % ((x1 - x0) * SCALE) + (' data-j="1"' if just else '')
@@ -157,7 +163,7 @@ def build_page(doc, pno, outdir, n, title, links_out, manual=(), ocr=False):
             textlines.append(''.join(clean(s['text']) for s in spans))
 
     apply_manual_links(lines_html, [m for m in manual if m.get('page') == n], links_out)
-    lines_html = [head + ''.join(render_seg(t, st, h) for t, st, h in segs) + '</p>' for head, segs in lines_html]
+    lines_html = [head + ''.join(render_seg(*sg) for sg in segs) + '</p>' for head, segs in lines_html]
     bg = fitz.open(); bg.insert_pdf(doc, from_page=pno, to_page=pno)
     bp = bg[0]
     for r in ([] if ocr else redact): bp.add_redact_annot(r)
@@ -197,8 +203,12 @@ def build_page(doc, pno, outdir, n, title, links_out, manual=(), ocr=False):
     open(os.path.join(outdir, '%d.html' % n), 'w', encoding='utf-8').write(doc_html)
     return {'lines': textlines, 'paras': paras}
 
-def render_seg(t, st, href):
+def render_seg(t, st, href, note=None):
     inner = '<span style="%s">%s</span>' % (st, html.escape(t, quote=False))
+    if note:
+        marks = ','.join(_notes.markers(t))
+        inner = '<span class="fn" tabindex="0" data-n="%s" data-note="%s" aria-label="Note %s: %s">%s</span>' % (
+            html.escape(marks, quote=True), html.escape(note, quote=True), html.escape(marks, quote=True), html.escape(note, quote=True), inner)
     return '<a href="%s" target="_blank" rel="noopener">%s</a>' % (html.escape(href, quote=True), inner) if href else inner
 
 def apply_manual_links(lines, specs, links_out):
@@ -230,7 +240,7 @@ def apply_manual_links(lines, specs, links_out):
             new = []
             base = sum(1 for _ in ())  # placeholder
             for sn, seg in enumerate(segs):
-                t, st, h = seg
+                t, st, h = seg[:3]
                 # character positions of this segment in the stream
                 pos = [i for i, ix in enumerate(index) if ix and ix[0] == ln and ix[1] == sn]
                 flags = [p in hit for p in pos]
@@ -239,7 +249,7 @@ def apply_manual_links(lines, specs, links_out):
                 start = 0
                 for ci in range(1, len(t) + 1):
                     if ci == len(t) or flags[ci] != cur:
-                        new.append([t[start:ci], st, spec['url'] if cur else h])
+                        new.append([t[start:ci], st, spec['url'] if cur else h] + list(seg[3:]))
                         if ci < len(t): start, cur = ci, flags[ci]
             lines[ln][1] = new
         links_out.append(spec['url'])
@@ -258,6 +268,7 @@ p{margin:0;position:absolute}
 a{color:inherit}
 a:hover{text-decoration:underline}
 a.pic{position:absolute;display:block;z-index:4;cursor:zoom-in;border-radius:2px}
+'''+_notes.CSS+'''
 /* one pulse as the pointer arrives - a ring that swells and fades - to say 'this one opens'; nothing more until a click */
 a.pic.pulse{animation:picpulse .8s ease-out 1}
 @keyframes picpulse{0%%{box-shadow:0 0 0 0 rgba(249,197,0,.85),inset 0 0 0 0 rgba(255,255,255,.0)}35%%{box-shadow:0 0 0 7px rgba(249,197,0,.55),inset 0 0 0 0 rgba(255,255,255,.18)}100%%{box-shadow:0 0 0 16px rgba(249,197,0,0),inset 0 0 0 0 rgba(255,255,255,0)}}
@@ -265,7 +276,8 @@ a.pic.pulse{animation:picpulse .8s ease-out 1}
 </style></head><body><div class="sheet"><div class="scaler"><div class="page">
 '''
 
-TAIL = '''<script>
+TAIL = '''<script>'''+_notes.JS+'''</script>
+<script>
 /* The reader tells this page how big to draw itself, so text is re-rendered at the new size
    instead of being stretched as a bitmap (which is what happens when an iframe is transform-scaled). */
 (function(){
@@ -365,6 +377,9 @@ def build_article(pdf_path, first_pno, last_pno, outdir, title, manual=(), ocr=F
     os.makedirs(outdir, exist_ok=True)
     doc = fitz.open(pdf_path)
     alltext, links = [], []
+    global NOTES, NOTE_STARTS
+    NOTES, NOTE_STARTS = ({}, set()) if ocr else _notes.harvest(doc, list(range(first_pno, last_pno + 1)), clean)
+    if NOTES: print('   footnotes as hover text:', ', '.join(sorted(NOTES, key=lambda k: (len(k), k))))
     for n, pno in enumerate(range(first_pno, last_pno + 1), start=1):
         alltext.append(build_page(doc, pno, outdir, n, title, links, manual, ocr))
     W, H = doc[first_pno].rect.width, doc[first_pno].rect.height

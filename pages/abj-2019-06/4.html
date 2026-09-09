@@ -12,6 +12,13 @@ p{margin:0;position:absolute}
 a{color:inherit}
 a:hover{text-decoration:underline}
 a.pic{position:absolute;display:block;z-index:4;cursor:zoom-in;border-radius:2px}
+
+.fn{cursor:help;border-bottom:1px dotted rgba(0,0,0,.35)}
+.fn:hover,.fn:focus{outline:none;background:rgba(249,197,0,.28)}
+.fnpop{position:fixed;z-index:20;display:none;max-width:380px;padding:9px 12px 10px;border-radius:8px;background:#fffdf5;color:#1a1a1a;
+  border:1px solid #c9a95f;box-shadow:0 8px 24px rgba(0,0,0,.22);font:13px/1.45 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;white-space:pre-line;pointer-events:none}
+.fnpop b{color:#6a5a3a;font-weight:700;margin-right:6px}
+
 /* one pulse as the pointer arrives - a ring that swells and fades - to say 'this one opens'; nothing more until a click */
 a.pic.pulse{animation:picpulse .8s ease-out 1}
 @keyframes picpulse{0%{box-shadow:0 0 0 0 rgba(249,197,0,.85),inset 0 0 0 0 rgba(255,255,255,.0)}35%{box-shadow:0 0 0 7px rgba(249,197,0,.55),inset 0 0 0 0 rgba(255,255,255,.18)}100%{box-shadow:0 0 0 16px rgba(249,197,0,0),inset 0 0 0 0 rgba(255,255,255,0)}}
@@ -136,6 +143,35 @@ a.pic.pulse{animation:picpulse .8s ease-out 1}
 <a class="pic" data-src="hi4_1.jpg" data-nw="684" data-nh="394" style="left:58.3px;top:845.0px;width:524.6px;height:301.9px" title="Enlarge picture" aria-label="Picture"></a>
 <a class="pic" data-src="hi4_2.jpg" data-nw="682" data-nh="459" style="left:58.3px;top:57.8px;width:523.0px;height:351.6px" title="Enlarge picture" aria-label="Picture"></a>
 </div></div></div>
+<script>
+/* Footnotes as hover text: rest on a superscript that has a note and the note appears beside it;
+   a tap does the same on a touch screen; Esc or moving away hides it. */
+(function(){
+  var pop=null, cur=null;
+  function show(el){
+    if(!pop){ pop=document.createElement('div'); pop.className='fnpop'; pop.setAttribute('role','tooltip'); document.body.appendChild(pop); }
+    var n=el.getAttribute('data-n'); pop.innerHTML=(n?'<b>'+n+'</b>':'')+el.getAttribute('data-note').replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});
+    pop.style.display='block'; pop.style.left='0px'; pop.style.top='0px';
+    var r=el.getBoundingClientRect(), pw=pop.offsetWidth, ph=pop.offsetHeight;
+    var x=Math.min(Math.max(6,r.left+r.width/2-pw/2), innerWidth-pw-6), y=r.top-ph-8;
+    if(y<4) y=r.bottom+8;
+    pop.style.left=x+'px'; pop.style.top=y+'px'; cur=el;
+  }
+  function hide(){ if(pop) pop.style.display='none'; cur=null; }
+  var fns=document.querySelectorAll('.fn');
+  for(var i=0;i<fns.length;i++){
+    var el=fns[i];
+    el.addEventListener('mouseenter',function(){ show(this); });
+    el.addEventListener('mouseleave',hide);
+    el.addEventListener('focus',function(){ show(this); });
+    el.addEventListener('blur',hide);
+    el.addEventListener('click',function(e){ e.preventDefault(); e.stopPropagation(); if(cur===this) hide(); else show(this); });
+  }
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') hide(); });
+  document.addEventListener('click',function(){ hide(); });
+  window.addEventListener('scroll',hide,true);
+})();
+</script>
 <script>
 /* The reader tells this page how big to draw itself, so text is re-rendered at the new size
    instead of being stretched as a bitmap (which is what happens when an iframe is transform-scaled). */

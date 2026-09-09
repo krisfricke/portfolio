@@ -12,6 +12,13 @@ p{margin:0;position:absolute}
 a{color:inherit}
 a:hover{text-decoration:underline}
 a.pic{position:absolute;display:block;z-index:4;cursor:zoom-in;border-radius:2px}
+
+.fn{cursor:help;border-bottom:1px dotted rgba(0,0,0,.35)}
+.fn:hover,.fn:focus{outline:none;background:rgba(249,197,0,.28)}
+.fnpop{position:fixed;z-index:20;display:none;max-width:380px;padding:9px 12px 10px;border-radius:8px;background:#fffdf5;color:#1a1a1a;
+  border:1px solid #c9a95f;box-shadow:0 8px 24px rgba(0,0,0,.22);font:13px/1.45 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;white-space:pre-line;pointer-events:none}
+.fnpop b{color:#6a5a3a;font-weight:700;margin-right:6px}
+
 /* one pulse as the pointer arrives - a ring that swells and fades - to say 'this one opens'; nothing more until a click */
 a.pic.pulse{animation:picpulse .8s ease-out 1}
 @keyframes picpulse{0%{box-shadow:0 0 0 0 rgba(249,197,0,.85),inset 0 0 0 0 rgba(255,255,255,.0)}35%{box-shadow:0 0 0 7px rgba(249,197,0,.55),inset 0 0 0 0 rgba(255,255,255,.18)}100%{box-shadow:0 0 0 16px rgba(249,197,0,0),inset 0 0 0 0 rgba(255,255,255,0)}}
@@ -44,7 +51,7 @@ a.pic.pulse{animation:picpulse .8s ease-out 1}
 <p style="position:absolute;left:63.4px;top:159.6px;font-size:17.7px;white-space:nowrap" data-w="401.3" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">entering the heavy concentration of feed lots reduced </span></p>
 <p style="position:absolute;left:63.4px;top:178.2px;font-size:17.7px;white-space:nowrap" data-w="396.9" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">morbidity by 80-90%.  In fact NSW DPI explicitly rec-</span></p>
 <p style="position:absolute;left:63.4px;top:196.8px;font-size:17.7px;white-space:nowrap" data-w="396.9" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">ommends cattle likely to go into feedlots be vaccinat-</span></p>
-<p style="position:absolute;left:63.4px;top:213.1px;font-size:17.7px;white-space:nowrap" data-w="396.9" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">ed.</span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;vertical-align:super;font-size:.7em">7</span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">  This isn’t just a “vaccination: good” scenario, cat-</span></p>
+<p style="position:absolute;left:63.4px;top:213.1px;font-size:17.7px;white-space:nowrap" data-w="396.9" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">ed.</span><span class="fn" tabindex="0" data-n="7" data-note="NSW Department of Primary Industries and Regional Development. Bovine Respiratory Disease (BRD) or Shipping Fever. NSW Government [Internet]. 2025 October [cited 2026 April 21]. Available from: https://www.nsw.gov.au/regional-and-primaryindustries/livestock/health-diseases/bovine-respiratory" aria-label="Note 7: NSW Department of Primary Industries and Regional Development. Bovine Respiratory Disease (BRD) or Shipping Fever. NSW Government [Internet]. 2025 October [cited 2026 April 21]. Available from: https://www.nsw.gov.au/regional-and-primaryindustries/livestock/health-diseases/bovine-respiratory"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;vertical-align:super;font-size:.7em">7</span></span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">  This isn’t just a “vaccination: good” scenario, cat-</span></p>
 <p style="position:absolute;left:63.4px;top:234.3px;font-size:17.7px;white-space:nowrap" data-w="396.8" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">tle that are not bound for high risk concentration envi-</span></p>
 <p style="position:absolute;left:63.4px;top:252.9px;font-size:17.7px;white-space:nowrap" data-w="401.3" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">ronments do not typically receive this preventative </span></p>
 <p style="position:absolute;left:63.4px;top:271.5px;font-size:17.7px;white-space:nowrap" data-w="401.3" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">treatment.  This is a directly analogous situation.  Like </span></p>
@@ -117,6 +124,35 @@ a.pic.pulse{animation:picpulse .8s ease-out 1}
 <a class="pic" data-src="hi3_5.jpg" data-nw="98" data-nh="99" style="left:811.1px;top:1115.8px;width:74.5px;height:75.3px" title="Enlarge picture" aria-label="Picture"></a>
 <a class="pic" data-src="hi3_6.jpg" data-nw="95" data-nh="94" style="left:812.8px;top:1214.4px;width:72.7px;height:71.9px" title="Enlarge picture" aria-label="Picture"></a>
 </div></div></div>
+<script>
+/* Footnotes as hover text: rest on a superscript that has a note and the note appears beside it;
+   a tap does the same on a touch screen; Esc or moving away hides it. */
+(function(){
+  var pop=null, cur=null;
+  function show(el){
+    if(!pop){ pop=document.createElement('div'); pop.className='fnpop'; pop.setAttribute('role','tooltip'); document.body.appendChild(pop); }
+    var n=el.getAttribute('data-n'); pop.innerHTML=(n?'<b>'+n+'</b>':'')+el.getAttribute('data-note').replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});
+    pop.style.display='block'; pop.style.left='0px'; pop.style.top='0px';
+    var r=el.getBoundingClientRect(), pw=pop.offsetWidth, ph=pop.offsetHeight;
+    var x=Math.min(Math.max(6,r.left+r.width/2-pw/2), innerWidth-pw-6), y=r.top-ph-8;
+    if(y<4) y=r.bottom+8;
+    pop.style.left=x+'px'; pop.style.top=y+'px'; cur=el;
+  }
+  function hide(){ if(pop) pop.style.display='none'; cur=null; }
+  var fns=document.querySelectorAll('.fn');
+  for(var i=0;i<fns.length;i++){
+    var el=fns[i];
+    el.addEventListener('mouseenter',function(){ show(this); });
+    el.addEventListener('mouseleave',hide);
+    el.addEventListener('focus',function(){ show(this); });
+    el.addEventListener('blur',hide);
+    el.addEventListener('click',function(e){ e.preventDefault(); e.stopPropagation(); if(cur===this) hide(); else show(this); });
+  }
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') hide(); });
+  document.addEventListener('click',function(){ hide(); });
+  window.addEventListener('scroll',hide,true);
+})();
+</script>
 <script>
 /* The reader tells this page how big to draw itself, so text is re-rendered at the new size
    instead of being stretched as a bitmap (which is what happens when an iframe is transform-scaled). */

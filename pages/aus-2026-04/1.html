@@ -12,6 +12,13 @@ p{margin:0;position:absolute}
 a{color:inherit}
 a:hover{text-decoration:underline}
 a.pic{position:absolute;display:block;z-index:4;cursor:zoom-in;border-radius:2px}
+
+.fn{cursor:help;border-bottom:1px dotted rgba(0,0,0,.35)}
+.fn:hover,.fn:focus{outline:none;background:rgba(249,197,0,.28)}
+.fnpop{position:fixed;z-index:20;display:none;max-width:380px;padding:9px 12px 10px;border-radius:8px;background:#fffdf5;color:#1a1a1a;
+  border:1px solid #c9a95f;box-shadow:0 8px 24px rgba(0,0,0,.22);font:13px/1.45 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;white-space:pre-line;pointer-events:none}
+.fnpop b{color:#6a5a3a;font-weight:700;margin-right:6px}
+
 /* one pulse as the pointer arrives - a ring that swells and fades - to say 'this one opens'; nothing more until a click */
 a.pic.pulse{animation:picpulse .8s ease-out 1}
 @keyframes picpulse{0%{box-shadow:0 0 0 0 rgba(249,197,0,.85),inset 0 0 0 0 rgba(255,255,255,.0)}35%{box-shadow:0 0 0 7px rgba(249,197,0,.55),inset 0 0 0 0 rgba(255,255,255,.18)}100%{box-shadow:0 0 0 16px rgba(249,197,0,0),inset 0 0 0 0 rgba(255,255,255,0)}}
@@ -50,11 +57,15 @@ a.pic.pulse{animation:picpulse .8s ease-out 1}
 <p style="position:absolute;left:62.8px;top:625.8px;font-size:17.7px;white-space:nowrap" data-w="377.6" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;font-style:italic">desire that this report will encourage others who </span></p>
 <p style="position:absolute;left:62.8px;top:644.5px;font-size:17.7px;white-space:nowrap" data-w="377.6" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;font-style:italic">have made similar observations to share their </span></p>
 <p style="position:absolute;left:62.8px;top:663.1px;font-size:17.7px;white-space:nowrap" data-w="373.5" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;font-style:italic">knowledge so that together we can identify the possi-</span></p>
-<p style="position:absolute;left:62.8px;top:679.3px;font-size:17.7px;white-space:nowrap" data-w="87.4"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;font-style:italic">ble causes.</span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;font-style:italic;vertical-align:super;font-size:.7em">1</span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif"> </span></p>
+<p style="position:absolute;left:62.8px;top:679.3px;font-size:17.7px;white-space:nowrap" data-w="87.4"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;font-style:italic">ble causes.</span><span class="fn" tabindex="0" data-n="1" data-note="Shimanuki, H., Calderone, N.W. &amp; Knox, D. 1994. Parasitic mite syndrome: the symptoms. American Bee Journal, 134: 827–828." aria-label="Note 1: Shimanuki, H., Calderone, N.W. &amp; Knox, D. 1994. Parasitic mite syndrome: the symptoms. American Bee Journal, 134: 827–828."><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;font-style:italic;vertical-align:super;font-size:.7em">1</span></span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif"> </span></p>
 <p style="position:absolute;left:85.5px;top:700.5px;font-size:17.7px;white-space:nowrap" data-w="373.5"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">However, for varroa-specific damage, the more pre-</span></p>
 <p style="position:absolute;left:62.8px;top:719.2px;font-size:17.7px;white-space:nowrap" data-w="400.3" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">cise term </span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;font-weight:700">varroosis </span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">(pronounced like varroa with “sis” </span></p>
 <p style="position:absolute;left:62.8px;top:737.8px;font-size:17.7px;white-space:nowrap" data-w="396.0" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">on the end) was officially adopted by the World Organ-</span></p>
-<p style="position:absolute;left:62.8px;top:754.0px;font-size:17.7px;white-space:nowrap" data-w="396.3" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">ization for Animal Health in 1989.</span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;vertical-align:super;font-size:.7em">2,3 </span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif"> This term is im-</span></p>
+<p style="position:absolute;left:62.8px;top:754.0px;font-size:17.7px;white-space:nowrap" data-w="396.3" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">ization for Animal Health in 1989.</span><span class="fn" tabindex="0" data-n="2,3" data-note="2  World Organisation for Animal Health (WOAH). 2021. Varroosis of honey bees (infestation of honey bees with Varroa spp.). In: Terrestrial Animal Health Code, Chapter 3.2.7. WOAH, Paris. Available at: https://www.woah.org/fileadmin/Home/eng/ Health_standards/tahm/3.02.07_VARROOSIS.pdf (accessed 2026-03-27).
+
+3  WOAH (World Organisation for Animal Health). 2024. Terrestrial Animal Health Code, 32nd edition, Chapter 9.6: Infestation of honey bees with Varroa spp. (Varroosis). Paris: WOAH. https://www.woah.org/ fileadmin/Home/eng/Health_standards/tahc/2024/ en_sommaire.htm" aria-label="Note 2,3: 2  World Organisation for Animal Health (WOAH). 2021. Varroosis of honey bees (infestation of honey bees with Varroa spp.). In: Terrestrial Animal Health Code, Chapter 3.2.7. WOAH, Paris. Available at: https://www.woah.org/fileadmin/Home/eng/ Health_standards/tahm/3.02.07_VARROOSIS.pdf (accessed 2026-03-27).
+
+3  WOAH (World Organisation for Animal Health). 2024. Terrestrial Animal Health Code, 32nd edition, Chapter 9.6: Infestation of honey bees with Varroa spp. (Varroosis). Paris: WOAH. https://www.woah.org/ fileadmin/Home/eng/Health_standards/tahc/2024/ en_sommaire.htm"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;vertical-align:super;font-size:.7em">2,3 </span></span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif"> This term is im-</span></p>
 <p style="position:absolute;left:62.8px;top:775.1px;font-size:17.7px;white-space:nowrap" data-w="400.5" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">mediately and intuitively clear – even if you’ve never </span></p>
 <p style="position:absolute;left:62.8px;top:793.7px;font-size:17.7px;white-space:nowrap" data-w="400.1" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">heard of “varroosis,” if someone says their hive has </span></p>
 <p style="position:absolute;left:62.8px;top:812.3px;font-size:17.7px;white-space:nowrap" data-w="400.2" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">varroosis you’d know immediately what they’re talking </span></p>
@@ -70,7 +81,7 @@ a.pic.pulse{animation:picpulse .8s ease-out 1}
 <p style="position:absolute;left:514.5px;top:215.5px;font-size:17.7px;white-space:nowrap" data-w="373.2"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">In addition to varroosis being more official and pre-</span></p>
 <p style="position:absolute;left:491.8px;top:234.1px;font-size:17.7px;white-space:nowrap" data-w="395.9" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">cise, PMS, as you will be aware, is already the univer-</span></p>
 <p style="position:absolute;left:491.8px;top:252.7px;font-size:17.7px;white-space:nowrap" data-w="400.2" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">sally recognized acronym for a condition affecting </span></p>
-<p style="position:absolute;left:491.8px;top:268.9px;font-size:17.7px;white-space:nowrap" data-w="400.5" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">nearly half of all adult humans.</span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;vertical-align:super;font-size:.7em">4</span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">  Acronyms should be </span></p>
+<p style="position:absolute;left:491.8px;top:268.9px;font-size:17.7px;white-space:nowrap" data-w="400.5" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">nearly half of all adult humans.</span><span class="fn" tabindex="0" data-n="4" data-note="Greene, R. &amp; Dalton, K. 1953. The premenstrual syndrome. British Medical Journal, 1(4818): 1007– 1014. https://doi.org/10.1136/bmj.1.4818.1007" aria-label="Note 4: Greene, R. &amp; Dalton, K. 1953. The premenstrual syndrome. British Medical Journal, 1(4818): 1007– 1014. https://doi.org/10.1136/bmj.1.4818.1007"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;vertical-align:super;font-size:.7em">4</span></span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">  Acronyms should be </span></p>
 <p style="position:absolute;left:491.8px;top:290.0px;font-size:17.7px;white-space:nowrap" data-w="400.2" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">unique, that’s the idea: you say GST, someone knows </span></p>
 <p style="position:absolute;left:491.8px;top:308.6px;font-size:17.7px;white-space:nowrap" data-w="400.2" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">what you’re talking about; you say HIV, someone </span></p>
 <p style="position:absolute;left:491.8px;top:327.3px;font-size:17.7px;white-space:nowrap" data-w="396.0" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">knows what you mean.  You say PMS, well, that re-</span></p>
@@ -84,12 +95,12 @@ a.pic.pulse{animation:picpulse .8s ease-out 1}
 <p style="position:absolute;left:514.5px;top:476.4px;font-size:17.7px;white-space:nowrap" data-w="377.7"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">Notably the original article introducing “Parasitic </span></p>
 <p style="position:absolute;left:491.8px;top:495.1px;font-size:17.7px;white-space:nowrap" data-w="400.2" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">Mite Syndrome” never shortened the three words to the </span></p>
 <p style="position:absolute;left:491.8px;top:513.7px;font-size:17.7px;white-space:nowrap" data-w="400.1" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">acronym “PMS.”   A year later in a follow up paper </span></p>
-<p style="position:absolute;left:491.8px;top:529.9px;font-size:17.7px;white-space:nowrap" data-w="395.9" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">they used “BPMS,”</span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;vertical-align:super;font-size:.7em">5</span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif"> no doubt realizing exactly the ac-</span></p>
+<p style="position:absolute;left:491.8px;top:529.9px;font-size:17.7px;white-space:nowrap" data-w="395.9" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">they used “BPMS,”</span><span class="fn" tabindex="0" data-n="5" data-note="Hung, A.C.F., Adams, J.R. &amp; Shimanuki, H. 1995. Bee parasitic mite syndrome (II): the role of Varroa mite and viruses. American Bee Journal, 135: 702– 704." aria-label="Note 5: Hung, A.C.F., Adams, J.R. &amp; Shimanuki, H. 1995. Bee parasitic mite syndrome (II): the role of Varroa mite and viruses. American Bee Journal, 135: 702– 704."><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;vertical-align:super;font-size:.7em">5</span></span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif"> no doubt realizing exactly the ac-</span></p>
 <p style="position:absolute;left:491.8px;top:551.0px;font-size:17.7px;white-space:nowrap" data-w="400.2" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">ronym problems I am now writing about.  But even this </span></p>
 <p style="position:absolute;left:491.8px;top:569.6px;font-size:17.7px;white-space:nowrap" data-w="400.1" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">solution isn’t great, as verbally that just sounds like </span></p>
 <p style="position:absolute;left:491.8px;top:588.2px;font-size:17.7px;white-space:nowrap" data-w="400.2" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">“bee PMS,” implying the bees are suffering from the </span></p>
 <p style="position:absolute;left:491.8px;top:606.8px;font-size:17.7px;white-space:nowrap" data-w="400.2" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">reproductive syndrome, which, needless to say, they do </span></p>
-<p style="position:absolute;left:491.8px;top:623.3px;font-size:17.7px;white-space:nowrap" data-w="116.2"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">not experience.</span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;vertical-align:super;font-size:.7em">6 </span></p>
+<p style="position:absolute;left:491.8px;top:623.3px;font-size:17.7px;white-space:nowrap" data-w="116.2"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">not experience.</span><span class="fn" tabindex="0" data-n="6" data-note="Winston, M.L. 1987. The Biology of the Honey Bee. Harvard University Press, Cambridge, Massachusetts. 281 pp." aria-label="Note 6: Winston, M.L. 1987. The Biology of the Honey Bee. Harvard University Press, Cambridge, Massachusetts. 281 pp."><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;vertical-align:super;font-size:.7em">6 </span></span></p>
 <p style="position:absolute;left:514.5px;top:644.3px;font-size:17.7px;white-space:nowrap" data-w="377.6"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">  And there’s a practical consequence to this: can </span></p>
 <p style="position:absolute;left:491.8px;top:662.9px;font-size:17.7px;white-space:nowrap" data-w="400.3" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">you or I google “PMS” and expect varroa management </span></p>
 <p style="position:absolute;left:491.8px;top:681.5px;font-size:17.7px;white-space:nowrap" data-w="400.2" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">advice?  No, we certainly cannot.  Instead, standing in </span></p>
@@ -107,6 +118,35 @@ a.pic.pulse{animation:picpulse .8s ease-out 1}
 <p style="position:absolute;left:266.4px;top:1258.0px;font-size:17.7px;white-space:nowrap" data-w="448.6"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;font-style:italic">A simple google search for "PMS" (left) vs "Varroosis" (right)  </span></p>
 <a class="pic" data-src="hi1_1.jpg" data-nw="1089" data-nh="401" style="left:60.7px;top:936.7px;width:835.8px;height:306.7px" title="Enlarge picture" aria-label="Picture"></a>
 </div></div></div>
+<script>
+/* Footnotes as hover text: rest on a superscript that has a note and the note appears beside it;
+   a tap does the same on a touch screen; Esc or moving away hides it. */
+(function(){
+  var pop=null, cur=null;
+  function show(el){
+    if(!pop){ pop=document.createElement('div'); pop.className='fnpop'; pop.setAttribute('role','tooltip'); document.body.appendChild(pop); }
+    var n=el.getAttribute('data-n'); pop.innerHTML=(n?'<b>'+n+'</b>':'')+el.getAttribute('data-note').replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});
+    pop.style.display='block'; pop.style.left='0px'; pop.style.top='0px';
+    var r=el.getBoundingClientRect(), pw=pop.offsetWidth, ph=pop.offsetHeight;
+    var x=Math.min(Math.max(6,r.left+r.width/2-pw/2), innerWidth-pw-6), y=r.top-ph-8;
+    if(y<4) y=r.bottom+8;
+    pop.style.left=x+'px'; pop.style.top=y+'px'; cur=el;
+  }
+  function hide(){ if(pop) pop.style.display='none'; cur=null; }
+  var fns=document.querySelectorAll('.fn');
+  for(var i=0;i<fns.length;i++){
+    var el=fns[i];
+    el.addEventListener('mouseenter',function(){ show(this); });
+    el.addEventListener('mouseleave',hide);
+    el.addEventListener('focus',function(){ show(this); });
+    el.addEventListener('blur',hide);
+    el.addEventListener('click',function(e){ e.preventDefault(); e.stopPropagation(); if(cur===this) hide(); else show(this); });
+  }
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') hide(); });
+  document.addEventListener('click',function(){ hide(); });
+  window.addEventListener('scroll',hide,true);
+})();
+</script>
 <script>
 /* The reader tells this page how big to draw itself, so text is re-rendered at the new size
    instead of being stretched as a bitmap (which is what happens when an iframe is transform-scaled). */

@@ -12,6 +12,13 @@ p{margin:0;position:absolute}
 a{color:inherit}
 a:hover{text-decoration:underline}
 a.pic{position:absolute;display:block;z-index:4;cursor:zoom-in;border-radius:2px}
+
+.fn{cursor:help;border-bottom:1px dotted rgba(0,0,0,.35)}
+.fn:hover,.fn:focus{outline:none;background:rgba(249,197,0,.28)}
+.fnpop{position:fixed;z-index:20;display:none;max-width:380px;padding:9px 12px 10px;border-radius:8px;background:#fffdf5;color:#1a1a1a;
+  border:1px solid #c9a95f;box-shadow:0 8px 24px rgba(0,0,0,.22);font:13px/1.45 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;white-space:pre-line;pointer-events:none}
+.fnpop b{color:#6a5a3a;font-weight:700;margin-right:6px}
+
 /* one pulse as the pointer arrives - a ring that swells and fades - to say 'this one opens'; nothing more until a click */
 a.pic.pulse{animation:picpulse .8s ease-out 1}
 @keyframes picpulse{0%{box-shadow:0 0 0 0 rgba(249,197,0,.85),inset 0 0 0 0 rgba(255,255,255,.0)}35%{box-shadow:0 0 0 7px rgba(249,197,0,.55),inset 0 0 0 0 rgba(255,255,255,.18)}100%{box-shadow:0 0 0 16px rgba(249,197,0,0),inset 0 0 0 0 rgba(255,255,255,0)}}
@@ -70,8 +77,8 @@ a.pic.pulse{animation:picpulse .8s ease-out 1}
 <p style="position:absolute;left:62.0px;top:746.6px;font-size:17.7px;white-space:nowrap" data-w="378.3" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;font-style:italic">honey or beeswax) or an appliance containing honey </span></p>
 <p style="position:absolute;left:62.0px;top:765.2px;font-size:17.7px;white-space:nowrap" data-w="378.2" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;font-style:italic">to be exposed in a manner or under conditions likely </span></p>
 <p style="position:absolute;left:62.0px;top:783.9px;font-size:17.7px;white-space:nowrap" data-w="373.9" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;font-style:italic">to attract robber bees; including during transporta-</span></p>
-<p style="position:absolute;left:62.0px;top:800.1px;font-size:17.7px;white-space:nowrap" data-w="40.4"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;font-style:italic">tion.</span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;font-style:italic;vertical-align:super;font-size:.7em">1 </span></p>
-<p style="position:absolute;left:84.7px;top:818.8px;font-size:17.7px;white-space:nowrap" data-w="378.5" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">The </span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;font-weight:700">Livestock Disease Control Act of 1994</span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;font-weight:700;vertical-align:super;font-size:.7em">2</span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif"> also </span></p>
+<p style="position:absolute;left:62.0px;top:800.1px;font-size:17.7px;white-space:nowrap" data-w="40.4"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;font-style:italic">tion.</span><span class="fn" tabindex="0" data-n="1" data-note="Plant Health Australia (2025) Australian Honey Bee Industry Biosecurity Code of Practice (Version 2.1). Canberra: Plant Health Australia." aria-label="Note 1: Plant Health Australia (2025) Australian Honey Bee Industry Biosecurity Code of Practice (Version 2.1). Canberra: Plant Health Australia."><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;font-style:italic;vertical-align:super;font-size:.7em">1 </span></span></p>
+<p style="position:absolute;left:84.7px;top:818.8px;font-size:17.7px;white-space:nowrap" data-w="378.5" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">The </span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;font-weight:700">Livestock Disease Control Act of 1994</span><span class="fn" tabindex="0" data-n="2" data-note="Livestock Disease Control Act 1994 (Vic). https:// www.legislation.vic.gov.au/in-force/acts/livestockdisease-control-act-1994" aria-label="Note 2: Livestock Disease Control Act 1994 (Vic). https:// www.legislation.vic.gov.au/in-force/acts/livestockdisease-control-act-1994"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;font-weight:700;vertical-align:super;font-size:.7em">2</span></span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif"> also </span></p>
 <p style="position:absolute;left:62.0px;top:839.8px;font-size:17.7px;white-space:nowrap" data-w="204.4"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">has some related provisions: </span></p>
 <p style="position:absolute;left:84.7px;top:858.6px;font-size:17.7px;white-space:nowrap" data-w="334.9"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;font-weight:700;font-style:italic">§ 52</span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;font-style:italic"> </span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;font-weight:700;font-style:italic">Exposure of bees to infected articles etc</span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;font-style:italic">.  </span></p>
 <p style="position:absolute;left:84.7px;top:877.2px;font-size:17.7px;white-space:nowrap" data-w="204.3"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;font-style:italic">A person must not expose—  </span></p>
@@ -96,7 +103,7 @@ a.pic.pulse{animation:picpulse .8s ease-out 1}
 <p style="position:absolute;left:62.0px;top:1231.7px;font-size:17.7px;white-space:nowrap" data-w="378.3" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;font-style:italic">or under such conditions that would provide bees </span></p>
 <p style="position:absolute;left:62.0px;top:1250.3px;font-size:17.7px;white-space:nowrap" data-w="180.0"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;font-style:italic">with access to the honey. </span></p>
 <p style="position:absolute;left:514.3px;top:560.4px;font-size:17.7px;white-space:nowrap" data-w="378.2"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">  The </span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;font-weight:700">Livestock and Disease Control Act of </span></p>
-<p style="position:absolute;left:491.6px;top:576.6px;font-size:17.7px;white-space:nowrap" data-w="396.5" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;font-weight:700">2017</span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;font-weight:700;vertical-align:super;font-size:.7em">3</span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif"> provides additional legal requirements for bee-</span></p>
+<p style="position:absolute;left:491.6px;top:576.6px;font-size:17.7px;white-space:nowrap" data-w="396.5" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;font-weight:700">2017</span><span class="fn" tabindex="0" data-n="3" data-note="Livestock Disease Control Regulations 2017 (Vic). https://www.legislation.vic.gov.au/in-force/statutoryrules/livestock-disease-control-regulations-2017" aria-label="Note 3: Livestock Disease Control Regulations 2017 (Vic). https://www.legislation.vic.gov.au/in-force/statutoryrules/livestock-disease-control-regulations-2017"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif;font-weight:700;vertical-align:super;font-size:.7em">3</span></span><span style="font-family:'Liberation Serif','Times New Roman',Times,serif"> provides additional legal requirements for bee-</span></p>
 <p style="position:absolute;left:491.6px;top:597.6px;font-size:17.7px;white-space:nowrap" data-w="305.2"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">keepers but doesn’t touch on this question. </span></p>
 <p style="position:absolute;left:514.3px;top:634.9px;font-size:17.7px;white-space:nowrap" data-w="373.9"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">These are very good reasonable regulations every-</span></p>
 <p style="position:absolute;left:491.6px;top:653.5px;font-size:17.7px;white-space:nowrap" data-w="400.8" data-j="1"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">one should adhere to in order to prevent the spread of </span></p>
@@ -133,6 +140,35 @@ a.pic.pulse{animation:picpulse .8s ease-out 1}
 <p style="position:absolute;left:491.6px;top:1231.5px;font-size:17.7px;white-space:nowrap" data-w="396.7"><span style="font-family:'Liberation Serif','Times New Roman',Times,serif">environment. Plus, you’re driving around with a you-</span></p>
 <p style="position:absolute;left:773.6px;top:1257.0px;font-size:12.9px;white-space:nowrap" data-w="117.8"><span style="font-family:Carlito,Calibri,'Segoe UI',Arial,sans-serif;font-style:italic">(Continued on page 7) </span></p>
 </div></div></div>
+<script>
+/* Footnotes as hover text: rest on a superscript that has a note and the note appears beside it;
+   a tap does the same on a touch screen; Esc or moving away hides it. */
+(function(){
+  var pop=null, cur=null;
+  function show(el){
+    if(!pop){ pop=document.createElement('div'); pop.className='fnpop'; pop.setAttribute('role','tooltip'); document.body.appendChild(pop); }
+    var n=el.getAttribute('data-n'); pop.innerHTML=(n?'<b>'+n+'</b>':'')+el.getAttribute('data-note').replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});
+    pop.style.display='block'; pop.style.left='0px'; pop.style.top='0px';
+    var r=el.getBoundingClientRect(), pw=pop.offsetWidth, ph=pop.offsetHeight;
+    var x=Math.min(Math.max(6,r.left+r.width/2-pw/2), innerWidth-pw-6), y=r.top-ph-8;
+    if(y<4) y=r.bottom+8;
+    pop.style.left=x+'px'; pop.style.top=y+'px'; cur=el;
+  }
+  function hide(){ if(pop) pop.style.display='none'; cur=null; }
+  var fns=document.querySelectorAll('.fn');
+  for(var i=0;i<fns.length;i++){
+    var el=fns[i];
+    el.addEventListener('mouseenter',function(){ show(this); });
+    el.addEventListener('mouseleave',hide);
+    el.addEventListener('focus',function(){ show(this); });
+    el.addEventListener('blur',hide);
+    el.addEventListener('click',function(e){ e.preventDefault(); e.stopPropagation(); if(cur===this) hide(); else show(this); });
+  }
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') hide(); });
+  document.addEventListener('click',function(){ hide(); });
+  window.addEventListener('scroll',hide,true);
+})();
+</script>
 <script>
 /* The reader tells this page how big to draw itself, so text is re-rendered at the new size
    instead of being stretched as a bitmap (which is what happens when an iframe is transform-scaled). */
