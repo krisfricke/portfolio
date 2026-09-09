@@ -53,20 +53,17 @@ def _lines(page, clean, n):
             size = sizes.most_common(1)[0][0] if sizes else round(spans[0]['size'] * 2) / 2
             x0 = min(l['bbox'][0] for l in ls); y0 = min(l['bbox'][1] for l in ls)
             out.append({'n': n, 'x': x0, 'y': y0, 'size': size, 'text': text, 'sup': sup, 'col': 0})
-    # columns: cluster the left edges - a new column wherever the sorted edges jump by more than 40 pt
-    xs = sorted(set(round(l['x']) for l in out)); cols = {}; c = 0
-    for i, x in enumerate(xs):
-        if i and x - xs[i - 1] > 40: c += 1
-        cols[x] = c
-    for l in out: l['col'] = cols[round(l['x'])]
     return out
 
+URLISH = re.compile(r'(https?://|www\.)\S*$')
 def _join(parts):
     out = ''
     for p in parts:
         p = p.strip()
         if not p: continue
-        if out.endswith('-') and p[:1].islower(): out = out[:-1] + p
+        last = out.split()[-1] if out else ''
+        if URLISH.search(last) and last.endswith(('/', '-', '_', '.', '=', '?', '&', '#')): out = out + p       # a web address wrapped: keep every character
+        elif out.endswith('-') and p[:1].islower(): out = out[:-1] + p                                             # a word split at the line end
         else: out = (out + ' ' + p).strip()
     return out
 
@@ -75,7 +72,23 @@ def harvest(doc, pnos, clean):
     lines = []
     for n, pno in enumerate(pnos, start=1):
         lines += _lines(doc[pno], clean, n)
+    return harvest_lines(lines)
+
+def columns(lines):
+    """Give every line a column number per page: a new column wherever the sorted left edges jump by more than 40 pt."""
+    for n in set(l['n'] for l in lines):
+        pg = [l for l in lines if l['n'] == n]
+        xs = sorted(set(round(l['x']) for l in pg)); cols = {}; c = 0
+        for i, x in enumerate(xs):
+            if i and x - xs[i - 1] > 40: c += 1
+            cols[x] = c
+        for l in pg: l['col'] = cols[round(l['x'])]
+
+def harvest_lines(lines):
+    """lines: dicts with n (page), x, y, size (pt), text, sup ('' or the leading superscript marker) - from a PDF
+    via _lines, or from already-built pages. Returns (notes, start keys)."""
     if not lines: return {}, set()
+    columns(lines)
     cnt = Counter()
     for l in lines: cnt[l['size']] += len(l['text'])
     body = cnt.most_common(1)[0][0]                      # the body size: the commonest by characters
