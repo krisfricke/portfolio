@@ -684,7 +684,9 @@ function route(){ let h=location.hash;
       /* only scroll when this hash change is what opened the list; backToTop/closeArticle place the view themselves */
       if(was){ requestAnimationFrame(()=>{ laneEl(0).scrollTop=0; }); } return; }
   closeTopic(); }
-LANES[0].active=sorted(ARTS,'new')[0].id;
+/* open on the stack, not inside an article: a portfolio should show its whole
+   body of work first. A #/read/<id> in the address still opens that one. */
+LANES[0].active=null;
 setZoom(ZOOM);
 build();
 window.addEventListener('keydown',function(e){
